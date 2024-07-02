@@ -60,9 +60,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\UI Rotation.cs" />
+    <Compile Include="Assets\amedama`s script\CustomerRequest.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\CustomerRequest.cs" />
+    <Compile Include="Assets\amedama`s script\Size Specification.cs" />
+    <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
