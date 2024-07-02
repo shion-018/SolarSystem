@@ -62,8 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\amedama`s script\CustomerRequest.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+
     <Compile Include="Assets\amedama`s script\Size Specification.cs" />
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
