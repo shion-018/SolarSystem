@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\generation.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\a.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

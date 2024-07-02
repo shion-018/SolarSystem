@@ -21,7 +21,7 @@ public class generation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-            i = Random.Range(0, 3);
+            i = Random.Range(0, target.Length);
 
             //Instantiate( 生成するオブジェクト,  場所, 回転 ); 
             Instantiate(target[i], this.transform.position, Quaternion.identity);
