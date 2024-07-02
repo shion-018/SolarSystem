@@ -63,8 +63,10 @@
     <Compile Include="Assets\amedama`s script\CustomerRequest.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
 
-    <Compile Include="Assets\amedama`s script\Size Specification.cs" />
-    <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\generation.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\a.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
 
   </ItemGroup>
   <ItemGroup>
