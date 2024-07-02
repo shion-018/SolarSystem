@@ -62,7 +62,8 @@
   <ItemGroup>
     <Compile Include="Assets\UI Rotation.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\CustomerRequest.cs" />
+    <Compile Include="Assets\Scripts\ObjectToggle.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

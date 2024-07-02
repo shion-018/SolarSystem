@@ -400,7 +400,8 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.Graphs">
-      <HintPath>D:\Unity\2022.3.24f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
