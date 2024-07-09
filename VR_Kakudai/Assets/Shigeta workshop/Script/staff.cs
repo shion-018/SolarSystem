@@ -6,6 +6,7 @@ public class staff : MonoBehaviour
 {
 
     [SerializeField] private Transform[] target;
+    [SerializeField] private GameObject child;
 
 
 
@@ -35,7 +36,9 @@ public class staff : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target[0].position, speed * Time.deltaTime);
                 if (this.transform.position == target[0].transform.position)
                 {
-                    dishes = Dishes.havedishes;
+                    child = GameObject.Find("dishes");
+                    this.gameObject.transform.parent = child.gameObject.transform;
+                    //dishes = Dishes.havedishes;
                 }
                 break;
 
