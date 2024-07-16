@@ -118,5 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d803365027e77f1469778006bab8869e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target:
-  - {fileID: 773057675854184826, guid: c738a0ea15d648841bff8f19e9f181db, type: 3}
+  targetNames:
+  - Counter Position
+  TimeBar: {fileID: 8847301645913041010, guid: c3fb8ccd3123a9b4e90f9a99e3a6444a, type: 3}
