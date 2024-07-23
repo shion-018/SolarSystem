@@ -5,7 +5,7 @@ using UnityEngine;
 public class Visit : MonoBehaviour
 {
     [SerializeField] private string[] targetNames;
-    [SerializeField] GameObject TimeBar;
+    //[SerializeField] GameObject TimeBar;
     private Transform[] targets;
 
     private float speed = 3.0f;
