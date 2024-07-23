@@ -17,17 +17,17 @@ public class TimeBar : MonoBehaviour
 
     void Start()
     {
-        // Sliderコンポーネントを自動的に取得
+        //Sliderコンポーネントを自動的に取得
         if (slider == null)
         {
             slider = GetComponentInChildren<Slider>();
         }
 
-        // Sliderを満タンにする
+        //Sliderを満タンにする
         slider.value = 1;
-        // 現在の時間を最大時間と同じにする
+        //現在の時間を最大時間と同じにする
         currenttime = maxtime;
-        Debug.Log("Start currentTime : " + currenttime);
+        
     }
 
     void Update()
@@ -39,18 +39,18 @@ public class TimeBar : MonoBehaviour
             {
                 seconds = 0;
 
-                Debug.Log("damage : " + damage);
+                
 
-                // 現在の時間からダメージを引く
+                //現在の時間からダメージを引く
                 currenttime -= damage;
-                Debug.Log("After currentTime : " + currenttime);
+                
 
                 if (currenttime <= 0)
                 {
                     currenttime = maxtime;
                 }
 
-                // 最大時間における現在の時間をSliderに反映
+                //最大時間における現在の時間をSliderに反映
                 slider.value = (float)currenttime / (float)maxtime;
             }
         }
@@ -58,7 +58,7 @@ public class TimeBar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Finish"))
         {
             Debug.Log("ばあ");
             touch = true;
