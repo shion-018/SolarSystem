@@ -70,6 +70,9 @@
     <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
     <Compile Include="Assets\amedama`s script\DishesSetting.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Appear dishes.cs" />
+
+    <Compile Include="Assets\amedama`s script\DifficultStretch.cs" />
+
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
   </ItemGroup>

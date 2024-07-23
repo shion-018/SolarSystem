@@ -1,36 +1,64 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class CustomerRequest : MonoBehaviour
 {
 
-    //Inspector‚Åİ’è‚µ‚Ä‚Ù‚µ‚¢‚Æ‚±‚ë
-    [SerializeField] private GameObject[] RequestDishes;//—¿—‚Ìí—Ş
-    [SerializeField] private Sprite[] DishesSprits;//—¿—‚Ì‰æ‘œ
-    [SerializeField] private Sprite[] SizeSpecificationSprits;//‘å‚«‚³w’è‚Ì‰æ‘œ
-    [SerializeField] private Image DishesImage;//—¿—‚Ì‰æ‘œ‚ğ‰f‚·êŠ‚Ìİ’è
-    [SerializeField] private Image SizeImage;//‘å‚«‚³‚Ì‰æ‘œ‚ğ‰f‚·êŠ‚Ìİ’è
+    //Inspectorã§è¨­å®šã—ã¦ã»ã—ã„ã¨ã“ã‚
+    [SerializeField] private GameObject[] RequestDishes;//æ–™ç†ã®ç¨®é¡
+    [SerializeField] private Sprite[] SizeSpecificationSprits;//å¤§ãã•æŒ‡å®šã®ç”»åƒ
+    [SerializeField] private UnityEngine.UI.Image DishesImage;//æ–™ç†ã®ç”»åƒã‚’æ˜ ã™å ´æ‰€ã®è¨­å®š
+    [SerializeField] private UnityEngine.UI.Image SizeImage;//å¤§ãã•ã®ç”»åƒã‚’æ˜ ã™å ´æ‰€ã®è¨­å®š
+    [SerializeField] private TextMeshProUGUI SalesAmountText;//å£²ä¸Šé‡‘é¡ã®åˆè¨ˆã‚’æ˜ ã™ã¨ã“ã‚
 
-    private int DishesSpriteValue; private int DishesSpriteValueMin; private int DishesSpriteValueMax;
+    private int DishesValue; private int DishesValueMin; private int DishesValueMax;
     private int SizeSpecificationSpriteValue; private int SizeSpecificationSpriteValueMin; private int SizeSpecificationSpriteValueMax;
-
+    private int RequestDishesPrice = 0;
+    private int[] DishesMagPrice;
+    private int SalesAmount = 0;
+    private DishesSetting dishesSetting;
+    private AmountText amountText;
 
     // Start is called before the first frame update
     void Start()
     {
-        //—”¶¬‚ÌãŒÀ‚Æ‰ºŒÀ‚ğİ’è
-        DishesSpriteValueMin = 0;
-        DishesSpriteValueMax = RequestDishes.Length;
+        Debug.Log(1);
+        Sprite[] DishesSprits = new Sprite[RequestDishes.Length];
+        int[] DishesPrice = new int[RequestDishes.Length];
+
+
+        for (int DishesNumber = 0; DishesNumber < RequestDishes.Length; DishesNumber++)
+        {
+
+            dishesSetting = RequestDishes[DishesNumber].GetComponent<DishesSetting>();
+            amountText = SalesAmountText.GetComponent<AmountText>();
+            Debug.Log(dishesSetting.DishesPrice);
+
+            DishesSprits[DishesNumber] = dishesSetting.DishesSprite;
+            DishesPrice[DishesNumber] = dishesSetting.DishesPrice;
+
+
+
+        }
+
+        //ä¹±æ•°ç”Ÿæˆã®ä¸Šé™ã¨ä¸‹é™ã‚’è¨­å®š
+        DishesValueMin = 0;
+        DishesValueMax = RequestDishes.Length;
         SizeSpecificationSpriteValueMin = 0;
         SizeSpecificationSpriteValueMax = SizeSpecificationSprits.Length;
 
-        //—”¶¬‚Å—¿—‚Æ‘å‚«‚³‚ğŒˆ’è
-        DishesSpriteValue = Random.Range(DishesSpriteValueMin, DishesSpriteValueMax);
-        DishesImage.sprite = DishesSprits[DishesSpriteValue];
+        //ä¹±æ•°ç”Ÿæˆã§æ–™ç†ã¨å¤§ãã•ã‚’æ±ºå®š
+        DishesValue = Random.Range(DishesValueMin, DishesValueMax);
+        dishesSetting = RequestDishes[DishesValue].GetComponent<DishesSetting>();
+        DishesImage.sprite = DishesSprits[DishesValue];
+        RequestDishesPrice = DishesPrice[DishesValue];
         SizeSpecificationSpriteValue = Random.Range(SizeSpecificationSpriteValueMin, SizeSpecificationSpriteValueMax);
         SizeImage.sprite = SizeSpecificationSprits[SizeSpecificationSpriteValue];
+
 
     }
 
@@ -43,14 +71,42 @@ public class CustomerRequest : MonoBehaviour
     void OnTriggerEnter(Collider colliderDishes)
     {
 
-        //“–‚½‚Á‚½ƒIƒuƒWƒFƒNƒg‚ğ”»’è
-        if (colliderDishes.tag == RequestDishes[DishesSpriteValue].tag)//—¿—‚Ìí—Ş‚ğtag‚Å”»’è
+        //å½“ãŸã£ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’åˆ¤å®š
+        if (colliderDishes.tag == RequestDishes[DishesValue].tag)//æ–™ç†ãŒæ­£ã—ã„ã‹ã‚’åˆ¤å®š
         {
 
-            if (SizeSpecificationSpriteValue < colliderDishes.transform.localScale.x)//—¿—‚Ì‘å‚«‚³‚ğScale.x‚Å”»’è
+            if (SizeSpecificationSpriteValue <= colliderDishes.transform.localScale.x)//æº€è¶³ã™ã‚‹å¤§ãã•ã‹ã®åˆ¤å®š
             {
+
+                amountText.Amount(DishesMagnification(colliderDishes));
                 Destroy(colliderDishes.gameObject);
+
             }
         }
+    }
+
+    int DishesMagnification(Collider colliderDishes)
+    {
+
+        float RDP = RequestDishesPrice;
+        float PM = 0;//PriceMagnification
+
+        Debug.Log(dishesSetting);
+
+        for (int i = 0; i < dishesSetting.dishesMagnifications.Length; i++)
+        {
+
+            if (colliderDishes.transform.localScale.x >= dishesSetting.dishesMagnifications[i].PriceMagnification[0])
+            {
+                PM = dishesSetting.dishesMagnifications[i].PriceMagnification[1];
+            }
+
+        }
+
+        RDP *= PM;
+
+        return (int)RDP;
+
+
     }
 }
