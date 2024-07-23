@@ -31,13 +31,13 @@ public class Staff : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, target[0].position, speed * Time.deltaTime);
                 if (this.transform.position == target[0].transform.position && child != null)
                 {
-                    // ワールド座標を保持
+                    //ワールド座標を保持
                     Vector3 childWorldPosition = child.transform.position;
 
-                    // 親子関係を設定
+                    //親子関係を設定
                     child.transform.SetParent(this.transform);
 
-                    // ワールド座標を再設定
+                    //ワールド座標を再設定
                     child.transform.position = childWorldPosition;
 
                     transform.rotation = Quaternion.AngleAxis(90.0f, new Vector3(0, 1, 0));
