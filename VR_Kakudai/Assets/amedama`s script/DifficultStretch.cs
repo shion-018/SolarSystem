@@ -5,8 +5,6 @@ using UnityEngine;
 public class DifficultStretch : MonoBehaviour
 {
 
-    [SeliarizeFierd]
-
 
     // Start is called before the first frame update
     void Start()
