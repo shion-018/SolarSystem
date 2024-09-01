@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class TimeBar : MonoBehaviour
 {
-    int maxtime = 100;
+   
+    public int maxtime;
     int currenttime;
     public Slider slider;
 
-    int damage = 10;
+    int damage = 1;
 
     bool touch = false;
 
@@ -17,6 +18,9 @@ public class TimeBar : MonoBehaviour
 
     void Start()
     {
+        maxtime = Random.Range(6, 10) * 10;
+
+
         //Sliderコンポーネントを自動的に取得
         if (slider == null)
         {
@@ -43,11 +47,11 @@ public class TimeBar : MonoBehaviour
 
                 //現在の時間からダメージを引く
                 currenttime -= damage;
-                
 
                 if (currenttime <= 0)
                 {
-                    currenttime = maxtime;
+                    Debug.Log("時間切れ");
+                   
                 }
 
                 //最大時間における現在の時間をSliderに反映
@@ -62,6 +66,11 @@ public class TimeBar : MonoBehaviour
         {
             Debug.Log("ばあ");
             touch = true;
+        }
+
+        if(maxtime != currenttime)
+        {
+            currenttime = maxtime;
         }
     }
 }
