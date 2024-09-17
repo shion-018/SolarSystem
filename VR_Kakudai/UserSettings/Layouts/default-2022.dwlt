@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\game3\SolarSystem\VR_Kakudai
+  m_LastProjectPath: C:\Users\nonam\source\repos\TemporaryFile\SolarSystem\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
