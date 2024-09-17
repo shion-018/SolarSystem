@@ -27,7 +27,7 @@ public class SpeechBubbleTimer : MonoBehaviour
     float _updateTimer()
     {
         seconds += Time.deltaTime;
-        float timer = seconds / timerLimit;
+        float timer = 1 - seconds / timerLimit;
 
         //’Ç‰Á@floatŒ^‚Ìtimer‚ğ•Ô‚·
         return timer;
