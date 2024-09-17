@@ -6,6 +6,7 @@ TagManager:
   tags:
   - sushi
   - donburi
+  - Game Object
   layers:
   - Default
   - TransparentFX
