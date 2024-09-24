@@ -46,8 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerLimit: 10
+  Customer: {fileID: 0}
   testclock: {fileID: 8666661996453006462}
   hukidasi: {fileID: 7644246272596138824}
+  hukidasiImage: {fileID: 0}
 --- !u!1 &1769448179173544545
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,8 +188,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerLimit: 10
+  Customer: {fileID: 1769448179173544545}
   testclock: {fileID: 8666661996453006462}
   hukidasi: {fileID: 7644246272596138824}
+  hukidasiImage: {fileID: 2227447101787075301}
 --- !u!54 &-3797858669801289314
 Rigidbody:
   m_ObjectHideFlags: 0

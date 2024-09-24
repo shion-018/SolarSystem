@@ -11,17 +11,21 @@ public class SpeechBubbleTimer : MonoBehaviour
     
     [SerializeField] TestClock testclock;
     [SerializeField] Image hukidasi;
+    [SerializeField] Canvas hukidasiImage;
 
     bool touch = false;
     void Start()
     {
         hukidasi.color = Color.green;
+
+        hukidasiImage.enabled = false;
     }
 
     void Update()
     {
         if (touch)
         {
+            hukidasiImage.enabled=true;
             testclock.UpdateClock(_updateTimer());
         }
     }
