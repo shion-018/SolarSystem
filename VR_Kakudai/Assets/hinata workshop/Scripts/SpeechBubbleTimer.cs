@@ -11,14 +11,23 @@ public class SpeechBubbleTimer : MonoBehaviour
     
     [SerializeField] TestClock testclock;
     [SerializeField] Image hukidasi;
+    [SerializeField] Canvas hukidasiImage;
+
+    bool touch = false;
     void Start()
     {
         hukidasi.color = Color.green;
+
+        hukidasiImage.enabled = false;
     }
 
     void Update()
     {
-        testclock.UpdateClock(_updateTimer());
+        if (touch)
+        {
+            hukidasiImage.enabled=true;
+            testclock.UpdateClock(_updateTimer());
+        }
     }
     float _updateTimer()
     {
@@ -30,5 +39,14 @@ public class SpeechBubbleTimer : MonoBehaviour
         }
 
         return timer;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            Debug.Log("‚Î‚ ");
+            touch = true;
+        }
     }
 }
