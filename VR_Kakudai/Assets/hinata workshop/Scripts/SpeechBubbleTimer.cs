@@ -1,35 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpeechBubbleTimer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //timerLimitで制限時間変更
     [SerializeField] float timerLimit;
     float seconds = 0f;
-
-    //追加　ClockをInspector上から設定するため
+    
     [SerializeField] TestClock testclock;
-
+    [SerializeField] Image hukidasi;
     void Start()
     {
-
+        hukidasi.color = Color.green;
     }
 
     void Update()
     {
-        //変更　ClockのUpdateClock関数を呼び出す
-        //　　　引数は_updateTimer()のtimerの値
         testclock.UpdateClock(_updateTimer());
     }
-
-    //変更　void からfloat
     float _updateTimer()
     {
         seconds += Time.deltaTime;
         float timer = 1 - seconds / timerLimit;
+        if(timer < 0.25)
+        {
+            hukidasi.color = Color.red;
+        }
 
-        //追加　float型のtimerを返す
         return timer;
     }
 }
