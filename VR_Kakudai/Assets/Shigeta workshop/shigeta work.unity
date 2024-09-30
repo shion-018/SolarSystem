@@ -2455,9 +2455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target:
-  - {fileID: 1769448179173544545, guid: 8691de68967323e45b8d70d50278cd4d, type: 3}
-  - {fileID: 1769448179173544545, guid: 8691de68967323e45b8d70d50278cd4d, type: 3}
-  - {fileID: 1769448179173544545, guid: 8691de68967323e45b8d70d50278cd4d, type: 3}
+  - {fileID: 2798101770354366275, guid: 30a9f4852c858f84d90cfbab6f5e36f1, type: 3}
+  - {fileID: 2798101770354366275, guid: 9ebe6f2b41e7f5e4999aa0bf5274a725, type: 3}
 --- !u!4 &1324483313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 773057675854184826, guid: c738a0ea15d648841bff8f19e9f181db,
