@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Shigeta workshop\Script\TimeBar.cs" />
+    <Compile Include="Assets\amedama`s script\GameManager.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\SpeechBubbleTimer.cs" />
     <Compile Include="Assets\amedama`s script\CustomerRequest.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\TestClock.cs" />
