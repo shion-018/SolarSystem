@@ -61,13 +61,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Shigeta workshop\Script\TimeBar.cs" />
+    <Compile Include="Assets\hinata workshop\Scripts\SpeechBubbleTimer.cs" />
     <Compile Include="Assets\amedama`s script\CustomerRequest.cs" />
+    <Compile Include="Assets\hinata workshop\Scripts\TestClock.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\amedama`s script\AmountText.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\generation.cs" />
     <Compile Include="Assets\Scripts\ObjectToggle.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\Moob.cs" />
     <Compile Include="Assets\amedama`s script\Size Specification.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
+    <Compile Include="Assets\hinata workshop\Scripts\PopUpHowToPlay.cs" />
     <Compile Include="Assets\amedama`s script\DishesSetting.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Appear dishes.cs" />
     <Compile Include="Assets\amedama`s script\DifficultStretch.cs" />

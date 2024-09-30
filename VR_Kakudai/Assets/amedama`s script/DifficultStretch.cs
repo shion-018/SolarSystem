@@ -5,9 +5,11 @@ using UnityEngine;
 public class DifficultStretch : MonoBehaviour
 {
 
+
     private Vector3 BeforeScale;
     private Vector3 AfterScale;
     [SerializeField] private float stretch = 1.0f;
+
 
 
     // Start is called before the first frame update

@@ -502,7 +502,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetNames:
   - Counter Position
-  TimeBar: {fileID: 8508839857041862429}
 --- !u!54 &337241934434555271
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -542,4 +541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f01fc7984309840be37b91332dc400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxtime: 0
   slider: {fileID: 3691656523652755720}
+  image: {fileID: 8294218204019528609}
