@@ -6,14 +6,14 @@ public class Appeardishes : MonoBehaviour
 {
     [SerializeField] private GameObject dishes;
 
-    [SerializeField] private Staff staff;
+    //[SerializeField] private Staff staff;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject spawnedDishes = Instantiate(dishes, this.transform.position, Quaternion.identity);
 
-        staff.SetChild(spawnedDishes);
+        //staff.SetChild(spawnedDishes);
     }
 
     // Update is called once per frame
