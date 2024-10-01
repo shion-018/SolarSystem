@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SpeechBubbleTimer : MonoBehaviour
 {
     //timerLimit‚Å§ŒÀŠÔ•ÏX
-    [SerializeField] float timerLimit;
+    float timerLimit;
     float seconds = 0f;
     
     [SerializeField] TestClock testclock;
@@ -16,6 +16,9 @@ public class SpeechBubbleTimer : MonoBehaviour
     bool touch = false;
     void Start()
     {
+        timerLimit = Random.Range(2,6 ) * 5;
+        Debug.Log("§ŒÀŠÔ" + timerLimit);
+
         hukidasi.color = Color.green;
 
         hukidasiImage.enabled = false;
