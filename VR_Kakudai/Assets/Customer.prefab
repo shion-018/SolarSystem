@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8426389165385870603}
   - component: {fileID: 3278625947891263919}
   - component: {fileID: 5732388447685888548}
+  - component: {fileID: -5144677268890529260}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -123,16 +124,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequestDishes:
   - {fileID: 1161829402999011553, guid: 6bdc1292ed24f3a429cfbfb4628f9346, type: 3}
-  - {fileID: 0}
-  DishesSprits:
-  - {fileID: 21300000, guid: dc7122bf9c8f5154ea96899f65240f26, type: 3}
-  - {fileID: 21300000, guid: 141da425885ed524c8661099f836fcd7, type: 3}
   SizeSpecificationSprits:
   - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
   - {fileID: 21300000, guid: 5c673bb3f210eb5428d863de0f8ace28, type: 3}
   - {fileID: 21300000, guid: f6ae0fda42033114fa0f6d84fbb4c2ab, type: 3}
   DishesImage: {fileID: 3980811142030792149}
   SizeImage: {fileID: 4156533479983585659}
+  SalesAmountText: {fileID: 0}
+--- !u!114 &-5144677268890529260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118148188337128087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d803365027e77f1469778006bab8869e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetNames:
+  - Counter Position
 --- !u!1 &6905179307119126330
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee536ac73442646bda336f191ccbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
+  MainCamera: {fileID: 8697802174550569429, guid: 8d78f208033e4074b8ecf651cb845e93,
+    type: 3}
 --- !u!1 &8064568601516823111
 GameObject:
   m_ObjectHideFlags: 0

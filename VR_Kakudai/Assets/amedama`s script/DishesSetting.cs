@@ -6,7 +6,7 @@ using UnityEngine;
 public class DishesSetting : MonoBehaviour   
 {
 
-   // [SerializeField] public GameObject Deshes;
+   // [SerializeField] public GameObject Dishes;
     [SerializeField] public Sprite DishesSprite;
     [SerializeField] public int DishesPrice = 700;
     //[SerializeField] public float[,] DishesMagnificationPrice;//Šg‘å‚µ‚½‚ÌA’iŠK‚Æ”{—¦‚ğŒˆ‚ß‚Ä‚Ù‚µ‚¢‚Å‚·B

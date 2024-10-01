@@ -9,6 +9,7 @@ public class TimeBar : MonoBehaviour
     public int maxtime;
     int currenttime;
     public Slider slider;
+    public Image image;
 
     int damage = 1;
 
@@ -18,7 +19,7 @@ public class TimeBar : MonoBehaviour
 
     void Start()
     {
-        maxtime = Random.Range(6, 10) * 10;
+        maxtime = Random.Range(1, 5) * 5;
 
 
         //Sliderコンポーネントを自動的に取得
@@ -31,11 +32,12 @@ public class TimeBar : MonoBehaviour
         slider.value = 1;
         //現在の時間を最大時間と同じにする
         currenttime = maxtime;
-        
+
     }
 
     void Update()
     {
+        image = image.GetComponentInChildren<Image>();
         if (touch)
         {
             seconds += Time.deltaTime;
@@ -47,11 +49,11 @@ public class TimeBar : MonoBehaviour
 
                 //現在の時間からダメージを引く
                 currenttime -= damage;
+                
 
-                if (currenttime <= 0)
+                if (currenttime == maxtime/2 )
                 {
-                    Debug.Log("時間切れ");
-                   
+                    image.color = Color.yellow;
                 }
 
                 //最大時間における現在の時間をSliderに反映
