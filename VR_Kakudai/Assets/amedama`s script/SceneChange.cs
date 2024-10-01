@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -7,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
 
-    [SerializeField] SceneAsset ChangeScene;//ˆÚ“®‚·‚éScene‚ğŒˆ’è
+    [SerializeField] SceneAsset ChangeScene;//Ë†Ãšâ€œÂ®â€šÂ·â€šÃ©Sceneâ€šÃ°Å’Ë†â€™Ã¨
 
 
 
