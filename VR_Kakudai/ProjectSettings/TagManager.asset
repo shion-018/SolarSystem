@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - sushi
+  - donburi
+<<<<<<< HEAD
+  - Grabbable
+=======
+  - Game Object
+>>>>>>> 3e3dbf8697565b14bac4bcf115c7fd3163f9e075
   layers:
   - Default
   - TransparentFX
