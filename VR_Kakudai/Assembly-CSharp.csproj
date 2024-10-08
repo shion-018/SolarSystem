@@ -71,6 +71,7 @@
     <Compile Include="Assets\Shigeta workshop\Script\generation.cs" />
     <Compile Include="Assets\Scripts\ObjectToggle.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Moob.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\sitting.cs" />
     <Compile Include="Assets\amedama`s script\Size Specification.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
     <Compile Include="Assets\amedama`s script\SceneChange.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Shigeta workshop\Script\Appear dishes.cs" />
     <Compile Include="Assets\amedama`s script\DifficultStretch.cs" />
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\emptyseat.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
   </ItemGroup>
   <ItemGroup>

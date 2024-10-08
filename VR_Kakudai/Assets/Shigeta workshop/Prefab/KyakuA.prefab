@@ -307,6 +307,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetNames:
   - Counter Position
+  - Counter Position2
+  - Counter Position3
+  targets: []
 --- !u!114 &5033697385753545155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf0837484e4d994389cd41a170bdbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerLimit: 10
   testclock: {fileID: 888351387401476262}
   hukidasi: {fileID: 5589629027799656821}
   hukidasiImage: {fileID: 8635735789819898625}
