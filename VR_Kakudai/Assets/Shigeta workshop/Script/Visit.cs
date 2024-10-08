@@ -44,7 +44,6 @@ public class Visit : MonoBehaviour
             {
                 seatnum = i;
                 empty.seat[i] = false;
-                Debug.Log("ターゲット"+ seatnum);
                 P++;
             }
         }
