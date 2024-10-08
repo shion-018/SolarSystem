@@ -6,10 +6,16 @@ public class Visit : MonoBehaviour
 {
     [SerializeField] private string[] targetNames;
     //[SerializeField] GameObject TimeBar;
-    private Transform[] targets;
+    public Transform[] targets;
 
     private float speed = 3.0f;
 
+    int seatnum = 0;
+
+    int P = 0;
+
+    GameObject A;
+    emptyseat empty;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +29,29 @@ public class Visit : MonoBehaviour
                 targets[i] = targetObject.transform;
             }
         }
+
+        A = GameObject.Find("emptyseat");
+        empty = A.GetComponent<emptyseat>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (targets.Length > 0 && targets[0] != null)
+        for (int i = 0;i < targets.Length; i++)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targets[0].position, speed * Time.deltaTime);
+            if (empty.seat[i] == true && P == 0)
+            {
+                seatnum = i;
+                empty.seat[i] = false;
+                Debug.Log("ターゲット"+ seatnum);
+                P++;
+            }
+        }
+
+        if (targets.Length > 0 && targets[seatnum] != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targets[seatnum].position, speed * Time.deltaTime);
         }
     }
 }
