@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 40
+  controlID: 45
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 39
+  controlID: 87
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -293,7 +293,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
       snapOffset: {x: -160, y: -26.399994}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: -10.399963, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -647,11 +647,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.040957708, y: -0.35390565, z: 0.015513997, w: 0.9343036}
     speed: 2
-    m_Value: {x: 0.040974442, y: -0.35276824, z: 0.0154641345, w: 0.9346853}
+    m_Value: {x: -0.040957708, y: 0.35390562, z: -0.015513997, w: -0.9343035}
   m_Size:
     m_Target: 147.17302
     speed: 2
-    m_Value: 154.10788
+    m_Value: 147.17302
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -732,14 +732,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: 73
-  m_LastProjectPath: C:\Users\shiki\Desktop\SolarSystem\VR_Kakudai
+  m_LastProjectPath: C:\Users\hide0\Documents\Unity_ver2\SolarSystem\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: ca7a0000
-    m_LastClickedID: 31434
-    m_ExpandedIDs: 00000000ca7a000000ca9a3bffffff7f
+    m_SelectedIDs: 10060000
+    m_LastClickedID: 1552
+    m_ExpandedIDs: 000000001006000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -767,7 +767,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ca7a0000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -978,9 +978,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c2faffff
-      m_LastClickedID: -1342
-      m_ExpandedIDs: 12fbffff
+      m_SelectedIDs: cec70000
+      m_LastClickedID: 0
+      m_ExpandedIDs: dac7fdff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
