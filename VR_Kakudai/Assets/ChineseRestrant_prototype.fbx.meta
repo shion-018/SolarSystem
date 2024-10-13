@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: chear
-    second: {fileID: 2100000, guid: 2c22a5f3492f76046a31eed955225e00, type: 2}
+    second: {fileID: 2100000, guid: 400a3ea2f47f8174aa0e4dc3200bf3de, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: chopstick
-    second: {fileID: 2100000, guid: 2b894752401227943b0e1707612bd09e, type: 2}
+    second: {fileID: 2100000, guid: 55fbdea2d2bce53478b7ea023002a2c5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: countertable
-    second: {fileID: 2100000, guid: acc21a7cdd3132d4fba301ea7a089d72, type: 2}
+    second: {fileID: 2100000, guid: 0bc05961f727d964e9dcfff46bdffee7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -28,17 +28,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: gaskonro
-    second: {fileID: 2100000, guid: 078cf7b31b3ad3e45b6bbdcdf1702c46, type: 2}
+    second: {fileID: 2100000, guid: 8f5b99fb72f0052449f15bb61b8d5b06, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: gastable
-    second: {fileID: 2100000, guid: b1ec0f37811140748830daeaa7ebcb93, type: 2}
+    second: {fileID: 2100000, guid: 448eca2bc981d5449b50184e4aa16dcb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: haisuikou
-    second: {fileID: 2100000, guid: b5e1d041e4164b6498cde5cb6cb84428, type: 2}
+    second: {fileID: 2100000, guid: f998c5d1ebc6a8f49869c18a44e07d5d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -53,32 +53,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: konro_switch
-    second: {fileID: 2100000, guid: 519278d02d7752041a81512796b9c4f6, type: 2}
+    second: {fileID: 2100000, guid: 65434e8b792e36d4793d09cebfee6eb8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 666b7159bb3cfd1448086cecaeee7c4e, type: 2}
+    second: {fileID: 2100000, guid: 53b5a2a498c0f4f49ac9d64c9e296508, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: light_kyakuseki
-    second: {fileID: 2100000, guid: cb2639f5ba181c946a23ceffdf80fec6, type: 2}
+    second: {fileID: 2100000, guid: 9b69f78b2a91e6e4e91d5e469d0e6836, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: paper
-    second: {fileID: 2100000, guid: e3f6021a4764fe144a523c236702c72a, type: 2}
+    second: {fileID: 2100000, guid: b39ad4044b235e34eb52d9d3aea7f1e0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: paul
-    second: {fileID: 2100000, guid: 54a9e0bb7f1296f4ba596d92a34b063d, type: 2}
+    second: {fileID: 2100000, guid: 943f071059f8f244698af6aa294282c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: refrigerator
-    second: {fileID: 2100000, guid: 9e00e33371e5efa4cbd4d197fc9063ce, type: 2}
+    second: {fileID: 2100000, guid: ff37d2c59ed4288479dadbcec64a04b9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -88,17 +88,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: rice_cooker_lid
-    second: {fileID: 2100000, guid: 1baf9e0ea2e6a774296b173c39403ad0, type: 2}
+    second: {fileID: 2100000, guid: f59e1844e5faec841a1eaa644ebf6380, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: squarechear
-    second: {fileID: 2100000, guid: 8edac7d18e73e2144a3708ae89a03ae9, type: 2}
+    second: {fileID: 2100000, guid: 846ed08eea3b5424baead952b7f92a91, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: table_mat
-    second: {fileID: 2100000, guid: c139852999a508f4c836bb050caaac7f, type: 2}
+    second: {fileID: 2100000, guid: a1e4d3f9cc84d054d8db2386e1fd8f4c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -108,32 +108,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ventilation_fan
-    second: {fileID: 2100000, guid: 4049f06758921d84a92edf6e198caee6, type: 2}
+    second: {fileID: 2100000, guid: 355a7cc43949cf742a7cce751a2d9b32, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: wall
-    second: {fileID: 2100000, guid: 97af756a2a6b11d4f91788a190471159, type: 2}
+    second: {fileID: 2100000, guid: 338e6fb1332ff7f4e850ec24d76f9fc4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: water_place_faucet
-    second: {fileID: 2100000, guid: 40a1625115b4a6c47b4d45399d5260b5, type: 2}
+    second: {fileID: 2100000, guid: ea5adf25f330c9347bd945632bb23221, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: waterplace
-    second: {fileID: 2100000, guid: 37ecbf20568fe704d874431e07e499a0, type: 2}
+    second: {fileID: 2100000, guid: e13b3f63ccdc18f499c57fa5bb2d9b14, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: workplace_back
-    second: {fileID: 2100000, guid: 22b0ff905848dbe47b8b392e0ff6a44b, type: 2}
+    second: {fileID: 2100000, guid: 788522124447b8540933d387685449e4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: worktable
-    second: {fileID: 2100000, guid: ccde024e4f1065d4ba08db4bad843cf7, type: 2}
+    second: {fileID: 2100000, guid: d451c2cdaa8c8f346b1589df34f8f966, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
