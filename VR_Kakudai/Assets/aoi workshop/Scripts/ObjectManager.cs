@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class ObjectManager : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class ObjectManager : MonoBehaviour
     private Rigidbody selectedObjectRb;
     private Vector3 lastMousePosition;
     private bool isGrabbing = false;
+    private bool isRecentlyReleased = false;  // 掴んだ直後かを示すフラグ
 
     private List<ObjectState> spawnedObjects = new List<ObjectState>(); // 生成されたオブジェクトの状態を追跡
 
@@ -32,6 +32,11 @@ public class ObjectManager : MonoBehaviour
     // 右クリックでオブジェクトを生成または未選択のものをまとめて削除
     void HandleRightClick()
     {
+        if (isGrabbing)
+        {
+            return;  // 掴んでいる場合は処理をスキップ
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Right click detected!");
@@ -43,7 +48,7 @@ public class ObjectManager : MonoBehaviour
             }
             else
             {
-                // すべて削除された、または新規生成のときは新しいオブジェクトを生成
+                // 新しいオブジェクトを生成
                 SpawnMultipleObjects();
             }
         }
@@ -54,7 +59,6 @@ public class ObjectManager : MonoBehaviour
     {
         List<ObjectState> objectsToRemove = new List<ObjectState>();
 
-        // 未選択のオブジェクトをすべて削除対象に追加
         foreach (var objState in spawnedObjects)
         {
             if (!objState.IsGrabbed && objState.ObjectInstance != null)
@@ -63,20 +67,15 @@ public class ObjectManager : MonoBehaviour
             }
         }
 
-        // リストの中のすべての未選択オブジェクトを削除
         foreach (var objState in objectsToRemove)
         {
             Destroy(objState.ObjectInstance);
-            Debug.Log("Deleting ungrabbed object: " + objState.ObjectInstance.name);
             objState.ObjectInstance = null;
         }
 
-        // 削除されたオブジェクトを spawnedObjects リストから削除
         spawnedObjects.RemoveAll(obj => obj.ObjectInstance == null);
-        Debug.Log("All ungrabbed objects deleted.");
     }
 
-    // 掴まれていないオブジェクトが存在するか確認
     bool HasUngrabbedObjects()
     {
         foreach (var objState in spawnedObjects)
@@ -89,28 +88,26 @@ public class ObjectManager : MonoBehaviour
         return false;
     }
 
-    // 配列に基づいて複数のオブジェクトを生成する
+    // 複数のオブジェクトを生成する
     void SpawnMultipleObjects()
     {
         if (objectPrefabs.Length == 0 || spawnPoints.Length == 0)
         {
-            Debug.LogWarning("No prefabs or spawn points set in the inspector.");
+            Debug.LogWarning("No prefabs or spawn points set.");
             return;
         }
 
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            GameObject prefabToSpawn = objectPrefabs[i % objectPrefabs.Length];  // プレハブを選択
+            GameObject prefabToSpawn = objectPrefabs[i % objectPrefabs.Length];
             GameObject newObject = Instantiate(prefabToSpawn, spawnPoints[i].position, Quaternion.identity);
-            newObject.tag = "Grabbable";  // タグを設定
+            newObject.tag = "Grabbable";
             Rigidbody newObjectRb = newObject.GetComponent<Rigidbody>();
-            newObjectRb.useGravity = false; // 生成時には重力を無効に
+            newObjectRb.useGravity = false;
+            newObjectRb.isKinematic = true;  // 生成時に物理挙動を無効化
 
-            // 各オブジェクトの状態を追跡
             ObjectState newState = new ObjectState(newObject, spawnPoints[i].position);
-            spawnedObjects.Add(newState); // リストに追加
-
-            Debug.Log("New object spawned at: " + spawnPoints[i].position);
+            spawnedObjects.Add(newState);
         }
     }
 
@@ -119,8 +116,6 @@ public class ObjectManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !isGrabbing)
         {
-            Debug.Log("Left click detected!");
-
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -133,7 +128,6 @@ public class ObjectManager : MonoBehaviour
                 lastMousePosition = Input.mousePosition;
                 isGrabbing = true;
 
-                // 掴んだオブジェクトの状態を更新
                 foreach (var objState in spawnedObjects)
                 {
                     if (objState.ObjectInstance == selectedObject)
@@ -143,19 +137,18 @@ public class ObjectManager : MonoBehaviour
                     }
                 }
 
-                // 左クリックで掴んだ瞬間、掴まれていないすべてのオブジェクトを削除
                 DeleteAllUngrabbedObjects();
             }
         }
     }
 
-    // 掴んでいる間、オブジェクトを自由に移動
+    // 掴んでいる間オブジェクトを移動
     void HandleDrag()
     {
         if (isGrabbing && selectedObject != null)
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            Vector3 newObjectPos = ray.GetPoint(5); // カメラからの距離を調整
+            Vector3 newObjectPos = ray.GetPoint(5);
             selectedObject.transform.position = newObjectPos;
         }
     }
@@ -165,12 +158,12 @@ public class ObjectManager : MonoBehaviour
     {
         if (isGrabbing && Input.GetMouseButtonUp(0))
         {
-            Debug.Log("Left click release detected!");
-
             selectedObjectRb.isKinematic = false;
             selectedObjectRb.useGravity = true;
 
             isGrabbing = false;
+            isRecentlyReleased = true;  // 掴んだ直後のフラグを立てる
+
             selectedObject = null;
             selectedObjectRb = null;
         }
@@ -179,15 +172,30 @@ public class ObjectManager : MonoBehaviour
     // オブジェクトの状態を管理するクラス
     private class ObjectState
     {
-        public GameObject ObjectInstance; // オブジェクトの実体
-        public Vector3 InitialPosition;   // 生成された位置
-        public bool IsGrabbed;            // 掴まれた状態かどうか
+        public GameObject ObjectInstance;
+        public Vector3 InitialPosition;
+        public bool IsGrabbed;
 
         public ObjectState(GameObject instance, Vector3 position)
         {
             ObjectInstance = instance;
             InitialPosition = position;
             IsGrabbed = false;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // 落下させたオブジェクトのみ移動させる
+        if (isRecentlyReleased && collision.gameObject.CompareTag("Grabbable"))
+        {
+            Rigidbody collidedRb = collision.gameObject.GetComponent<Rigidbody>();
+            if (collidedRb != null && !collidedRb.isKinematic)
+            {
+                // 衝突したオブジェクトが掴んだオブジェクトなら移動させる
+                collidedRb.isKinematic = false;
+                isRecentlyReleased = false;  // フラグリセット
+            }
         }
     }
 }
