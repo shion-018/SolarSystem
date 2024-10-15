@@ -33,7 +33,7 @@ public class Moob : MonoBehaviour
     {
         transform.position = GetMouseWorldPos() + mOffset;
         this.gameObject.transform.parent = null;
-        this.gameObject.tag = "Untagged";
+        this.gameObject.tag = "sushi";
     }
 
     void OnCollisionEnter(Collision collision)
