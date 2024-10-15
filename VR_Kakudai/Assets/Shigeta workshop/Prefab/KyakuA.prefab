@@ -310,6 +310,13 @@ MonoBehaviour:
   - Counter Position2
   - Counter Position3
   targets: []
+  RoadName0:
+  - Road0-1
+  - Road0-2
+  - Road0-3
+  RoadName1: []
+  RoadName2: []
+  Road: []
 --- !u!114 &5033697385753545155
 MonoBehaviour:
   m_ObjectHideFlags: 0

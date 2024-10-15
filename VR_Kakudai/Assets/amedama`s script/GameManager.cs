@@ -12,10 +12,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-
-
-    [SerializeField, Tooltip("ƒ^ƒCƒ€ƒŠƒ~ƒbƒgi•bj")] int TimeLimit = 60;
-    [SerializeField, Tooltip("§ŒÀŠÔText")] TextMeshProUGUI TimeLimitText;
+    [SerializeField, Tooltip("ã‚¿ã‚¤ãƒ ãƒªãƒŸãƒƒãƒˆï¼ˆç§’ï¼‰")] int TimeLimit = 60;
+    [SerializeField, Tooltip("åˆ¶é™æ™‚é–“Text")] TextMeshProUGUI TimeLimitText;
     [SerializeField, Tooltip("")]
 
 
@@ -68,7 +66,7 @@ public class GameManager : MonoBehaviour
             gamestate = GAMESTATE.Play;
         }
 
-        if (gamestate == GAMESTATE.Play)
+        if (gamestate == GAMESTATE.Play)//æ™‚é–“ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹å‡¦ç†
         {
             Seconds_If += Time.deltaTime;
 
