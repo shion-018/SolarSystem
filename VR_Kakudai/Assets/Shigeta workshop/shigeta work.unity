@@ -868,7 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549d14a0dc2f89144bc2398782d11339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishes: {fileID: 3862628536634719999, guid: 6b09204fecaea1946a85f0291dd641f3, type: 3}
+  dishes: {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
 --- !u!4 &684088110
 Transform:
   m_ObjectHideFlags: 0

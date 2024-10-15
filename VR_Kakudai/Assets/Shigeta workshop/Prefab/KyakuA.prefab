@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequestDishes:
-  - {fileID: 3862628536634719999, guid: 6b09204fecaea1946a85f0291dd641f3, type: 3}
+  - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
   SizeSpecificationSprits:
   - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
   DishesImage: {fileID: 7049957028511146205}

@@ -8,11 +8,15 @@ public class Moob : MonoBehaviour
     private float mZCoord;
     [SerializeField] GameObject RootObject;
     private GameObject obj;
-   
+
 
     void Start()
     {
-
+        GameObject targetObject = GameObject.Find("ebiten2");
+        if (targetObject != null)
+        {
+            RootObject.transform.position = targetObject.transform.position;
+        }
     }
 
     void OnMouseDown()
