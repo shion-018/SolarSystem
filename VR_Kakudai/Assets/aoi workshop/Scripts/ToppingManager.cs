@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectManager : MonoBehaviour
+public class ToppingManager : MonoBehaviour
 {
     public GameObject[] objectPrefabs;  // 生成するオブジェクトのプレハブ配列
     public Transform[] spawnPoints;     // 生成ポイントの配列

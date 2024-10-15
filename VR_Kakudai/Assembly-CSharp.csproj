@@ -80,9 +80,9 @@
     <Compile Include="Assets\amedama`s script\DishesSetting.cs" />
     <Compile Include="Assets\amedama`s script\NewBehaviourScript.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Appear dishes.cs" />
+    <Compile Include="Assets\aoi workshop\Scripts\ToppingManager.cs" />
     <Compile Include="Assets\amedama`s script\DifficultStretch.cs" />
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
-    <Compile Include="Assets\aoi workshop\Scripts\ObjectManager.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
   </ItemGroup>
   <ItemGroup>
