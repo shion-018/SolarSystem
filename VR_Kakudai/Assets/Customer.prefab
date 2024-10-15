@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequestDishes:
-  - {fileID: 1161829402999011553, guid: 6bdc1292ed24f3a429cfbfb4628f9346, type: 3}
+  - {fileID: 1161829402999011553, guid: 38e8ce5b5d1d23d48ad5503c33062aec, type: 3}
   SizeSpecificationSprits:
   - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
   - {fileID: 21300000, guid: 5c673bb3f210eb5428d863de0f8ace28, type: 3}
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetNames:
   - Counter Position
+  targets: []
 --- !u!1 &6905179307119126330
 GameObject:
   m_ObjectHideFlags: 0
