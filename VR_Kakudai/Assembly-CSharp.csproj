@@ -85,6 +85,7 @@
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\emptyseat.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
+    <Compile Include="Assets\amedama`s script\ScreenTransition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

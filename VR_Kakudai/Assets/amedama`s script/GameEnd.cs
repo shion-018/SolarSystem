@@ -20,11 +20,11 @@ public class GameEnd : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
+            UnityEditor.EditorApplication.isPlaying = false;//ﾆ嘆ﾂーﾆ停ぎﾆ致ﾆ椎槌辰ﾂ終窶板ｹ
         }
         else
         {
-            Application.Quit();//ゲームプレイ終了
+            Application.Quit();//ﾆ嘆ﾂーﾆ停ぎﾆ致ﾆ椎槌辰ﾂ終窶板ｹ
         }
     }
 }
