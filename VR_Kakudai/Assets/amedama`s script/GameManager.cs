@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,15 @@ using UnityEngine.Timeline;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager instance;
+
+
+
     [SerializeField, Tooltip("タイムリミット（秒）")] int TimeLimit = 60;
     [SerializeField, Tooltip("制限時間Text")] TextMeshProUGUI TimeLimitText;
     [SerializeField, Tooltip("")]
+
+
 
     public enum GAMESTATE
     {
@@ -28,18 +35,33 @@ public class GameManager : MonoBehaviour
     int TimeNow = 0;
     float Seconds_If;
 
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
 
-        
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -67,7 +89,5 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
-
-
 }
+
