@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1168188469021186971}
   - component: {fileID: 200348581192081412}
   - component: {fileID: 4344576634162951871}
+  - component: {fileID: 8248743103584314967}
   m_Layer: 0
   m_Name: sushi
   m_TagString: sushi
@@ -133,3 +134,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8248743103584314967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161829402999011553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506f53531e6e23b4eb0001b28ed6ff73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DishesSprite: {fileID: 21300000, guid: 63367eb2a7355184fa3631b14fd90d9a, type: 3}
+  DishesPrice: 700
+  dishesMagnifications:
+  - PriceMagnification:
+    - 1
+    - 1
+  - PriceMagnification:
+    - 1
+    - 1
+  - PriceMagnification:
+    - 1
+    - 1
