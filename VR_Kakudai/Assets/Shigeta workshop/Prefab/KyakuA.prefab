@@ -216,7 +216,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2902061310459440086}
@@ -314,7 +314,12 @@ MonoBehaviour:
   - Road0-1
   - Road0-2
   - Road0-3
-  RoadName1: []
+  RoadName1:
+  - Road1-1
+  - Road1-2
+  - Road1-3
+  - Road1-4
+  - Road1-5
   RoadName2: []
   Road: []
 --- !u!114 &5033697385753545155
@@ -372,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequestDishes:
-  - {fileID: 3862628536634719999, guid: 6b09204fecaea1946a85f0291dd641f3, type: 3}
+  - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
   SizeSpecificationSprits:
   - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
   DishesImage: {fileID: 7049957028511146205}
@@ -400,6 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2902061310459440086}
+  - component: {fileID: 4247086274689310681}
   m_Layer: 0
   m_Name: hukidashi
   m_TagString: Untagged
@@ -416,13 +422,26 @@ Transform:
   m_GameObject: {fileID: 6976834100600765146}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.18, z: 0}
+  m_LocalScale: {x: 1, y: 0.33333334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5306150689928612388}
   m_Father: {fileID: 7542655160045270495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4247086274689310681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976834100600765146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cee536ac73442646bda336f191ccbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
 --- !u!1 &7053477513037126358
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +721,6 @@ GameObject:
   - component: {fileID: 3500571364356913916}
   - component: {fileID: 3443374872030179655}
   - component: {fileID: 6910100145578391650}
-  - component: {fileID: 9126176209130074418}
   m_Layer: 5
   m_Name: RequestUI
   m_TagString: Untagged
@@ -794,17 +812,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9126176209130074418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8340363684105122212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cee536ac73442646bda336f191ccbcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 8697802174550569429, guid: 8d78f208033e4074b8ecf651cb845e93,
-    type: 3}

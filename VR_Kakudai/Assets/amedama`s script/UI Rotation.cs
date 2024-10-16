@@ -11,7 +11,7 @@ public class UIRotation : MonoBehaviour
     {
         if(MainCamera == null)
         {
-            MainCamera = GetComponent<GameObject>();
+            MainCamera = Camera.main.gameObject;
         }    
     }
 
