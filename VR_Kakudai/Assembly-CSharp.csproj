@@ -82,6 +82,7 @@
     <Compile Include="Assets\Shigeta workshop\Script\Appear dishes.cs" />
     <Compile Include="Assets\amedama`s script\DifficultStretch.cs" />
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
+    <Compile Include="Assets\amedama`s script\alpha key.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\emptyseat.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
     <Compile Include="Assets\amedama`s script\ScreenTransition.cs" />
