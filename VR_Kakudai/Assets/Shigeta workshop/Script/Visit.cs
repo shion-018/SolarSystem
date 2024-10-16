@@ -67,7 +67,7 @@ public class Visit : MonoBehaviour
             }
         }
 
-        if(HeadtoGirl == false && RoadNum < 3)
+        if(HeadtoGirl == false && RoadNum < Road.Length)
         {
             transform.position = Vector3.MoveTowards(transform.position, Road[RoadNum].position, speed * Time.deltaTime);
 
@@ -77,7 +77,7 @@ public class Visit : MonoBehaviour
                 TriggerSignal = false;
             }
 
-            if(RoadNum > 2)
+            if(RoadNum > Road.Length-1)
             {
                 HeadtoGirl = true;
             }
