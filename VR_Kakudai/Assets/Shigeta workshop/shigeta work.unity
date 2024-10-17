@@ -3997,6 +3997,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmountText
       objectReference: {fileID: 0}
+    - target: {fileID: 3059463674181572017, guid: af83517f90d362d4fa00c3c5427a4c46,
+        type: 3}
+      propertyPath: m_TagString
+      value: SalesAmountText
+      objectReference: {fileID: 0}
     - target: {fileID: 6942424891848303980, guid: af83517f90d362d4fa00c3c5427a4c46,
         type: 3}
       propertyPath: m_LocalPosition.x

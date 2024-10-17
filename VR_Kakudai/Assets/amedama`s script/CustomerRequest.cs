@@ -37,6 +37,7 @@ public class CustomerRequest : MonoBehaviour
         {
 
             dishesSetting = RequestDishes[DishesNumber].GetComponent<DishesSetting>();
+            SalesAmountText = GameObject.FindWithTag("SalesAmountText");
             amountText = SalesAmountText.GetComponent<AmountText>();
             Debug.Log(dishesSetting.DishesPrice);
 
