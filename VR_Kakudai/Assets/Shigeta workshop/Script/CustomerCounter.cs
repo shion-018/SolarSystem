@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class emptyseat : MonoBehaviour
+public class CustomerCounter : MonoBehaviour
 {
-    public bool[] seat;
 
+    public int counter = 0;
     // Start is called before the first frame update
-    public void Start()
+    void Start()
     {
-        for (int i = 0; i< seat.Length;i++)
-        {
-            seat[i] = true;
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(counter);
     }
 }

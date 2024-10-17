@@ -33,6 +33,10 @@ public class Visit : MonoBehaviour
 
     GameObject A;
     emptyseat empty;
+
+GameObject B;
+        CustomerCounter CustmerCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +53,9 @@ public class Visit : MonoBehaviour
 
         A = GameObject.Find("emptyseat");
         empty = A.GetComponent<emptyseat>();
+
+        B = GameObject.Find("CustonerCount");
+        CustmerCounter = B.GetComponent<CustomerCounter>();
 
         cube = GameObject.Find("Cube");
         cube_boxCol = cube.GetComponent<BoxCollider>();
@@ -76,7 +83,7 @@ public class Visit : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, Road[RoadNum].position, speed * Time.deltaTime);
 
-            if(TriggerSignal == true)
+            if(TriggerSignal)
             {
                 
                 RoadNum++;
@@ -114,6 +121,7 @@ public class Visit : MonoBehaviour
         if (collision.gameObject.CompareTag("sushi"))
         {
             empty.seat[seatnum] = true;
+            CustmerCounter.counter--;
             Destroy(this.gameObject);
         }
 

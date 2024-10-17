@@ -10,31 +10,30 @@ public class generation : MonoBehaviour
 
     int i = 0;
 
-    int  Count = 0;
-
     GameObject A;
-    emptyseat empty;
+    CustomerCounter CustmerCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        A = GameObject.Find("emptyseat");
-        empty = A.GetComponent<emptyseat>();
+        A = GameObject.Find("CustonerCount");
+        CustmerCounter = A.GetComponent<CustomerCounter>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < empty.seat.Length; i++)
+        if (CustmerCounter.counter != 3)
         {
-            if (empty.seat[i])
-            {
-                i = Random.Range(0, target.Length);
+            i = Random.Range(0, target.Length);
 
-                //Instantiate( 生成するオブジェクト,  場所, 回転 ); 
-                Instantiate(target[i], this.transform.position, Quaternion.identity);
-                //Count++;
-            }
+            //Instantiate( 生成するオブジェクト,  場所, 回転 ); 
+            Instantiate(target[i], this.transform.position, Quaternion.identity);
+            
+            CustmerCounter.counter++;
         }
+
+
+
     }
 }
