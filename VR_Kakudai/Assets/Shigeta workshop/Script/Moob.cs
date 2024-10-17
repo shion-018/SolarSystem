@@ -9,10 +9,9 @@ public class Moob : MonoBehaviour
     [SerializeField] GameObject RootObject;
     private GameObject obj;
 
-
     void Start()
     {
-        GameObject targetObject = GameObject.Find("ebiten2");
+        GameObject targetObject = GameObject.Find("don");
         if (targetObject != null)
         {
             RootObject.transform.position = targetObject.transform.position;
@@ -41,15 +40,10 @@ public class Moob : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "sushi")
+        if (collision.gameObject.tag == "donburi")
         {
-            this.gameObject.transform.parent = RootObject.gameObject.transform;
-            //this.gameObject.tag = "sushi";
+            // 当たったオブジェクトを親として設定
+            this.gameObject.transform.parent = collision.gameObject.transform;
         }
-        //else
-        //{
-        //    obj = collision.gameObject; 
-        //    this.gameObject.transform.parent = obj.gameObject.transform;
-        //}
     }
 }
