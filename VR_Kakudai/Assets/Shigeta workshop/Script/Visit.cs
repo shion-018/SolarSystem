@@ -5,7 +5,7 @@ using UnityEngine;
 public class Visit : MonoBehaviour
 {
     [SerializeField] private string[] targetNames;
-    //[SerializeField] GameObject TimeBar;
+    
     public Transform[] targets;
 
     [SerializeField] private string[] RoadName0;
@@ -28,6 +28,8 @@ public class Visit : MonoBehaviour
 
     bool HeadtoGirl = false;
 
+    public GameObject cube;
+    public BoxCollider cube_boxCol;
 
     GameObject A;
     emptyseat empty;
@@ -47,6 +49,9 @@ public class Visit : MonoBehaviour
 
         A = GameObject.Find("emptyseat");
         empty = A.GetComponent<emptyseat>();
+
+        cube = GameObject.Find("Cube");
+        cube_boxCol = cube.GetComponent<BoxCollider>();
 
     }
 
@@ -73,7 +78,9 @@ public class Visit : MonoBehaviour
 
             if(TriggerSignal == true)
             {
+                
                 RoadNum++;
+                Debug.Log(RoadNum);
                 TriggerSignal = false;
             }
 
@@ -95,6 +102,19 @@ public class Visit : MonoBehaviour
         if (other.gameObject.CompareTag("Road"))
         {
             TriggerSignal = true;
+        }
+
+        if (other.gameObject.CompareTag("Finish")){
+            cube_boxCol.isTrigger = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    { 
+        if (collision.gameObject.CompareTag("sushi"))
+        {
+            empty.seat[seatnum] = true;
+            Destroy(this.gameObject);
         }
 
     }

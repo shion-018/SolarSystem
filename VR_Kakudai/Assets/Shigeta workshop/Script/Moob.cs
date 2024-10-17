@@ -37,20 +37,19 @@ public class Moob : MonoBehaviour
     {
         transform.position = GetMouseWorldPos() + mOffset;
         this.gameObject.transform.parent = null;
-        this.gameObject.tag = "sushi";
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "donburi")
+        if (collision.gameObject.tag == "sushi")
         {
             this.gameObject.transform.parent = RootObject.gameObject.transform;
-            this.gameObject.tag = "donburi";
+            //this.gameObject.tag = "sushi";
         }
-        else
-        {
-            obj = collision.gameObject; 
-            this.gameObject.transform.parent = obj.gameObject.transform;
-        }
+        //else
+        //{
+        //    obj = collision.gameObject; 
+        //    this.gameObject.transform.parent = obj.gameObject.transform;
+        //}
     }
 }

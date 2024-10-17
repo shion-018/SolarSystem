@@ -112,7 +112,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 979581ecf34b03c44913de89be3f45f0,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6929092527460528009}
+      addedObject: {fileID: 8684540290800594314}
   m_SourcePrefab: {fileID: 100100000, guid: 979581ecf34b03c44913de89be3f45f0, type: 3}
 --- !u!1 &4593849405150154754 stripped
 GameObject:
@@ -166,8 +166,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RootObject: {fileID: 4593849405150154754}
---- !u!64 &6929092527460528009
-MeshCollider:
+--- !u!65 &8684540290800594314
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -202,7 +202,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
