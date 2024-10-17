@@ -320,8 +320,13 @@ MonoBehaviour:
   - Road1-3
   - Road1-4
   - Road1-5
-  RoadName2: []
+  RoadName2:
+  - Road2-1
+  - Road2-2
+  - Road2-3
   Road: []
+  cube: {fileID: 0}
+  cube_boxCol: {fileID: 0}
 --- !u!114 &5033697385753545155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +387,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
   DishesImage: {fileID: 7049957028511146205}
   SizeImage: {fileID: 7174629265976132430}
-  SalesAmountText: {fileID: 0}
+  SalesAmountText: {fileID: 2950773877133528363, guid: 7ae693ebd15bfda46900d12e48963f6f,
+    type: 3}
 --- !u!114 &7794649616950881576
 MonoBehaviour:
   m_ObjectHideFlags: 0

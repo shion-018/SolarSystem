@@ -30,6 +30,8 @@ public class CustomerRequest : MonoBehaviour
         Sprite[] DishesSprits = new Sprite[RequestDishes.Length];
         int[] DishesPrice = new int[RequestDishes.Length];
 
+        
+
 
         for (int DishesNumber = 0; DishesNumber < RequestDishes.Length; DishesNumber++)
         {
@@ -58,8 +60,6 @@ public class CustomerRequest : MonoBehaviour
         RequestDishesPrice = DishesPrice[DishesValue];
         SizeSpecificationSpriteValue = Random.Range(SizeSpecificationSpriteValueMin, SizeSpecificationSpriteValueMax);
         SizeImage.sprite = SizeSpecificationSprits[SizeSpecificationSpriteValue];
-
-
     }
 
     // Update is called once per frame
