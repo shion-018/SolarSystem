@@ -13,7 +13,7 @@ public class CustomerRequest : MonoBehaviour
     [SerializeField] private Sprite[] SizeSpecificationSprits;//大きさ指定の画像
     [SerializeField] private UnityEngine.UI.Image DishesImage;//料理の画像を映す場所の設定
     [SerializeField] private UnityEngine.UI.Image SizeImage;//大きさの画像を映す場所の設定
-    [SerializeField] private TextMeshProUGUI SalesAmountText;//売上金額の合計を映すところ
+    [SerializeField] private GameObject SalesAmountText;//売上金額の合計を映すところ
 
     private int DishesValue; private int DishesValueMin; private int DishesValueMax;
     private int SizeSpecificationSpriteValue; private int SizeSpecificationSpriteValueMin; private int SizeSpecificationSpriteValueMax;

@@ -1134,7 +1134,7 @@ PrefabInstance:
         type: 3}
       propertyPath: SalesAmountText
       value: 
-      objectReference: {fileID: 1880484804}
+      objectReference: {fileID: 526948991}
     - target: {fileID: 5732388447685888548, guid: e598271c67d80934b923f23ba341f606,
         type: 3}
       propertyPath: RequestDishes.Array.data[1]
@@ -1264,7 +1264,7 @@ PrefabInstance:
         type: 3}
       propertyPath: SalesAmountText
       value: 
-      objectReference: {fileID: 1880484804}
+      objectReference: {fileID: 0}
     - target: {fileID: 5732388447685888548, guid: e598271c67d80934b923f23ba341f606,
         type: 3}
       propertyPath: RequestDishes.Array.data[1]
@@ -6560,6 +6560,7 @@ GameObject:
   - component: {fileID: 526948994}
   - component: {fileID: 526948993}
   - component: {fileID: 526948992}
+  - component: {fileID: 526948995}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6617,6 +6618,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526948995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526948991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e849ff5bfedf02342a0baa40c225c395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SalesAmountText: {fileID: 1880484804}
 --- !u!1 &527676378
 GameObject:
   m_ObjectHideFlags: 0
@@ -8471,7 +8485,7 @@ PrefabInstance:
         type: 3}
       propertyPath: SalesAmountText
       value: 
-      objectReference: {fileID: 1880484804}
+      objectReference: {fileID: 526948991}
     - target: {fileID: 5732388447685888548, guid: e598271c67d80934b923f23ba341f606,
         type: 3}
       propertyPath: RequestDishes.Array.data[1]
@@ -11952,7 +11966,7 @@ PrefabInstance:
         type: 3}
       propertyPath: SalesAmountText
       value: 
-      objectReference: {fileID: 1880484804}
+      objectReference: {fileID: 526948991}
     - target: {fileID: 8728658364911822223, guid: e598271c67d80934b923f23ba341f606,
         type: 3}
       propertyPath: MainCamera
@@ -19508,7 +19522,6 @@ GameObject:
   - component: {fileID: 1880484803}
   - component: {fileID: 1880484805}
   - component: {fileID: 1880484804}
-  - component: {fileID: 1880484806}
   - component: {fileID: 1880484807}
   m_Layer: 5
   m_Name: SalesAmount
@@ -19633,19 +19646,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880484802}
   m_CullTransparentMesh: 1
---- !u!114 &1880484806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880484802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e849ff5bfedf02342a0baa40c225c395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SalesAmountText: {fileID: 1880484804}
 --- !u!114 &1880484807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22678,7 +22678,7 @@ PrefabInstance:
         type: 3}
       propertyPath: SalesAmountText
       value: 
-      objectReference: {fileID: 1880484804}
+      objectReference: {fileID: 526948991}
     - target: {fileID: 5732388447685888548, guid: e598271c67d80934b923f23ba341f606,
         type: 3}
       propertyPath: RequestDishes.Array.size
