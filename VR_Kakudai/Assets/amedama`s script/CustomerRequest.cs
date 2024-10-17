@@ -35,7 +35,7 @@ public class CustomerRequest : MonoBehaviour
         {
 
             dishesSetting = RequestDishes[DishesNumber].GetComponent<DishesSetting>();
-            //amountText = SalesAmountText.GetComponent<AmountText>();
+            amountText = SalesAmountText.GetComponent<AmountText>();
             Debug.Log(dishesSetting.DishesPrice);
 
             DishesSprits[DishesNumber] = dishesSetting.DishesSprite;
@@ -68,26 +68,26 @@ public class CustomerRequest : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider colliderDishes)
+    void OnCollisionEnter(Collision colliderDishes)
     {
 
         //当たったオブジェクトを判定
-        if (colliderDishes.tag == RequestDishes[DishesValue].tag)//料理が正しいかを判定
+        if (colliderDishes.gameObject.tag == RequestDishes[DishesValue].tag)//料理が正しいかを判定
         {
 
-            Debug.Log(colliderDishes.name);
+            Debug.Log(colliderDishes.gameObject.name);
 
             if (SizeSpecificationSpriteValue <= colliderDishes.transform.localScale.x)//満足する大きさかの判定
             {
 
-                //amountText.Amount(DishesMagnification(colliderDishes));
+                amountText.Amount(DishesMagnification(colliderDishes));
                 Destroy(colliderDishes.gameObject);
-
+                
             }
         }
     }
 
-    int DishesMagnification(Collider colliderDishes)
+    int DishesMagnification(Collision colliderDishes)
     {
 
         float RDP = RequestDishesPrice;
