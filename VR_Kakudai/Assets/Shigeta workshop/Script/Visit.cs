@@ -57,8 +57,8 @@ GameObject B;
         B = GameObject.Find("CustonerCount");
         CustmerCounter = B.GetComponent<CustomerCounter>();
 
-        cube = GameObject.Find("Cube");
-        cube_boxCol = cube.GetComponent<BoxCollider>();
+        
+        cube_boxCol = this.GetComponent<BoxCollider>();
 
     }
 
@@ -112,6 +112,8 @@ GameObject B;
         }
 
         if (other.gameObject.CompareTag("Finish")){
+
+            Debug.Log("ua-");
             cube_boxCol.isTrigger = false;
         }
     }
