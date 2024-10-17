@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public GAMESTATE gamestate = GAMESTATE.Title;
 
-    int TimeNow = 0;
+    public int TimeNow = 0;
     float Seconds_If;
 
 
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             if (Seconds_If >= 1.0f)
             {
                 TimeNow += 1;
-                TimeLimitText.text = TimeNow.ToString();
+                //TimeLimitText.text = TimeNow.ToString();
                 Seconds_If = 0;
 
                 if (TimeLimit <= TimeNow)
