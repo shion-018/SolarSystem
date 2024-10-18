@@ -198,7 +198,6 @@ GameObject:
   - component: {fileID: 5033697385753545155}
   - component: {fileID: 3107454067047138707}
   - component: {fileID: 2983854336700605060}
-  - component: {fileID: 7794649616950881576}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -386,19 +385,6 @@ MonoBehaviour:
   DishesImage: {fileID: 7049957028511146205}
   SizeImage: {fileID: 7174629265976132430}
   SalesAmountText: {fileID: 6260050630058687577}
---- !u!114 &7794649616950881576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6260050630058687577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36b41c1274862e42a710e5ee004cc6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RootObject: {fileID: 6260050630058687577}
 --- !u!1 &6976834100600765146
 GameObject:
   m_ObjectHideFlags: 0
