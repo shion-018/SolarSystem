@@ -91,12 +91,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2b36846b04c551243b47287250afe38d,
         type: 3}
       propertyPath: m_Name
-      value: don
+      value: don12
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b36846b04c551243b47287250afe38d,
         type: 3}
       propertyPath: m_TagString
-      value: donburi
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3369211384038127710, guid: 2b36846b04c551243b47287250afe38d,
         type: 3}
@@ -116,17 +116,17 @@ PrefabInstance:
     - target: {fileID: 3376159707114228855, guid: 2b36846b04c551243b47287250afe38d,
         type: 3}
       propertyPath: m_TagString
-      value: sushi
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4716222418562832604, guid: 2b36846b04c551243b47287250afe38d,
         type: 3}
       propertyPath: m_TagString
-      value: sushi
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5699729333898661015, guid: 2b36846b04c551243b47287250afe38d,
         type: 3}
       propertyPath: m_TagString
-      value: sushi
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -140,10 +140,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2657696570625887638}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b36846b04c551243b47287250afe38d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6546708259776322857}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b36846b04c551243b47287250afe38d,
         type: 3}
       insertIndex: -1
@@ -188,7 +184,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 2, y: 0.5, z: 2}
   m_Center: {x: 0, y: -0.3, z: 0}
@@ -219,19 +215,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6546708259776322857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2443548255374076840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36b41c1274862e42a710e5ee004cc6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RootObject: {fileID: 2443548255374076840}
 --- !u!114 &6070170612698101388
 MonoBehaviour:
   m_ObjectHideFlags: 0
