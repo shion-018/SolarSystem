@@ -19,7 +19,7 @@ public class TimeText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameManager.TimeNow);
+        //Debug.Log(gameManager.TimeNow);
         TimeLimitText.text = gameManager.TimeNow.ToString();
     }
 }

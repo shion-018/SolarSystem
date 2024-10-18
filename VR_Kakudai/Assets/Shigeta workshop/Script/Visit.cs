@@ -37,6 +37,9 @@ public class Visit : MonoBehaviour
 GameObject B;
         CustomerCounter CustmerCounter;
 
+    GameObject C;
+    Appeardishes appeardishes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +59,9 @@ GameObject B;
 
         B = GameObject.Find("CustonerCount");
         CustmerCounter = B.GetComponent<CustomerCounter>();
+
+        C = GameObject.Find("DishesManager");
+        appeardishes = C.GetComponent<Appeardishes>();
 
         
         cube_boxCol = this.GetComponent<BoxCollider>();
@@ -113,7 +119,7 @@ GameObject B;
 
         if (other.gameObject.CompareTag("Finish")){
 
-            Debug.Log("ua-");
+            InputDishes();
             cube_boxCol.isTrigger = false;
         }
     }
@@ -169,4 +175,25 @@ GameObject B;
 
         }
     }
+
+    void InputDishes()
+    {
+
+        switch (seatnum)
+        {
+            case 0:
+                appeardishes.dishesnum = 0;
+                appeardishes.spawndishes[0] = true;
+                break;
+            case 1:
+                appeardishes.dishesnum = 1;
+                appeardishes.spawndishes[1] = true;
+                break;
+            case 2:
+                appeardishes.dishesnum = 2;
+                appeardishes.spawndishes[2] = true;
+                break;
+        }
+    }
+
 }
