@@ -340,7 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28f1a57be4563b42a5b17f09c545c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChangeScene: {fileID: 0}
+  sceneToLoad: shigeta work
+  ChangeScene: {fileID: 102900000, guid: bcef77559c462fb40a0c00ada89df32b, type: 3}
 --- !u!114 &1022295390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,12 +388,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1022295389}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: SceneChange_designation_func
-        m_Mode: 2
+        m_MethodName: SceneChange_func
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: bcef77559c462fb40a0c00ada89df32b,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

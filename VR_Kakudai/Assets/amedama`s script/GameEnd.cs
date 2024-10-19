@@ -20,7 +20,11 @@ public class GameEnd : MonoBehaviour
     {
         if (Application.isEditor)
         {
+
+#if UNITY_EDITOR
+
             UnityEditor.EditorApplication.isPlaying = false;//ƒQ[ƒ€ƒvƒŒƒCI—¹
+#endif        
         }
         else
         {

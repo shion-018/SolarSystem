@@ -8,8 +8,12 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
 
-    [SerializeField] SceneAsset ChangeScene;//ˆÚ“®‚·‚éScene‚ðŒˆ’è
 
+    [HideInInspector][SerializeField] private string sceneToLoad;
+
+#if UNITY_EDITOR
+    [SerializeField] SceneAsset ChangeScene;//ˆÚ“®‚·‚éScene‚ðŒˆ’è
+#endif
 
 
     // Start is called before the first frame update
@@ -24,17 +28,21 @@ public class SceneChange : MonoBehaviour
 
     }
 
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (ChangeScene != null)
+        {
+            sceneToLoad = ChangeScene.name;
+        }
+    }
+#endif
+
     public void SceneChange_func()
     {
 
-        SceneManager.LoadScene(ChangeScene.name.ToString());
-        
+        SceneManager.LoadScene(sceneToLoad);
 
-    }
 
-    public void SceneChange_designation_func(SceneAsset scene)
-    {
-        SceneManager.LoadScene(scene.name.ToString());
-        
-    }
+    }   
 }
