@@ -6,6 +6,7 @@ public class alphakey : MonoBehaviour
 {
 
     [SerializeField] GameObject ebiebi;
+    [SerializeField] GameObject ebiday;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class alphakey : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(ebiebi,this.transform.position + Vector3.forward,Quaternion.identity);
+            Instantiate(ebiebi,ebiday.transform.position,Quaternion.identity);
             Debug.Log("Space");
         }
     }
