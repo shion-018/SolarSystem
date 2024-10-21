@@ -19,6 +19,7 @@ public class alphakey : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(ebiebi,Vector3.forward,Quaternion.identity);
+            Debug.Log("Space");
         }
     }
 }
