@@ -7706,6 +7706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ebiebi: {fileID: 4593849405150154754, guid: b225f5a33d5213d498ee899a926d04b0, type: 3}
+  ebiday: {fileID: 2030236245}
 --- !u!114 &718952065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23782,6 +23783,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 898922140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2030236245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030236246}
+  m_Layer: 0
+  m_Name: ebispawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2030236246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030236245}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.411, y: 3.495052, z: 20.164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2034842966
 GameObject:
   m_ObjectHideFlags: 0
@@ -25427,3 +25459,4 @@ SceneRoots:
   - {fileID: 60638548}
   - {fileID: 1124545195}
   - {fileID: 1689204630}
+  - {fileID: 2030236246}
