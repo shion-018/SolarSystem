@@ -64,6 +64,7 @@
     <Compile Include="Assets\Shigeta workshop\Script\TimeBar.cs" />
     <Compile Include="Assets\amedama`s script\GameManager.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\SpeechBubbleTimer.cs" />
+    <Compile Include="Assets\amedama`s script\DishesFusion.cs" />
     <Compile Include="Assets\amedama`s script\StrechSound.cs" />
     <Compile Include="Assets\amedama`s script\CustomerRequest.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\TestClock.cs" />
@@ -448,14 +449,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.2\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">

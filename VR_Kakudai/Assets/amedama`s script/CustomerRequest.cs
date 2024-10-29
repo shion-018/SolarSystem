@@ -22,11 +22,12 @@ public class CustomerRequest : MonoBehaviour
     private int SalesAmount = 0;
     private DishesSetting dishesSetting;
     private AmountText amountText;
+    private DishesFusion dishesFusion;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(1);
+       
         Sprite[] DishesSprits = new Sprite[RequestDishes.Length];
         int[] DishesPrice = new int[RequestDishes.Length];
 
@@ -71,17 +72,21 @@ public class CustomerRequest : MonoBehaviour
 
     void OnCollisionEnter(Collision colliderDishes)
     {
+        Debug.Log(dishesSetting);
 
         //当たったオブジェクトを判定
         if (colliderDishes.gameObject.tag == RequestDishes[DishesValue].tag)//料理が正しいかを判定
         {
 
-            Debug.Log(colliderDishes.gameObject.name);
+           DishesSetting ColDishesSetting  = colliderDishes.gameObject.GetComponent<DishesSetting>();
+
+           
 
             if (SizeSpecificationSpriteValue <= colliderDishes.transform.localScale.x)//満足する大きさかの判定
             {
 
                 amountText.Amount(DishesMagnification(colliderDishes));
+                Debug.Log(ColDishesSetting.DishesNumber);
                 Destroy(colliderDishes.gameObject);
                 
             }
