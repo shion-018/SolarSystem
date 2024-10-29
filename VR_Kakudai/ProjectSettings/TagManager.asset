@@ -7,8 +7,10 @@ TagManager:
   - sushi
   - donburi
   - Game Object
-  - Road
-  - SalesAmountText
+
+
+  - Grabbable
+
   layers:
   - Default
   - TransparentFX
