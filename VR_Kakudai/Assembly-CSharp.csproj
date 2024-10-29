@@ -61,9 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\amedama`s script\GameEnd.cs" />
-    <Compile Include="Assets\Shigeta workshop\Script\TimeBar.cs" />
     <Compile Include="Assets\amedama`s script\GameManager.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\SpeechBubbleTimer.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\Not use\staff.cs" />
     <Compile Include="Assets\amedama`s script\StrechSound.cs" />
     <Compile Include="Assets\amedama`s script\CustomerRequest.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\TestClock.cs" />
@@ -71,7 +71,6 @@
     <Compile Include="Assets\amedama`s script\AmountText.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\generation.cs" />
     <Compile Include="Assets\Scripts\ObjectToggle.cs" />
-    <Compile Include="Assets\Shigeta workshop\Script\Moob.cs" />
     <Compile Include="Assets\amedama`s script\Size Specification.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
     <Compile Include="Assets\amedama`s script\ScreenTransitions.cs" />
@@ -85,11 +84,11 @@
     <Compile Include="Assets\amedama`s script\DifficultStretch.cs" />
     <Compile Include="Assets\amedama`s script\TimeText.cs" />
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
-
-
     <Compile Include="Assets\aoi workshop\Scripts\ObjectManager.cs" />
-
-    <Compile Include="Assets\Shigeta workshop\Script\staff.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\Not use\Moob.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\Not use\TimeBar.cs" />
+    <Compile Include="Assets\amedama`s script\alpha key.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\emptyseat.cs" />
     <Compile Include="Assets\amedama`s script\ScreenTransition.cs" />
   </ItemGroup>
   <ItemGroup>
