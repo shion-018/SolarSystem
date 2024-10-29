@@ -32,7 +32,7 @@ public class ToppingManager : MonoBehaviour
     // 右クリックでオブジェクトを生成または未選択のものをまとめて削除
     void HandleRightClick()
     {
-        bool rightClick = Input.GetMouseButtonDown(1) || Input.GetButtonDown("XRI_Right_PrimaryButton");
+        bool rightClick = Input.GetMouseButtonDown(1) /*|| Input.GetButtonDown("XRI_Right_PrimaryButton")*/;
 
         if (rightClick && !isGrabbing)
         {
@@ -109,7 +109,7 @@ public class ToppingManager : MonoBehaviour
 
     void HandleGrab()
     {
-        bool leftClick = Input.GetMouseButtonDown(0) || Input.GetAxis("XRI_Right_Trigger") > 0.5f;
+        bool leftClick = Input.GetMouseButtonDown(0) /*|| Input.GetAxis("XRI_Right_Trigger") > 0.5f*/;
 
         if (leftClick && !isGrabbing)
         {
@@ -153,7 +153,7 @@ public class ToppingManager : MonoBehaviour
 
     void HandleRelease()
     {
-        bool leftRelease = Input.GetMouseButtonUp(0) || Input.GetAxis("XRI_Right_Trigger") < 0.5f;
+        bool leftRelease = Input.GetMouseButtonUp(0) /*|| Input.GetAxis("XRI_Right_Trigger") < 0.5f*/;
 
         if (isGrabbing && leftRelease)
         {
