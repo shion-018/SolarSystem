@@ -72,15 +72,11 @@ public class CustomerRequest : MonoBehaviour
 
     void OnCollisionEnter(Collision colliderDishes)
     {
-        Debug.Log(dishesSetting);
+        DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
 
         //当たったオブジェクトを判定
-        if (colliderDishes.gameObject.tag == RequestDishes[DishesValue].tag)//料理が正しいかを判定
+        if (ColDishesSetting.DishesNumber == dishesSetting.Number[SizeSpecificationSpriteValue])//料理が正しいかを判定
         {
-
-           DishesSetting ColDishesSetting  = colliderDishes.gameObject.GetComponent<DishesSetting>();
-
-           
 
             if (SizeSpecificationSpriteValue <= colliderDishes.transform.localScale.x)//満足する大きさかの判定
             {

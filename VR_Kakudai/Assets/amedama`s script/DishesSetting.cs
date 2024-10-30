@@ -9,7 +9,7 @@ public class DishesSetting : MonoBehaviour
    // [SerializeField] public GameObject Dishes;
     [SerializeField] public Sprite DishesSprite;
     [SerializeField] public int DishesPrice = 700;
-    [SerializeField] int[] Number = new int[3];
+    public int[] Number = new int[3];
 
     [HideInInspector] public int DishesNumber = 999;
     //[SerializeField] public float[,] DishesMagnificationPrice;//Šg‘å‚µ‚½‚ÌA’iŠK‚Æ”{—¦‚ğŒˆ‚ß‚Ä‚Ù‚µ‚¢‚Å‚·B
