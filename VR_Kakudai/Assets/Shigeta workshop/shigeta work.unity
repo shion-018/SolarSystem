@@ -8692,11 +8692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefabs:
   - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
   spawnPoints:
-  - {fileID: 3786244282230049464, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  - {fileID: 3786244282230049464, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
   - {fileID: 3786244282230049464, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
 --- !u!114 &491835695
 MonoBehaviour:
