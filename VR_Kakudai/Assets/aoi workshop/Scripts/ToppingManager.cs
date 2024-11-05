@@ -32,9 +32,9 @@ public class ToppingManager : MonoBehaviour
     // 右クリックでオブジェクトを生成または未選択のものをまとめて削除
     void HandleRightClick()
     {
-
         bool rightClick = Input.GetMouseButtonDown(1) || OVRInput.GetDown(OVRInput.RawButton.B);
 
+        // 左クリックが長押しされている間は新規オブジェクトを生成しない
         if (rightClick && !isGrabbing)
         {
             Debug.Log("Right click detected!");
