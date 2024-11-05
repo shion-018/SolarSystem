@@ -32,7 +32,7 @@ public class ToppingManager : MonoBehaviour
     // 右クリックでオブジェクトを生成または未選択のものをまとめて削除
     void HandleRightClick()
     {
-        bool rightClick = Input.GetMouseButtonDown(1) || Input.GetButtonDown("XRI_Right_PrimaryButton");
+        bool rightClick = Input.GetMouseButtonDown(1) || OVRInput.GetDown(OVRInput.RawButton.B);
 
         if (rightClick && !isGrabbing)
         {
