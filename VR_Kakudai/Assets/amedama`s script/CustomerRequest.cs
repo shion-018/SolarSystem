@@ -20,18 +20,26 @@ public class CustomerRequest : MonoBehaviour
     private int RequestDishesPrice = 0;
     private int[] DishesMagPrice;
     private int SalesAmount = 0;
+    private int AssortDishesNumberMax = 4;//最大の料理組み合わせ数 + 1
+    private int[] AssortDishesNumber;
     private DishesSetting dishesSetting;
     private AmountText amountText;
     private DishesFusion dishesFusion;
+    private int Assort;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
+
+
         Sprite[] DishesSprits = new Sprite[RequestDishes.Length];
         int[] DishesPrice = new int[RequestDishes.Length];
 
-        
+        Assort = Random.Range(1, AssortDishesNumberMax);
+        AssortDishesNumber = new int[Assort];
+
+        Debug.Log(Assort);
 
 
         for (int DishesNumber = 0; DishesNumber < RequestDishes.Length; DishesNumber++)
@@ -40,7 +48,6 @@ public class CustomerRequest : MonoBehaviour
             dishesSetting = RequestDishes[DishesNumber].GetComponent<DishesSetting>();
             SalesAmountText = GameObject.FindWithTag("SalesAmountText");
             amountText = SalesAmountText.GetComponent<AmountText>();
-            Debug.Log(dishesSetting.DishesPrice);
 
             DishesSprits[DishesNumber] = dishesSetting.DishesSprite;
             DishesPrice[DishesNumber] = dishesSetting.DishesPrice;
@@ -56,12 +63,20 @@ public class CustomerRequest : MonoBehaviour
         SizeSpecificationSpriteValueMax = SizeSpecificationSprits.Length;
 
         //乱数生成で料理と大きさを決定
-        DishesValue = Random.Range(DishesValueMin, DishesValueMax);
-        dishesSetting = RequestDishes[DishesValue].GetComponent<DishesSetting>();
-        DishesImage.sprite = DishesSprits[DishesValue];
-        RequestDishesPrice = DishesPrice[DishesValue];
-        SizeSpecificationSpriteValue = Random.Range(SizeSpecificationSpriteValueMin, SizeSpecificationSpriteValueMax);
-        SizeImage.sprite = SizeSpecificationSprits[SizeSpecificationSpriteValue];
+        for (int i = 0; i < Assort; i++)
+        {
+
+            DishesValue = Random.Range(DishesValueMin, DishesValueMax);
+            dishesSetting = RequestDishes[DishesValue].GetComponent<DishesSetting>();
+            DishesImage.sprite = DishesSprits[DishesValue];
+            RequestDishesPrice = DishesPrice[DishesValue];
+            SizeSpecificationSpriteValue = Random.Range(SizeSpecificationSpriteValueMin, SizeSpecificationSpriteValueMax);
+            SizeImage.sprite = SizeSpecificationSprits[SizeSpecificationSpriteValue];
+
+            AssortDishesNumber[i] = dishesSetting.Number[SizeSpecificationSpriteValue];
+
+            Debug.Log("盛り付け : " + AssortDishesNumber[i]);
+        }
     }
 
     // Update is called once per frame
@@ -74,6 +89,9 @@ public class CustomerRequest : MonoBehaviour
     {
         DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
 
+
+        
+
         //当たったオブジェクトを判定
         if (ColDishesSetting.DishesNumber == dishesSetting.Number[SizeSpecificationSpriteValue])//料理が正しいかを判定
         {
@@ -82,7 +100,7 @@ public class CustomerRequest : MonoBehaviour
             {
 
                 amountText.Amount(DishesMagnification(colliderDishes));
-                Debug.Log(ColDishesSetting.DishesNumber);
+                
                 Destroy(colliderDishes.gameObject);
                 
             }
@@ -95,7 +113,7 @@ public class CustomerRequest : MonoBehaviour
         float RDP = RequestDishesPrice;
         float PM = 0;//PriceMagnification
 
-        Debug.Log(dishesSetting);
+
 
         for (int i = 0; i < dishesSetting.dishesMagnifications.Length; i++)
         {

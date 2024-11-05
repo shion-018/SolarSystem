@@ -22,20 +22,23 @@ public class DishesSetting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(DishesNumber);
+        
 
         switch ((int)this.gameObject.transform.localScale.x)
         {
-            case 0:
+            case 1:
                 DishesNumber = Number[0];
                 break;
 
-            case 1:
+            case 2:
                 DishesNumber = Number[1];
                 break;
 
-            case 2:
+            case 3:
                 DishesNumber = Number[2];
+                break;
+
+            default:
                 break;
         }
     }
@@ -43,7 +46,6 @@ public class DishesSetting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
         switch ((int)this.gameObject.transform.localScale.x)
         {
@@ -57,6 +59,9 @@ public class DishesSetting : MonoBehaviour
 
             case 2:
                 DishesNumber = Number[2];
+                break;
+
+            default:
                 break;
         }
     }
