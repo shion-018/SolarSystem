@@ -5,8 +5,8 @@ using UnityEngine.XR;
 
 public class ToppingManager : MonoBehaviour
 {
-    public GameObject[] objectPrefabs;  // ¶¬‚·‚éƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒnƒu”z—ñ
-    public Transform[] spawnPoints;     // ¶¬ƒ|ƒCƒ“ƒg‚Ì”z—ñ
+    public GameObject[] objectPrefabs;  // ç”Ÿæˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒãƒ–é…åˆ—
+    public Transform[] spawnPoints;     // ç”Ÿæˆãƒã‚¤ãƒ³ãƒˆã®é…åˆ—
 
     private Camera cam;
     private GameObject selectedObject;
@@ -14,7 +14,7 @@ public class ToppingManager : MonoBehaviour
     private Vector3 lastMousePosition;
     private bool isGrabbing = false;
 
-    private List<ObjectState> spawnedObjects = new List<ObjectState>(); // ¶¬‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚Ìó‘Ô‚ğ’ÇÕ
+    private List<ObjectState> spawnedObjects = new List<ObjectState>(); // ç”Ÿæˆã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®çŠ¶æ…‹ã‚’è¿½è·¡
 
     void Start()
     {
@@ -23,15 +23,16 @@ public class ToppingManager : MonoBehaviour
 
     void Update()
     {
-        HandleRightClick();  // ‰EƒNƒŠƒbƒNiVR‚Å‚ÍBƒ{ƒ^ƒ“j‚ÅV‚µ‚¢ƒIƒuƒWƒFƒNƒg‚ğ¶¬‚Ü‚½‚Ííœ
-        HandleGrab();        // ¶ƒNƒŠƒbƒNiVR‚Å‚ÍRTƒ{ƒ^ƒ“j‚Å’Í‚Ş
-        HandleRelease();     // ¶ƒNƒŠƒbƒN‚ğ—£‚·‚Æ•ú‚Â
-        HandleDrag();        // ’Í‚ñ‚Å‚¢‚éŠÔƒIƒuƒWƒFƒNƒg‚ğ“®‚©‚·
+        HandleRightClick();  // å³ã‚¯ãƒªãƒƒã‚¯ï¼ˆVRã§ã¯Bãƒœã‚¿ãƒ³ï¼‰ã§æ–°ã—ã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã¾ãŸã¯å‰Šé™¤
+        HandleGrab();        // å·¦ã‚¯ãƒªãƒƒã‚¯ï¼ˆVRã§ã¯RTãƒœã‚¿ãƒ³ï¼‰ã§æ´ã‚€
+        HandleRelease();     // å·¦ã‚¯ãƒªãƒƒã‚¯ã‚’é›¢ã™ã¨æ”¾ã¤
+        HandleDrag();        // æ´ã‚“ã§ã„ã‚‹é–“ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‹•ã‹ã™
     }
 
-    // ‰EƒNƒŠƒbƒN‚ÅƒIƒuƒWƒFƒNƒg‚ğ¶¬‚Ü‚½‚Í–¢‘I‘ğ‚Ì‚à‚Ì‚ğ‚Ü‚Æ‚ß‚Äíœ
+    // å³ã‚¯ãƒªãƒƒã‚¯ã§ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã¾ãŸã¯æœªé¸æŠã®ã‚‚ã®ã‚’ã¾ã¨ã‚ã¦å‰Šé™¤
     void HandleRightClick()
     {
+
         bool rightClick = Input.GetMouseButtonDown(1) || OVRInput.GetDown(OVRInput.RawButton.B);
 
         if (rightClick && !isGrabbing)
@@ -109,7 +110,7 @@ public class ToppingManager : MonoBehaviour
 
     void HandleGrab()
     {
-        bool leftClick = Input.GetMouseButtonDown(0) || Input.GetAxis("XRI_Right_Trigger") > 0.5f;
+        bool leftClick = Input.GetMouseButtonDown(0) /*|| Input.GetAxis("XRI_Right_Trigger") > 0.5f*/;
 
         if (leftClick && !isGrabbing)
         {
@@ -153,7 +154,7 @@ public class ToppingManager : MonoBehaviour
 
     void HandleRelease()
     {
-        bool leftRelease = Input.GetMouseButtonUp(0) || Input.GetAxis("XRI_Right_Trigger") < 0.5f;
+        bool leftRelease = Input.GetMouseButtonUp(0) /*|| Input.GetAxis("XRI_Right_Trigger") < 0.5f*/;
 
         if (isGrabbing && leftRelease)
         {
