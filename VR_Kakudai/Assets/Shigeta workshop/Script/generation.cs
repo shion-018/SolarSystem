@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class generation : MonoBehaviour
 {
-
     [SerializeField] private GameObject[] target;
 
     int i = 0;
@@ -13,27 +11,38 @@ public class generation : MonoBehaviour
     GameObject A;
     CustomerCounter CustmerCounter;
 
-    // Start is called before the first frame update
+    // 生成間隔（秒）
+    [SerializeField] private float spawnInterval = 2.0f;
+    private bool isSpawning = false;
+
     void Start()
     {
         A = GameObject.Find("CustonerCount");
         CustmerCounter = A.GetComponent<CustomerCounter>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (CustmerCounter.counter != 3)
+        if (CustmerCounter.counter < 3 && !isSpawning)
         {
-            i = Random.Range(0, target.Length);
-
-            //Instantiate( 生成するオブジェクト,  場所, 回転 ); 
-            Instantiate(target[i], this.transform.position, Quaternion.identity);
-            
-            CustmerCounter.counter++;
+            StartCoroutine(SpawnWithDelay());
         }
+    }
 
+    IEnumerator SpawnWithDelay()
+    {
+        isSpawning = true;  // 生成中フラグをオン
 
+        // ランダムにオブジェクトを選んで生成
+        i = Random.Range(0, target.Length);
+        Instantiate(target[i], this.transform.position, Quaternion.identity);
 
+        // カウンターを増やす
+        CustmerCounter.counter++;
+
+        // 指定の間隔を待機
+        yield return new WaitForSeconds(spawnInterval);
+
+        isSpawning = false;  // 生成中フラグをオフ
     }
 }

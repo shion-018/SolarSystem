@@ -11187,6 +11187,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.26
@@ -25780,6 +25784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
   - {fileID: 2798101770354366275, guid: 30a9f4852c858f84d90cfbab6f5e36f1, type: 3}
+  spawnInterval: 2
 --- !u!4 &1324483313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 773057675854184826, guid: c738a0ea15d648841bff8f19e9f181db,
