@@ -50,31 +50,13 @@ public class ToppingManager : MonoBehaviour
         }
     }
 
-    void DeleteAllUngrabbedObjects()
-    {
-        List<ObjectState> objectsToRemove = new List<ObjectState>();
-
-        foreach (var objState in spawnedObjects)
-        {
-            if (!objState.IsGrabbed && objState.ObjectInstance != null)
-            {
-                objectsToRemove.Add(objState);
-            }
-        }
-
-        foreach (var objState in objectsToRemove)
-        {
-            Destroy(objState.ObjectInstance);
-            Debug.Log("Deleting ungrabbed object: " + objState.ObjectInstance.name);
-            objState.ObjectInstance = null;
-        }
-
-        spawnedObjects.RemoveAll(obj => obj.ObjectInstance == null);
-        Debug.Log("All ungrabbed objects deleted.");
-    }
-
+    // 未選択のオブジェクトが存在するか確認
     bool HasUngrabbedObjects()
     {
+        // リストからすでに消滅したオブジェクトを削除
+        spawnedObjects.RemoveAll(obj => obj.ObjectInstance == null);
+
+        // リスト内に未選択のオブジェクトが残っているかを確認
         foreach (var objState in spawnedObjects)
         {
             if (!objState.IsGrabbed)
@@ -85,6 +67,33 @@ public class ToppingManager : MonoBehaviour
         return false;
     }
 
+    // 未選択のオブジェクトを全て削除
+    void DeleteAllUngrabbedObjects()
+    {
+        List<ObjectState> objectsToRemove = new List<ObjectState>();
+
+        foreach (var objState in spawnedObjects)
+        {
+            // オブジェクトが存在し、かつ未選択の場合、削除対象に追加
+            if (!objState.IsGrabbed && objState.ObjectInstance != null)
+            {
+                objectsToRemove.Add(objState);
+            }
+        }
+
+        // 削除対象のオブジェクトを消去
+        foreach (var objState in objectsToRemove)
+        {
+            Destroy(objState.ObjectInstance);
+            objState.ObjectInstance = null;
+        }
+
+        // すでに消滅したオブジェクトもリストから削除
+        spawnedObjects.RemoveAll(obj => obj.ObjectInstance == null);
+        Debug.Log("All ungrabbed objects deleted.");
+    }
+
+    // 複数のオブジェクトを生成
     void SpawnMultipleObjects()
     {
         if (objectPrefabs.Length == 0 || spawnPoints.Length == 0)
@@ -108,6 +117,7 @@ public class ToppingManager : MonoBehaviour
         }
     }
 
+    // オブジェクトを掴む
     void HandleGrab()
     {
         bool leftClick = Input.GetMouseButtonDown(0) /*|| Input.GetAxis("XRI_Right_Trigger") > 0.5f*/;
@@ -142,6 +152,7 @@ public class ToppingManager : MonoBehaviour
         }
     }
 
+    // 掴んでいる間オブジェクトをドラッグする
     void HandleDrag()
     {
         if (isGrabbing && selectedObject != null)
@@ -152,6 +163,7 @@ public class ToppingManager : MonoBehaviour
         }
     }
 
+    // 掴んでいるオブジェクトを放す
     void HandleRelease()
     {
         bool leftRelease = Input.GetMouseButtonUp(0) /*|| Input.GetAxis("XRI_Right_Trigger") < 0.5f*/;
@@ -160,6 +172,7 @@ public class ToppingManager : MonoBehaviour
         {
             Debug.Log("Left click release detected!");
 
+            // 重力を有効にして、オブジェクトが自然に落ちるようにする
             selectedObjectRb.isKinematic = false;
             selectedObjectRb.useGravity = true;
 
