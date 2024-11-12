@@ -5,46 +5,35 @@ using UnityEngine;
 public class Visit : MonoBehaviour
 {
     [SerializeField] private string[] targetNames;
-    
     public Transform[] targets;
 
     [SerializeField] private string[] RoadName0;
-
     [SerializeField] private string[] RoadName1;
-
     [SerializeField] private string[] RoadName2;
 
     int RoadNum = 0;
-
     bool TriggerSignal = false;
-
     public Transform[] Road;
-
     private float speed = 3.0f;
-
     int seatnum = 0;
-
     int P = 0;
-
     bool HeadtoGirl = false;
-
     public GameObject cube;
     public BoxCollider cube_boxCol;
 
     GameObject A;
     emptyseat empty;
-
-GameObject B;
-        CustomerCounter CustmerCounter;
-
+    GameObject B;
+    CustomerCounter CustmerCounter;
     GameObject C;
     Appeardishes appeardishes;
 
-    // Start is called before the first frame update
+    // PlayerのTransformを取得するための変数を追加
+    private Transform playerTransform;
+
     void Start()
     {
         targets = new Transform[targetNames.Length];
-
         for (int i = 0; i < targetNames.Length; i++)
         {
             GameObject targetObject = GameObject.Find(targetNames[i]);
@@ -63,12 +52,16 @@ GameObject B;
         C = GameObject.Find("DishesManager");
         appeardishes = C.GetComponent<Appeardishes>();
 
-        
         cube_boxCol = this.GetComponent<BoxCollider>();
 
+        // Playerオブジェクトを取得してTransformを保持
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            playerTransform = playerObject.transform;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (P == 0)
@@ -85,28 +78,45 @@ GameObject B;
             }
         }
 
-        if(HeadtoGirl == false && RoadNum < Road.Length)
+        if (HeadtoGirl == false && RoadNum < Road.Length)
         {
+            Vector3 direction = (Road[RoadNum].position - transform.position).normalized;
             transform.position = Vector3.MoveTowards(transform.position, Road[RoadNum].position, speed * Time.deltaTime);
 
-            if(TriggerSignal)
+            if (direction != Vector3.zero)
             {
-                
+                transform.rotation = Quaternion.LookRotation(direction);
+            }
+
+            if (TriggerSignal)
+            {
                 RoadNum++;
                 Debug.Log(RoadNum);
                 TriggerSignal = false;
             }
 
-            if(RoadNum > Road.Length-1)
+            if (RoadNum > Road.Length - 1)
             {
                 HeadtoGirl = true;
             }
         }
 
-
         if (targets.Length > 0 && targets[seatnum] != null && HeadtoGirl == true)
         {
+            Vector3 directionToTarget = (targets[seatnum].position - transform.position).normalized;
             transform.position = Vector3.MoveTowards(transform.position, targets[seatnum].position, speed * Time.deltaTime);
+
+            if (directionToTarget != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(directionToTarget);
+            }
+
+            // Counterポジションに到達したらPlayerの方向を向く
+            if (Vector3.Distance(transform.position, targets[seatnum].position) < 0.1f && playerTransform != null)
+            {
+                Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
+                transform.rotation = Quaternion.LookRotation(directionToPlayer);
+            }
         }
     }
 
@@ -117,22 +127,21 @@ GameObject B;
             TriggerSignal = true;
         }
 
-        if (other.gameObject.CompareTag("Finish")){
-
+        if (other.gameObject.CompareTag("Finish"))
+        {
             InputDishes();
             cube_boxCol.isTrigger = false;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
-    { 
+    {
         if (collision.gameObject.CompareTag("sushi"))
         {
             empty.seat[seatnum] = true;
             CustmerCounter.counter--;
             Destroy(this.gameObject);
         }
-
     }
 
     void InputRoad(int seatnum)
@@ -172,13 +181,11 @@ GameObject B;
                     }
                 }
                 break;
-
         }
     }
 
     void InputDishes()
     {
-
         switch (seatnum)
         {
             case 0:
@@ -195,5 +202,4 @@ GameObject B;
                 break;
         }
     }
-
 }
