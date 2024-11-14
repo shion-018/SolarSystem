@@ -31,6 +31,9 @@ public class Visit : MonoBehaviour
     // PlayerのTransformを取得するための変数を追加
     private Transform playerTransform;
 
+    // アニメーションの管理用
+    private Animator animator;
+
     void Start()
     {
         targets = new Transform[targetNames.Length];
@@ -60,10 +63,15 @@ public class Visit : MonoBehaviour
         {
             playerTransform = playerObject.transform;
         }
+
+        // Animatorコンポーネントの取得
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        bool isMoving = false;
+
         if (P == 0)
         {
             for (int i = 0; i < targets.Length; i++)
@@ -99,6 +107,8 @@ public class Visit : MonoBehaviour
             {
                 HeadtoGirl = true;
             }
+
+            isMoving = true;
         }
 
         if (targets.Length > 0 && targets[seatnum] != null && HeadtoGirl == true)
@@ -116,7 +126,20 @@ public class Visit : MonoBehaviour
             {
                 Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
                 transform.rotation = Quaternion.LookRotation(directionToPlayer);
+
+                // アニメーションを待機状態に切り替える
+                isMoving = false;
             }
+            else
+            {
+                isMoving = true;
+            }
+        }
+
+        // アニメーションの切り替え
+        if (animator != null)
+        {
+            animator.SetBool("walking", isMoving);
         }
     }
 
