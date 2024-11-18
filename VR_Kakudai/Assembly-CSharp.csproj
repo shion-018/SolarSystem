@@ -79,6 +79,7 @@
     <Compile Include="Assets\amedama`s script\SceneChange.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\PopUpHowToPlay.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\CustomerCounter.cs" />
+    <Compile Include="Assets\amedama`s script\HighJudge.cs" />
     <Compile Include="Assets\amedama`s script\GameStateChange.cs" />
     <Compile Include="Assets\amedama`s script\DishesSetting.cs" />
     <Compile Include="Assets\amedama`s script\NewBehaviourScript.cs" />
