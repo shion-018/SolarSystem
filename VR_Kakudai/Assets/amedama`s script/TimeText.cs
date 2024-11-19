@@ -20,6 +20,6 @@ public class TimeText : MonoBehaviour
     void Update()
     {
         //Debug.Log(gameManager.TimeNow);
-        TimeLimitText.text = gameManager.TimeNow.ToString();
+        //TimeLimitText.text = gameManager.TimeNow.ToString();
     }
 }
