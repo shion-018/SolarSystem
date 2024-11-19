@@ -10,7 +10,7 @@ public class HighJudge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(this.transform.position.x, HighJudgeHeight, this.transform.position.z);
+        //transform.position = new Vector3(this.transform.position.x, HighJudgeHeight, this.transform.position.z);
     }
 
     // Update is called once per frame
