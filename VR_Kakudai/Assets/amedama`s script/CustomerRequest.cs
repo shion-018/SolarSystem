@@ -35,7 +35,7 @@ public class CustomerRequest : MonoBehaviour
     private int AssortJudge = 0;
 
 
-    private int aaa = 1;//仮
+    [SerializeField]private int aaa = 1;//仮
     private int HighJudgeNumber;
 
     // Start is called before the first frame update
