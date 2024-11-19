@@ -6362,8 +6362,6 @@ MonoBehaviour:
   - Counter Position3
   targets: []
   RoadName0:
-  - Road0-1
-  - Road0-2
   - Road0-3
   RoadName1:
   - Road1-1
