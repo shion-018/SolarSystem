@@ -869,6 +869,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 47964abd8aa15c041bd7039cd1349e75,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 08cf0af7cbad20148a73977087d9c2a1, type: 3}
+    - target: {fileID: 5866666021909216657, guid: 47964abd8aa15c041bd7039cd1349e75,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 89a88d902b0f3164482668dd8ab8664b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -995,8 +1005,6 @@ MonoBehaviour:
   - Counter Position3
   targets: []
   RoadName0:
-  - Road0-1
-  - Road0-2
   - Road0-3
   RoadName1:
   - Road1-1
