@@ -49,15 +49,15 @@ public class DishesSetting : MonoBehaviour
 
         switch ((int)this.gameObject.transform.localScale.x)
         {
-            case 0:
+            case 1:
                 DishesNumber = Number[0];
                 break;
 
-            case 1:
+            case 2:
                 DishesNumber = Number[1];
                 break;
 
-            case 2:
+            case 3:
                 DishesNumber = Number[2];
                 break;
 

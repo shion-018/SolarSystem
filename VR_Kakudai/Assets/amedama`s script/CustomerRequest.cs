@@ -50,7 +50,7 @@ public class CustomerRequest : MonoBehaviour
         Assort = Random.Range(1, AssortDishesNumberMax);
         AssortDishesNumber = new int[Assort];
 
-        Debug.Log(Assort);
+       
 
 
         for (int DishesNumber = 0; DishesNumber < RequestDishes.Length; DishesNumber++)
@@ -73,7 +73,6 @@ public class CustomerRequest : MonoBehaviour
         {
             case 0:
 
-                Debug.Log("Case 0");
 
                 //乱数生成の上限と下限を設定
                 DishesValueMin = 0;
@@ -102,7 +101,7 @@ public class CustomerRequest : MonoBehaviour
 
             case 1:
 
-                Debug.Log("Case 1");
+          
 
                 //乱数生成の上限と下限を設定
                 DishesValueMin = 0;
@@ -140,17 +139,19 @@ public class CustomerRequest : MonoBehaviour
         DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
         HighJudge highJudge = colliderDishes.gameObject.GetComponentInChildren<HighJudge>();
 
-        Debug.Log(colliderDishes.gameObject);
+        
 
         for (int i = 0; i < Assort; i++)
         {
+            Debug.Log("AssortDishesNumber : " + AssortDishesNumber[i] + " | ColDishesSettiong.DishesNumber : " + ColDishesSetting.DishesNumber);
+
             if (AssortDishesNumber[i] == ColDishesSetting.DishesNumber)//料理が正しいかを判定
             {
 
                 AssortDishesNumber[i] = -1;
                 AssortJudge += 1;
 
-                Debug.Log(AssortJudge);
+               
 
             }
         }
@@ -162,18 +163,21 @@ public class CustomerRequest : MonoBehaviour
                 if (AssortJudge == Assort)
                 {
                     amountText.Amount(DishesMagnification(colliderDishes));
+                    Debug.Log(colliderDishes.gameObject);
 
                     Destroy(colliderDishes.gameObject);
+
                 }
                 break;
 
             case 1:
 
 
-                if (highJudge.satisfyHeight > HighJudgeNumber)
+                if (highJudge.satisfyHeight >= HighJudgeNumber)
                 {
 
                     amountText.Amount(DishesMagnification(colliderDishes));
+                    Debug.Log(colliderDishes.gameObject);
 
                     Destroy(colliderDishes.gameObject);
 
