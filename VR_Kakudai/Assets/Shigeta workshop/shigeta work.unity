@@ -8883,10 +8883,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2190d2993ac5c4281285c938f961a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs:
-  - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  spawnPoints:
-  - {fileID: 3786244282230049464, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
+  oculusController: 2
+  grabRadius: 0.2
+  grabbableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  grabHoldDuration: 0.5
 --- !u!114 &491835695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18825,11 +18827,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8557186196169287253, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
+    - target: {fileID: -8247858087064322042, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
+    - target: {fileID: -6867183505990268438, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
     - target: {fileID: -6033611301746311989, guid: 36219e0af6849b743aa5d7bcf6c42afa,
         type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -1934149327396006691, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
+    - target: {fileID: -1202277625504280213, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f1f112573d3fcaf4a83859cbf533da71, type: 2}
+    - target: {fileID: 551277989089093184, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
     - target: {fileID: 866622991362577334, guid: 36219e0af6849b743aa5d7bcf6c42afa,
         type: 3}
       propertyPath: m_IsActive
@@ -18850,6 +18882,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 374
       objectReference: {fileID: 0}
+    - target: {fileID: 6769783689388911432, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
+    - target: {fileID: 8527080394378119245, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
+    - target: {fileID: 8569561733979910035, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27698733bf9f6b7468140f14bcb3471b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -19628,14 +19675,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2190d2993ac5c4281285c938f961a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs:
-  - {fileID: 4593849405150154754, guid: b225f5a33d5213d498ee899a926d04b0, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnPoints:
-  - {fileID: 984640758}
-  - {fileID: 0}
-  - {fileID: 0}
+  oculusController: 2
+  grabRadius: 0.2
+  grabbableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  grabHoldDuration: 0.5
 --- !u!1 &985315543
 GameObject:
   m_ObjectHideFlags: 0
