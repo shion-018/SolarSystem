@@ -3,196 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class ToppingManager : MonoBehaviour
+public class GrabController : MonoBehaviour
 {
-    public GameObject[] objectPrefabs;  // 生成するオブジェクトのプレハブ配列
-    public Transform[] spawnPoints;     // 生成ポイントの配列
+    public OVRInput.Controller oculusController = OVRInput.Controller.RTouch; // Oculusコントローラー
+    public float grabRadius = 0.2f; // 掴む範囲
+    public LayerMask grabbableLayer; // 掴めるオブジェクトのレイヤー
+    public float grabHoldDuration = 0.5f; // 左クリック長押しの時間
 
-    private Camera cam;
-    private GameObject selectedObject;
-    private Rigidbody selectedObjectRb;
-    private Vector3 lastMousePosition;
-    private bool isGrabbing = false;
-
-    private List<ObjectState> spawnedObjects = new List<ObjectState>(); // 生成されたオブジェクトの状態を追跡
-
-    void Start()
-    {
-        cam = Camera.main;
-    }
+    private GameObject grabbedObject; // 掴んだオブジェクト
+    private float leftClickHoldTime = 0f; // 左クリック長押しのタイマー
 
     void Update()
     {
-        HandleRightClick();  // 右クリック（VRではBボタン）で新しいオブジェクトを生成または削除
-        HandleGrab();        // 左クリック（VRではRTボタン）で掴む
-        HandleRelease();     // 左クリックを離すと放つ
-        HandleDrag();        // 掴んでいる間オブジェクトを動かす
-    }
+        // Oculusコントローラーの入力をチェック
+        bool isOculusGrabbing = OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, oculusController);
 
-    // 右クリックでオブジェクトを生成または未選択のものをまとめて削除
-    void HandleRightClick()
-    {
-        bool rightClick = Input.GetMouseButtonDown(1) || OVRInput.GetDown(OVRInput.RawButton.B);
-
-        // 左クリックが長押しされている間は新規オブジェクトを生成しない
-        if (rightClick && !isGrabbing)
+        // マウスの左クリック入力をチェック
+        if (Input.GetMouseButton(0)) // 左クリックが押され続けている場合
         {
-            Debug.Log("Right click detected!");
+            leftClickHoldTime += Time.deltaTime;
+        }
+        else
+        {
+            leftClickHoldTime = 0f; // 離されたらリセット
+        }
 
-            if (HasUngrabbedObjects())
-            {
-                DeleteAllUngrabbedObjects();
-            }
-            else
-            {
-                SpawnMultipleObjects();
-            }
+        bool isMouseGrabbing = leftClickHoldTime >= grabHoldDuration;
+
+        // 掴むアクション
+        if (isOculusGrabbing || isMouseGrabbing)
+        {
+            TryGrab();
+        }
+
+        // 掴んだオブジェクトを離す
+        if ((OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, oculusController) || Input.GetMouseButtonUp(0)) && grabbedObject != null)
+        {
+            ReleaseGrab();
         }
     }
 
-    // 未選択のオブジェクトが存在するか確認
-    bool HasUngrabbedObjects()
+    void TryGrab()
     {
-        // リストからすでに消滅したオブジェクトを削除
-        spawnedObjects.RemoveAll(obj => obj.ObjectInstance == null);
+        if (grabbedObject != null) return; // 既に掴んでいる場合は処理しない
 
-        // リスト内に未選択のオブジェクトが残っているかを確認
-        foreach (var objState in spawnedObjects)
+        // プレイヤーの周囲を探索
+        Collider[] hits = Physics.OverlapSphere(transform.position, grabRadius, grabbableLayer);
+
+        if (hits.Length > 0)
         {
-            if (!objState.IsGrabbed)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // 未選択のオブジェクトを全て削除
-    void DeleteAllUngrabbedObjects()
-    {
-        List<ObjectState> objectsToRemove = new List<ObjectState>();
-
-        foreach (var objState in spawnedObjects)
-        {
-            // オブジェクトが存在し、かつ未選択の場合、削除対象に追加
-            if (!objState.IsGrabbed && objState.ObjectInstance != null)
-            {
-                objectsToRemove.Add(objState);
-            }
-        }
-
-        // 削除対象のオブジェクトを消去
-        foreach (var objState in objectsToRemove)
-        {
-            Destroy(objState.ObjectInstance);
-            objState.ObjectInstance = null;
-        }
-
-        // すでに消滅したオブジェクトもリストから削除
-        spawnedObjects.RemoveAll(obj => obj.ObjectInstance == null);
-        Debug.Log("All ungrabbed objects deleted.");
-    }
-
-    // 複数のオブジェクトを生成
-    void SpawnMultipleObjects()
-    {
-        if (objectPrefabs.Length == 0 || spawnPoints.Length == 0)
-        {
-            Debug.LogWarning("No prefabs or spawn points set in the inspector.");
-            return;
-        }
-
-        for (int i = 0; i < spawnPoints.Length; i++)
-        {
-            GameObject prefabToSpawn = objectPrefabs[i % objectPrefabs.Length];
-            GameObject newObject = Instantiate(prefabToSpawn, spawnPoints[i].position, Quaternion.identity);
-            newObject.tag = "sushi";
-            Rigidbody newObjectRb = newObject.GetComponent<Rigidbody>();
-            newObjectRb.useGravity = false;
-
-            ObjectState newState = new ObjectState(newObject, spawnPoints[i].position);
-            spawnedObjects.Add(newState);
-
-            Debug.Log("New object spawned at: " + spawnPoints[i].position);
+            // 最初にヒットしたオブジェクトを掴む
+            grabbedObject = hits[0].gameObject;
+            grabbedObject.transform.SetParent(transform);
+            grabbedObject.GetComponent<Rigidbody>().isKinematic = true; // 物理挙動を無効化
         }
     }
 
-    // オブジェクトを掴む
-    void HandleGrab()
+    void ReleaseGrab()
     {
-        bool leftClick = Input.GetMouseButtonDown(0) /*|| Input.GetAxis("XRI_Right_Trigger") > 0.5f*/;
-
-        if (leftClick && !isGrabbing)
-        {
-            Debug.Log("Left click detected!");
-
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.CompareTag("sushi"))
-            {
-                selectedObject = hit.collider.gameObject;
-                selectedObjectRb = selectedObject.GetComponent<Rigidbody>();
-                selectedObjectRb.isKinematic = true;
-                selectedObjectRb.useGravity = false;
-                lastMousePosition = Input.mousePosition;
-                isGrabbing = true;
-
-                foreach (var objState in spawnedObjects)
-                {
-                    if (objState.ObjectInstance == selectedObject)
-                    {
-                        objState.IsGrabbed = true;
-                        break;
-                    }
-                }
-
-                DeleteAllUngrabbedObjects();
-            }
-        }
+        // 掴んだオブジェクトを解放
+        grabbedObject.GetComponent<Rigidbody>().isKinematic = false; // 物理挙動を有効化
+        grabbedObject.transform.SetParent(null);
+        grabbedObject = null;
     }
 
-    // 掴んでいる間オブジェクトをドラッグする
-    void HandleDrag()
+    private void OnDrawGizmosSelected()
     {
-        if (isGrabbing && selectedObject != null)
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            Vector3 newObjectPos = ray.GetPoint(5);
-            selectedObject.transform.position = newObjectPos;
-        }
-    }
-
-    // 掴んでいるオブジェクトを放す
-    void HandleRelease()
-    {
-        bool leftRelease = Input.GetMouseButtonUp(0) /*|| Input.GetAxis("XRI_Right_Trigger") < 0.5f*/;
-
-        if (isGrabbing && leftRelease)
-        {
-            Debug.Log("Left click release detected!");
-
-            // 重力を有効にして、オブジェクトが自然に落ちるようにする
-            selectedObjectRb.isKinematic = false;
-            selectedObjectRb.useGravity = true;
-
-            isGrabbing = false;
-            selectedObject = null;
-            selectedObjectRb = null;
-        }
-    }
-
-    private class ObjectState
-    {
-        public GameObject ObjectInstance;
-        public Vector3 InitialPosition;
-        public bool IsGrabbed;
-
-        public ObjectState(GameObject instance, Vector3 position)
-        {
-            ObjectInstance = instance;
-            InitialPosition = position;
-            IsGrabbed = false;
-        }
+        // 掴む範囲を視覚化
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, grabRadius);
     }
 }
