@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7c20922f550e23048b6837aa00e36527
+guid: 4c7232405a7bcca4f9f9a18e6b1cc78a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: 93e16b52a81764541817245e244b52ec, type: 2}
+      name: kaiage_mt
+    second: {fileID: 2100000, guid: 64c63086583afda438906ba0c1fb478e, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: katsu01
-    second: {fileID: 2800000, guid: 5f5dec1077f4dbc45ab56584f14436f3, type: 3}
+      name: kakiae_tex
+    second: {fileID: 2800000, guid: 565b0e60b3e722947a539d404a776c62, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
