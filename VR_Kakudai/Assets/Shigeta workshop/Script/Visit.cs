@@ -163,9 +163,18 @@ public class Visit : MonoBehaviour
         {
             empty.seat[seatnum] = true;
             CustmerCounter.counter--;
+
+            // 自分の親オブジェクトを削除
+            if (transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+
+            // 自分自身を削除
             Destroy(this.gameObject);
         }
     }
+
 
     void InputRoad(int seatnum)
     {
