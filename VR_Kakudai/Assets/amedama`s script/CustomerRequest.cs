@@ -19,14 +19,17 @@ public class CustomerRequest : MonoBehaviour
     [SerializeField] private GameObject SalesAmountText;//売上金額の合計を映すところ
 
 
-    
+    /// 仮
+    [SerializeField] private GameObject UI_matome;
+    [SerializeField] private Transform contect;
+
 
     private int DishesValue; private int DishesValueMin; private int DishesValueMax;
     private int SizeSpecificationSpriteValue; private int SizeSpecificationSpriteValueMin; private int SizeSpecificationSpriteValueMax;
     private int RequestDishesPrice = 0;
     private int[] DishesMagPrice;
     private int SalesAmount = 0;
-    private int AssortDishesNumberMax = 2;//最大の料理組み合わせ数 + 1
+    [SerializeField] private int AssortDishesNumberMax = 2;//最大の料理組み合わせ数 + 1
     private int[] AssortDishesNumber;
     private DishesSetting dishesSetting;
     private AmountText amountText;
@@ -37,6 +40,7 @@ public class CustomerRequest : MonoBehaviour
 
     [SerializeField]private int aaa = 1;//仮
     private int HighJudgeNumber;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -44,13 +48,26 @@ public class CustomerRequest : MonoBehaviour
 
 
 
-        Sprite[] DishesSprits = new Sprite[RequestDishes.Length];
+        Sprite[] DishesSprits = new Sprite[RequestDishes.Length];//料理の画像        
         int[] DishesPrice = new int[RequestDishes.Length];
-
         Assort = Random.Range(1, AssortDishesNumberMax);
         AssortDishesNumber = new int[Assort];
 
-       
+        Transform[] UI_matome_Hairetu = new Transform[Assort];
+        Image[,] UI_Images = new Image[Assort, 3];//料理の画像を表示するUI
+
+        for (int i = 0; i < UI_matome_Hairetu.Length; i++)
+        {
+            UI_matome_Hairetu[i] = Instantiate(UI_matome, contect).transform;
+            
+            for(int j = 0;j < UI_Images.GetLength(1);j++)
+            {
+ 
+                UI_Images[i,j] = UI_matome_Hairetu[i].transform.GetChild(j).GetComponent<Image>();
+               
+            }
+        }
+
 
 
         for (int DishesNumber = 0; DishesNumber < RequestDishes.Length; DishesNumber++)
@@ -86,10 +103,10 @@ public class CustomerRequest : MonoBehaviour
 
                     DishesValue = Random.Range(DishesValueMin, DishesValueMax);
                     dishesSetting = RequestDishes[DishesValue].GetComponent<DishesSetting>();
-                    DishesImage.sprite = DishesSprits[DishesValue];
+                    UI_Images[i,0].sprite = DishesSprits[DishesValue];                    
                     RequestDishesPrice = DishesPrice[DishesValue];
                     SizeSpecificationSpriteValue = Random.Range(SizeSpecificationSpriteValueMin, SizeSpecificationSpriteValueMax);
-                    SizeImage.sprite = SizeSpecificationSprits[SizeSpecificationSpriteValue];
+                    UI_Images[i, 1].sprite = SizeSpecificationSprits[SizeSpecificationSpriteValue];
 
                     AssortDishesNumber[i] = dishesSetting.Number[SizeSpecificationSpriteValue];
 
@@ -110,10 +127,11 @@ public class CustomerRequest : MonoBehaviour
                 //乱数生成で料理と大きさを決定
                 DishesValue = Random.Range(DishesValueMin, DishesValueMax);
                 dishesSetting = RequestDishes[DishesValue].GetComponent<DishesSetting>();
-                DishesImage.sprite = DishesSprits[DishesValue];
+                UI_Images[0,0].sprite = DishesSprits[DishesValue];
                 RequestDishesPrice = DishesPrice[DishesValue];
                 SizeSpecificationSpriteValue = Random.Range(SizeSpecificationSpriteValueMin, SizeSpecificationSpriteValueMax);
-                SizeImage.sprite = HighSpecificationSprits[SizeSpecificationSpriteValue];
+                UI_Images[0,1].sprite = HighSpecificationSprits[SizeSpecificationSpriteValue];
+
 
                 AssortDishesNumber[0] = dishesSetting.Number[SizeSpecificationSpriteValue];
 
