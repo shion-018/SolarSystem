@@ -48,7 +48,10 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 123
+
+
+  controlID: 111
+
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -92,10 +95,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 290.4
-    height: 427.2
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+
+    width: 288
+    height: 423.2
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +228,10 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 69
+
+
+  controlID: 58
+
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +256,9 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 70
+
+  controlID: 59
+
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -322,7 +332,9 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Shigeta workshop/Prefab/Food
+
+    - Assets/aoi workshop/Scripts
+
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -330,16 +342,20 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Shigeta workshop/Prefab/Food
+
+  - Assets/aoi workshop/Scripts
+
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Game3\SolarSystem\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 310.99997}
-    m_SelectedIDs: e2a40000
-    m_LastClickedID: 42210
-    m_ExpandedIDs: 00000000149a0000d69a0000d0a4000000ca9a3b
+
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: dc9a0000
+    m_LastClickedID: 39644
+    m_ExpandedIDs: 00000000549a0000569a0000589a00005a9a00005c9a00005e9a000000ca9a3bffffff7f
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +383,9 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000149a0000
+
+    m_ExpandedIDs: 00000000549a0000569a0000589a00005a9a00005c9a00005e9a0000
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -508,10 +526,12 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 94.79999}
-      m_SelectedIDs: 1428ffff
-      m_LastClickedID: -55276
-      m_ExpandedIDs: 801affff1428ffff5e32ffff4057fffffc66ffff3478ffff0279ffff64a6ffffeedaffff7addffff7eddffff2ef3ffffe8faffffecfaffff14fbffff2cfbfffffa7800004c840000
+
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: ce490000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 34faffff
+
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -879,9 +899,11 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.999446, y: 3.0748227, z: 19.977488}
+
+    m_Target: {x: -5.6239467, y: 3.0557153, z: 20.848219}
     speed: 2
-    m_Value: {x: -4.999446, y: 3.0748227, z: 19.977488}
+    m_Value: {x: -5.6239467, y: 3.0557153, z: 20.848219}
+
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -929,11 +951,13 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.16702172, y: -0.6593859, z: 0.15334952, w: 0.71754575}
     speed: 2
-    m_Value: {x: 0.1660722, y: -0.65921575, z: 0.15247534, w: 0.7173603}
+
+    m_Value: {x: 0.038966637, y: 0.6224869, z: 0.030960253, w: -0.7810462}
   m_Size:
-    m_Target: 0.19477908
+    m_Target: 0.76449883
     speed: 2
-    m_Value: 0.19477908
+    m_Value: 0.76449883
+
   m_Ortho:
     m_Target: 0
     speed: 2
