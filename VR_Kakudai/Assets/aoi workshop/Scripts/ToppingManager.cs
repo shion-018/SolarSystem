@@ -64,7 +64,7 @@ public class ToppingManager : MonoBehaviour
                 {
                     collider = newObject.AddComponent<BoxCollider>();
                 }
-                collider.isTrigger = true;
+                collider.isTrigger = false;
 
                 // Rigidbodyを追加し、物理演算での制御を可能にする
                 Rigidbody rb = newObject.GetComponent<Rigidbody>();
