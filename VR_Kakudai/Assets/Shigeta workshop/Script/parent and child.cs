@@ -10,14 +10,17 @@ public class parentandchild : MonoBehaviour
     void Update()
     {
         bool rightClick = OVRInput.GetDown(OVRInput.RawButton.A);
-        if (Input.GetKey(KeyCode.A)||rightClick)
-            if(targetSushi != null) {
-                {
-                    Debug.Log("かき揚げ");
-                    targetSushi.transform.SetParent(this.transform);
-                    targetSushi = null; // 一度設定したらクリア
-                }
-        }
+        Transform currentParent = this.transform.parent;
+
+        if (Input.GetKey(KeyCode.A) || rightClick)
+            if (targetSushi != null)
+            {
+                targetSushi.transform.SetParent(this.transform);
+                targetSushi = null; // 一度設定したらクリア
+
+            }
+
+        
     }
 
     private void OnCollisionStay(Collision collision)
