@@ -605,7 +605,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 50
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 159.43094
   m_InnerSpotAngle: 111.064575
@@ -644,7 +644,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -5527,7 +5527,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100
+  m_Intensity: 10
   m_Range: 7
   m_SpotAngle: 159.43094
   m_InnerSpotAngle: 111.064575
@@ -5566,7 +5566,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -8883,10 +8883,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2190d2993ac5c4281285c938f961a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs:
-  - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  spawnPoints:
-  - {fileID: 3786244282230049464, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
+  oculusController: 2
+  grabRadius: 0.2
+  grabbableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  grabHoldDuration: 0.5
 --- !u!114 &491835695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9098,7 +9100,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 50
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 159.43094
   m_InnerSpotAngle: 159.43094
@@ -9137,7 +9139,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -12648,7 +12650,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 50
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 159.43094
   m_InnerSpotAngle: 111.064575
@@ -12687,7 +12689,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -17416,7 +17418,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 50
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 159.43094
   m_InnerSpotAngle: 111.064575
@@ -17455,7 +17457,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -19628,14 +19630,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2190d2993ac5c4281285c938f961a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs:
-  - {fileID: 4593849405150154754, guid: b225f5a33d5213d498ee899a926d04b0, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnPoints:
-  - {fileID: 984640758}
-  - {fileID: 0}
-  - {fileID: 0}
+  oculusController: 2
+  grabRadius: 0.2
+  grabbableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  grabHoldDuration: 0.5
 --- !u!1 &985315543
 GameObject:
   m_ObjectHideFlags: 0
@@ -19972,6 +19972,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 753900080}
+  - {fileID: 1091056893}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994975501
@@ -22161,15 +22162,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091056892}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.00913, y: -1.5525504, z: 17.957943}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -210.09131, y: -15.525504, z: 179.57944}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 684088110}
   - {fileID: 1188549905}
   - {fileID: 355075353}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 993152428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1092354109
 GameObject:
@@ -23946,7 +23947,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100
+  m_Intensity: 10
   m_Range: 50
   m_SpotAngle: 179
   m_InnerSpotAngle: 111.064575
@@ -23985,7 +23986,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -33280,7 +33281,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100
+  m_Intensity: 10
   m_Range: 50
   m_SpotAngle: 179
   m_InnerSpotAngle: 111.064575
@@ -33319,7 +33320,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -33345,18 +33346,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3072275858059735314, guid: 201e6bc98dd793247a5d66664e6cd359,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072275858059735314, guid: 201e6bc98dd793247a5d66664e6cd359,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072275858059735314, guid: 201e6bc98dd793247a5d66664e6cd359,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072275858059735314, guid: 201e6bc98dd793247a5d66664e6cd359,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.316
+      value: -5.661
       objectReference: {fileID: 0}
     - target: {fileID: 3072275858059735314, guid: 201e6bc98dd793247a5d66664e6cd359,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.115
+      value: 2.691
       objectReference: {fileID: 0}
     - target: {fileID: 3072275858059735314, guid: 201e6bc98dd793247a5d66664e6cd359,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.96
+      value: 20.183
       objectReference: {fileID: 0}
     - target: {fileID: 3072275858059735314, guid: 201e6bc98dd793247a5d66664e6cd359,
         type: 3}
@@ -33897,7 +33913,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100
+  m_Intensity: 10
   m_Range: 50
   m_SpotAngle: 179
   m_InnerSpotAngle: 111.064575
@@ -33936,7 +33952,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -41510,7 +41526,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 50
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 111.064575
@@ -41549,7 +41565,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -42130,5 +42146,4 @@ SceneRoots:
   - {fileID: 640078961}
   - {fileID: 953632041}
   - {fileID: 1734879280}
-  - {fileID: 1091056893}
   - {fileID: 993152428}
