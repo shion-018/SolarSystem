@@ -68,6 +68,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: kakiage_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1816479882577499875, guid: 4c7232405a7bcca4f9f9a18e6b1cc78a,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816479882577499875, guid: 4c7232405a7bcca4f9f9a18e6b1cc78a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816479882577499875, guid: 4c7232405a7bcca4f9f9a18e6b1cc78a,
+        type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816479882577499875, guid: 4c7232405a7bcca4f9f9a18e6b1cc78a,
+        type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
