@@ -73,6 +73,7 @@
     <Compile Include="Assets\Shigeta workshop\Script\generation.cs" />
     <Compile Include="Assets\Scripts\ObjectToggle.cs" />
     <Compile Include="Assets\amedama`s script\Size Specification.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\Not use\parent and child.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
     <Compile Include="Assets\amedama`s script\ScreenTransitions.cs" />
     <Compile Include="Assets\amedama`s script\SceneChange.cs" />
@@ -87,12 +88,12 @@
     <Compile Include="Assets\amedama`s script\DifficultStretch.cs" />
     <Compile Include="Assets\amedama`s script\TimeText.cs" />
     <Compile Include="Assets\amedama`s script\UI Rotation.cs" />
+    <Compile Include="Assets\Shigeta workshop\Script\AttachChildrenInRange.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Not use\Moob.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Not use\TimeBar.cs" />
     <Compile Include="Assets\amedama`s script\alpha key.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\emptyseat.cs" />
     <Compile Include="Assets\amedama`s script\ScreenTransition.cs" />
-    <Compile Include="Assets\Shigeta workshop\Script\parent and child.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

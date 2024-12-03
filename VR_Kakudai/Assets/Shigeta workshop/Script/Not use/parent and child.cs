@@ -10,7 +10,7 @@ public class parentandchild : MonoBehaviour
     void Update()
     {
         bool rightClick = OVRInput.GetDown(OVRInput.RawButton.A);
-        Transform currentParent = this.transform.parent;
+        //Transform currentParent = this.transform.parent;
 
         if (Input.GetKey(KeyCode.A) || rightClick)
             if (targetSushi != null)
@@ -23,10 +23,11 @@ public class parentandchild : MonoBehaviour
         
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("sushi"))
         {
+            Debug.Log("“‚—g‚°");
             targetSushi = collision.gameObject;
         }
     }
