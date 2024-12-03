@@ -26,7 +26,6 @@ public class GameStateChange : MonoBehaviour
 
         gameManager.gamestate = GameManager.GAMESTATE.Play;
 
-
     }
 
 

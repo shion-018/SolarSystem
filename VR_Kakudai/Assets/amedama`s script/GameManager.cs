@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
 
 
 
@@ -52,8 +53,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.sceneLoaded += SceneloadIvent;
 
 
+    }
+
+    void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
+    {
+
+        TimeLimitText = TextMeshProUGUI.Find("TimeText");
 
     }
 
@@ -73,7 +81,7 @@ public class GameManager : MonoBehaviour
             if (Seconds_If >= 1.0f)
             {
                 TimeNow += 1;
-                //TimeLimitText.text = TimeNow.ToString();
+                TimeLimitText.text = TimeNow.ToString();
                 Seconds_If = 0;
 
                 if (TimeLimit <= TimeNow)
