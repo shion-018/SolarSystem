@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SpeechBubbleTimer : MonoBehaviour
 {
     //timerLimit‚Å§ŒÀŠÔ•ÏX
-    float timerLimit;
+    [SerializeField] float timerLimit;
     float seconds = 0f;
     
     [SerializeField] TestClock testclock;
