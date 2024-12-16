@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("")]
 
 
-
     public enum GAMESTATE
     {
         Title,
@@ -68,11 +67,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            gamestate = GAMESTATE.Play;
-        }
-
         if (gamestate == GAMESTATE.Play)//時間をカウントする処理
         {
             Seconds_If += Time.deltaTime;
@@ -86,6 +80,7 @@ public class GameManager : MonoBehaviour
                 if (TimeLimit <= TimeNow)
                 {
                     TimeNow = 0;
+                    gamestate = GAMESTATE.GameEnd;
 
                 }
 
