@@ -54,14 +54,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += SceneloadIvent;
-
-
     }
 
     void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
     {
 
-        TimeLimitText = TextMeshProUGUI.Find("TimeText");
+        TimeLimitText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
+        Debug.Log(TimeLimitText);
 
     }
 

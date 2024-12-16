@@ -455,7 +455,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022295387}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54df21bbe09fe5c469398275b405b2e4, type: 3}
   m_Name: 
@@ -1250,7 +1250,7 @@ PrefabInstance:
     - target: {fileID: 8147324909571315226, guid: 9a755b017e0818540bdf54364b59df20,
         type: 3}
       propertyPath: m_Name
-      value: Text (TMP)
+      value: TimeText
       objectReference: {fileID: 0}
     - target: {fileID: 8693997434384642287, guid: 9a755b017e0818540bdf54364b59df20,
         type: 3}
