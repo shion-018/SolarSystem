@@ -1,8 +1,10 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
 
 
 
@@ -11,10 +13,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    [SerializeField, Tooltip("ƒ^ƒCƒ€ƒŠƒ~ƒbƒgi•bj")] int TimeLimit = 60;
-    [SerializeField, Tooltip("§ŒÀŠÔText")] TextMeshProUGUI TimeLimitText;
+    [SerializeField, Tooltip("ã‚¿ã‚¤ãƒ ãƒªãƒŸãƒƒãƒˆï¼ˆç§’ï¼‰")] int TimeLimit = 60;
+    [SerializeField, Tooltip("åˆ¶é™æ™‚é–“Text")] TextMeshProUGUI TimeLimitText;
     [SerializeField, Tooltip("")]
-
 
 
     public enum GAMESTATE
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public GAMESTATE gamestate = GAMESTATE.Title;
 
-    int TimeNow = 0;
+    public int TimeNow = 0;
     float Seconds_If;
 
 
@@ -51,8 +52,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.sceneLoaded += SceneloadIvent;
+        TimeNow = TimeLimit;
+    }
 
+    void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
+    {
 
+        TimeLimitText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
+        Debug.Log(TimeLimitText);
 
     }
 
@@ -60,24 +68,20 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            gamestate = GAMESTATE.Play;
-        }
-
-        if (gamestate == GAMESTATE.Play)//ŠÔ‚ğƒJƒEƒ“ƒg‚·‚éˆ—
+        if (gamestate == GAMESTATE.Play)//æ™‚é–“ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹å‡¦ç†
         {
             Seconds_If += Time.deltaTime;
 
             if (Seconds_If >= 1.0f)
             {
-                TimeNow += 1;
+                TimeNow -= 1;
                 TimeLimitText.text = TimeNow.ToString();
                 Seconds_If = 0;
 
                 if (TimeLimit <= TimeNow)
                 {
                     TimeNow = 0;
+                    gamestate = GAMESTATE.GameEnd;
 
                 }
 
@@ -87,3 +91,4 @@ public class GameManager : MonoBehaviour
     }
 
 }
+

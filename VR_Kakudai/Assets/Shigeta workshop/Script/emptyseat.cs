@@ -7,7 +7,7 @@ public class emptyseat : MonoBehaviour
     public bool[] seat;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         for (int i = 0; i< seat.Length;i++)
         {

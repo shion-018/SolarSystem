@@ -7,7 +7,7 @@ using UnityEngine.UIElements.Experimental;
 public class AmountText : MonoBehaviour
 {
 
-    [SerializeField] private TextMeshProUGUI SalesAmountText;
+    [SerializeField]private TextMeshProUGUI SalesAmountText;
     private int SalesAmount = 0;
 
     // Start is called before the first frame update

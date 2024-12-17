@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: 63be942d02d18f246ae07cb9f417fd5c
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chear
+    second: {fileID: 2100000, guid: f74a08a7ce9ad754084874ae99ff8e88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chopstick
+    second: {fileID: 2100000, guid: 0c174575c8dedf44fa3948770dd4d5d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: counter_rightwall
+    second: {fileID: 2100000, guid: b54cd01df80e7264184d5779e3fefd48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: counterdoor
+    second: {fileID: 2100000, guid: 516730841fea8de48b510ef9bc0a4d9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: countertable
+    second: {fileID: 2100000, guid: f374e04ce892cf0418fff2b6b19cf47c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door_left
+    second: {fileID: 2100000, guid: d6ecb460d73569e4a94b084096dc1c21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door_right
+    second: {fileID: 2100000, guid: d51e1b898d312d648ad2bc9538198159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: entrance
+    second: {fileID: 2100000, guid: b67246fb197a9b94c93b391dfe2e771f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaskonro
+    second: {fileID: 2100000, guid: 4b2111614fe134041aceaf1619121d0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gastable
+    second: {fileID: 2100000, guid: 93eaa8bbe76431d4bb652c41f13196d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: haisuikou
+    second: {fileID: 2100000, guid: 9aa1f382221bf074a8d30b7af83bb3c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: keikoutou
+    second: {fileID: 2100000, guid: 5f915d191905ff941839ec6ceab54e64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: konro_switch
+    second: {fileID: 2100000, guid: 0be1d0b30b276794c95b264090e950d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 38dedec210481b343899835dd9ed4c6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light_kyakuseki
+    second: {fileID: 2100000, guid: ac5b1dc137d6ec54cbe12d9a843d971f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moritukeki
+    second: {fileID: 2100000, guid: 3f517810a632ce6489a4ca4b09d117e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paper
+    second: {fileID: 2100000, guid: 0109d120c2dacb24995b73e32418e92b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paul
+    second: {fileID: 2100000, guid: 37138910a6daeab4db5c05c219385f42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: refrigerator
+    second: {fileID: 2100000, guid: 25c8b26e8ad1dcf4197889a782818393, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rice_cooker_lid
+    second: {fileID: 2100000, guid: 2bbe2ffb893f1494491d4c852d8b463d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squarechear
+    second: {fileID: 2100000, guid: 6932d4ed23af910419b05ba835f32558, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_mat
+    second: {fileID: 2100000, guid: 37f6d57b4b4d5804fa556ac294456d45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ventilation_fan
+    second: {fileID: 2100000, guid: f38c1b9c7194e9a4b815260f63b807e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2100000, guid: ea0475b7a239e4c44900108499b526fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water_place_faucet
+    second: {fileID: 2100000, guid: 2928a7f0c0b285f4ab77276cc179d68b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: waterplace
+    second: {fileID: 2100000, guid: 40e6ba5a45560d748a0ff28f9e719a79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: workplace_back
+    second: {fileID: 2100000, guid: 169997de5e23d9044899af3590547853, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: worktable
+    second: {fileID: 2100000, guid: 3cb8c54bceceae64cbebcb71ba620ab1, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1140
+    second: {fileID: 2800000, guid: 93b543eee8b6b7f4887c31178e52fc9d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1143
+    second: {fileID: 2800000, guid: e8c4e2e902258ea49bc4e70dfa30747d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1151
+    second: {fileID: 2800000, guid: 7b5eb1e18ae3fe649a56eed62e9aab59, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1158
+    second: {fileID: 2800000, guid: cc870c6a5152e9a499af8c678a3ed5c0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1161
+    second: {fileID: 2800000, guid: c03f97c6d2b3cf342805a6983fb34a46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1170
+    second: {fileID: 2800000, guid: e97f59514b0aed14da96703d4b4d859e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1172
+    second: {fileID: 2800000, guid: d0bcd9c528c06b94bbda06259d19723f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1176
+    second: {fileID: 2800000, guid: 451296eeb66aca943b67a51287d02926, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1180
+    second: {fileID: 2800000, guid: 3aee6c6e29ad1ea469e5d2a96fb37ec6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_118122132
+    second: {fileID: 2800000, guid: 2169e75b99af8a4408449105ca59a2ec, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1192
+    second: {fileID: 2800000, guid: b13bf286fa46b524fb058a052fd17839, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1194
+    second: {fileID: 2800000, guid: 918dca923820dbd4798de524c45ef0a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1204
+    second: {fileID: 2800000, guid: 9ea8d66a39221f24db19f34a6105c1e1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1205
+    second: {fileID: 2800000, guid: 37d4134069368bd4497c6c74f224972a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1208
+    second: {fileID: 2800000, guid: c49d089b0e7a17c46ad6061ce25ca5ba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1211
+    second: {fileID: 2800000, guid: 2d5f597675a857c4ea8e7e680f258813, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1213
+    second: {fileID: 2800000, guid: a68fb99ff1cc92a409e0d30f64c764ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IMG_1215
+    second: {fileID: 2800000, guid: 59338eb0d5267fe4b8fa356ebfa37dfd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: img_212
+    second: {fileID: 2800000, guid: 46d6da9ae2543c142a6708cb91a7dce6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: morituke_tex_1
+    second: {fileID: 2800000, guid: 8b79cf1325c26e947a791508fac80ee1, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 0
+    importPhysicalCameras: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 1
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
