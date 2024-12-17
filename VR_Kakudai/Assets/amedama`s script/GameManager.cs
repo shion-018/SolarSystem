@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += SceneloadIvent;
+        TimeNow = TimeLimit;
     }
 
     void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
 
             if (Seconds_If >= 1.0f)
             {
-                TimeNow += 1;
+                TimeNow -= 1;
                 TimeLimitText.text = TimeNow.ToString();
                 Seconds_If = 0;
 

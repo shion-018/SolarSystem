@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DishesSprite: {fileID: 0}
   DishesPrice: 700
-  Number: 000000000000000000000000
+  Number: 090000000a0000000b000000
   DishesNumber: 999
   dishesMagnifications:
   - PriceMagnification:
