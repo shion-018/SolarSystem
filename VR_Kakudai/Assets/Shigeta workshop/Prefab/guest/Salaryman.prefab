@@ -6443,6 +6443,10 @@ MonoBehaviour:
   DishesImage: {fileID: 3042016299346062250}
   SizeImage: {fileID: 4063734389117143124}
   SalesAmountText: {fileID: 2103893928133094582}
+  UI_matome: {fileID: 1601294366854188784, guid: c963150da53da8245bff9c3bb919b997,
+    type: 3}
+  contect: {fileID: 2871553236810130794, guid: 06427a10984d85e409d141a461d6d881, type: 3}
+  AssortDishesNumberMax: 2
   aaa: 0
 --- !u!114 &3631795854974340014
 MonoBehaviour:
