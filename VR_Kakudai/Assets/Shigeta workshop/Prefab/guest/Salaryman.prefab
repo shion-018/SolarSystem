@@ -2546,7 +2546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2663626021817418702
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2755,7 +2755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1971904740511220049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6514,19 +6514,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequestDishes:
   - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
+  - {fileID: 5249408113730299099, guid: 62be556534024b34db3b65ff6a55c03d, type: 3}
+  - {fileID: 1309585570105773060, guid: 62dd7cd6cff078841a27bee7b167d044, type: 3}
+  - {fileID: 2339588246030708915, guid: 43f77ccdc60367147b85e9c8e8886d57, type: 3}
+  - {fileID: 1007433265764114765, guid: b36d3f6603f2c6649befda4fc8ceef90, type: 3}
+  - {fileID: 6075067564970040525, guid: f1264657bb58e284dbb69ffddc649d6a, type: 3}
+  - {fileID: 3586641004761463986, guid: f2af38e9b1de0af4b87932320f03e5e1, type: 3}
   SizeSpecificationSprits:
-  - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
+  - {fileID: 21300000, guid: 46902883bff181b4e854ec4ee5282bfa, type: 3}
+  - {fileID: 21300000, guid: d861e330c2792804eb16858da2d7aaea, type: 3}
+  - {fileID: 21300000, guid: c77c6be6b052bab4bba43cd8ef7b420b, type: 3}
   HighSpecificationSprits:
   - {fileID: 21300000, guid: cb54d447c074276449d238fe9eeeef1a, type: 3}
   DishesImage: {fileID: 3042016299346062250}
   SizeImage: {fileID: 4063734389117143124}
   SalesAmountText: {fileID: 2103893928133094582}
-
-  UI_matome: {fileID: 1601294366854188784, guid: bc30a4b2c2776d041b86371e429600c3,
+  UI_matome: {fileID: 1601294366854188784, guid: c963150da53da8245bff9c3bb919b997,
     type: 3}
   contect: {fileID: 5493870108573677233}
-
-  AssortDishesNumberMax: 2
+  AssortDishesNumberMax: 4
   aaa: 0
 --- !u!114 &3631795854974340014
 MonoBehaviour:

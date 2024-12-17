@@ -25,12 +25,11 @@ public class HighJudge : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         satisfyHeight = HighJudgeHeight;
-        Debug.Log(satisfyHeight);
-    }
 
+    }
     private void OnTriggerExit(Collider other)
     {
         satisfyHeight = 0;
-        Debug.Log(satisfyHeight);
+
     }
 }
