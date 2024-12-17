@@ -14,32 +14,62 @@ public class ToppingManager : MonoBehaviour
     private List<GameObject> spawnedObjects = new List<GameObject>(); // 出現中のオブジェクトを管理するリスト
     private List<GameObject> grabbedObjects = new List<GameObject>(); // 掴まれているオブジェクトを管理するリスト
 
+    private GameObject grabbedObject; // 左クリックで掴むオブジェクト
+    private Camera mainCamera; // メインカメラ
+
+    void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
     void Update()
     {
         // Oculus Quest 2のBボタンまたはマウスの右クリックを検出
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch) || Input.GetMouseButtonDown(1))
         {
-            // 掴まれているオブジェクトを除外してリストをチェック
-            List<GameObject> nonGrabbedObjects = new List<GameObject>();
+            HandleSpawnOrDestroy();
+        }
 
-            foreach (GameObject obj in spawnedObjects)
-            {
-                if (obj != null && !grabbedObjects.Contains(obj))
-                {
-                    nonGrabbedObjects.Add(obj);
-                }
-            }
+        // 左クリックでオブジェクトを掴む
+        if (Input.GetMouseButtonDown(0))
+        {
+            TryGrabObject();
+        }
 
-            if (nonGrabbedObjects.Count == 0)
-            {
-                SpawnPrefabs();
-            }
-            else
-            {
-                DestroyAllPrefabs(nonGrabbedObjects);
-            }
+        // 左クリックを離したらオブジェクトを放す
+        if (Input.GetMouseButtonUp(0))
+        {
+            ReleaseObject();
         }
     }
+
+    /// <summary>
+    /// オブジェクトの生成または削除を命ずる
+    /// </summary>
+    void HandleSpawnOrDestroy()
+    {
+        // 掴まれていないオブジェクトを検索
+        List<GameObject> nonGrabbedObjects = new List<GameObject>();
+        foreach (GameObject obj in spawnedObjects)
+        {
+            if (obj != null && !grabbedObjects.Contains(obj))
+            {
+                nonGrabbedObjects.Add(obj);
+            }
+        }
+
+        // 掴まれていないオブジェクトがない場合は新しいPrefabを生成
+        if (nonGrabbedObjects.Count == 0)
+        {
+            SpawnPrefabs();
+        }
+        else
+        {
+            // 掴まれていないオブジェクトを削除
+            DestroyAllPrefabs(nonGrabbedObjects);
+        }
+    }
+
     /// <summary>
     /// Prefabsを出現させる
     /// </summary>
@@ -58,7 +88,7 @@ public class ToppingManager : MonoBehaviour
                 GameObject newObject = Instantiate(prefabs[i], spawnPoints[i].position, spawnPoints[i].rotation);
                 spawnedObjects.Add(newObject); // リストに追加
 
-                // 必要に応じて、オブジェクトのコライダーを追加して掴む処理を実装します。
+                // Colliderを追加
                 Collider collider = newObject.GetComponent<Collider>();
                 if (collider == null)
                 {
@@ -66,54 +96,67 @@ public class ToppingManager : MonoBehaviour
                 }
                 collider.isTrigger = false;
 
-                // Rigidbodyを追加し、物理演算での制御を可能にする
+                // Rigidbodyを追加
                 Rigidbody rb = newObject.GetComponent<Rigidbody>();
                 if (rb == null)
                 {
                     rb = newObject.AddComponent<Rigidbody>();
-                    rb.isKinematic = true; // 初期状態では物理演算をオフにする
+                    rb.isKinematic = true; // 初期状態はオフ
+                    rb.useGravity = false; // 重力もオフ
                 }
             }
         }
     }
+
     /// <summary>
-    /// オブジェクトを掴んだときの処理
+    /// 左クリックでオブジェクトを掴む
     /// </summary>
-    public void OnObjectGrabbed(GameObject grabbedObject)
+    void TryGrabObject()
     {
-        if (spawnedObjects.Contains(grabbedObject))
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
         {
-            grabbedObjects.Add(grabbedObject);
+            GameObject hitObject = hit.collider.gameObject;
+            if (spawnedObjects.Contains(hitObject) && !grabbedObjects.Contains(hitObject))
+            {
+                grabbedObject = hitObject;
+                grabbedObjects.Add(hitObject);
+
+                // 他のオブジェクトを消去
+                DestroyAllPrefabs(new List<GameObject>(spawnedObjects.FindAll(obj => obj != hitObject && !grabbedObjects.Contains(obj))));
+
+                // 重力と物理演算を無効化
+                Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.isKinematic = true;
+                    rb.useGravity = false;
+                }
+            }
         }
     }
 
     /// <summary>
-    /// オブジェクトを放したときの処理
+    /// 左クリックを離したときの処理
     /// </summary>
-    public void OnObjectReleased(GameObject releasedObject)
+    void ReleaseObject()
     {
-        if (grabbedObjects.Contains(releasedObject))
+        if (grabbedObject != null)
         {
-            grabbedObjects.Remove(releasedObject);
-
-            // Rigidbodyの設定を変更して物理演算を適用するようにする
-            Rigidbody rb = releasedObject.GetComponent<Rigidbody>();
+            Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.isKinematic = false; // 物理演算を適用するように設定
+                rb.isKinematic = false;
+                rb.useGravity = true; // 重力有効化
             }
-
-            // Colliderの設定を変更して、物理衝突を適用するようにする
-            Collider collider = releasedObject.GetComponent<Collider>();
-            if (collider != null)
-            {
-                collider.isTrigger = false; // 衝突を有効にする
-            }
+            grabbedObject = null; // リファレンスを解除
         }
     }
 
     /// <summary>
-    /// 出現中のPrefabをすべて削除する
+    /// 出現中のPrefabを削除
     /// </summary>
     void DestroyAllPrefabs(List<GameObject> objectsToDestroy)
     {
@@ -121,9 +164,9 @@ public class ToppingManager : MonoBehaviour
         {
             if (obj != null)
             {
+                spawnedObjects.Remove(obj);
                 Destroy(obj);
             }
         }
-        spawnedObjects.RemoveAll(obj => objectsToDestroy.Contains(obj)); // 削除済みオブジェクトをリストから削除
     }
 }
