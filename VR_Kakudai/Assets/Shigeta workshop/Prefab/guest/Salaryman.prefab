@@ -6521,13 +6521,11 @@ MonoBehaviour:
   DishesImage: {fileID: 3042016299346062250}
   SizeImage: {fileID: 4063734389117143124}
   SalesAmountText: {fileID: 2103893928133094582}
-
   UI_matome: {fileID: 1601294366854188784, guid: bc30a4b2c2776d041b86371e429600c3,
     type: 3}
   contect: {fileID: 5493870108573677233}
-
   AssortDishesNumberMax: 2
-  aaa: 0
+  aaa: 1
 --- !u!114 &3631795854974340014
 MonoBehaviour:
   m_ObjectHideFlags: 0
