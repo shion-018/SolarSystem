@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\amedama`s script\GameEnd.cs" />
     <Compile Include="Assets\amedama`s script\GameManager.cs" />
+    <Compile Include="Assets\amedama`s script\TriggrFunc.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\SpeechBubbleTimer.cs" />
     <Compile Include="Assets\amedama`s script\DishesFusion.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Not use\staff.cs" />

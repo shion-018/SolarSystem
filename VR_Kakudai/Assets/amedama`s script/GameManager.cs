@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
 
 
 
@@ -15,7 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("タイムリミット（秒）")] int TimeLimit = 60;
     [SerializeField, Tooltip("制限時間Text")] TextMeshProUGUI TimeLimitText;
     [SerializeField, Tooltip("")]
-
 
 
     public enum GAMESTATE
@@ -52,19 +52,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.sceneLoaded += SceneloadIvent;
+    }
 
+    void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
+    {
 
+        TimeLimitText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
+        Debug.Log(TimeLimitText);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            gamestate = GAMESTATE.Play;
-        }
 
         if (gamestate == GAMESTATE.Play)//時間をカウントする処理
         {
@@ -73,12 +74,13 @@ public class GameManager : MonoBehaviour
             if (Seconds_If >= 1.0f)
             {
                 TimeNow += 1;
-                //TimeLimitText.text = TimeNow.ToString();
+                TimeLimitText.text = TimeNow.ToString();
                 Seconds_If = 0;
 
                 if (TimeLimit <= TimeNow)
                 {
                     TimeNow = 0;
+                    gamestate = GAMESTATE.GameEnd;
 
                 }
 
