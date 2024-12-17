@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706527867894566679}
   m_Layer: 0
-  m_Name: KyakuA
+  m_Name: Rikishi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf0837484e4d994389cd41a170bdbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerLimit: 0
   testclock: {fileID: 888351387401476262}
   hukidasi: {fileID: 5589629027799656821}
   hukidasiImage: {fileID: 8635735789819898625}
@@ -382,9 +383,11 @@ MonoBehaviour:
   - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
   SizeSpecificationSprits:
   - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
+  HighSpecificationSprits: []
   DishesImage: {fileID: 7049957028511146205}
   SizeImage: {fileID: 7174629265976132430}
   SalesAmountText: {fileID: 6260050630058687577}
+  aaa: 1
 --- !u!1 &6976834100600765146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf0837484e4d994389cd41a170bdbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerLimit: 0
   testclock: {fileID: 888351387401476262}
   hukidasi: {fileID: 5589629027799656821}
   hukidasiImage: {fileID: 8635735789819898625}
@@ -1075,6 +1079,8 @@ MonoBehaviour:
   - {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
   SizeSpecificationSprits:
   - {fileID: 21300000, guid: a19db5bfeecfa2e4ba06d5ceafe26ef2, type: 3}
+  HighSpecificationSprits: []
   DishesImage: {fileID: 7049957028511146205}
   SizeImage: {fileID: 7174629265976132430}
   SalesAmountText: {fileID: 2886866482362381698}
+  aaa: 1

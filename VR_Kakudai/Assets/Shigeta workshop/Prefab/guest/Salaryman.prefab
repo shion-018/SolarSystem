@@ -1275,6 +1275,7 @@ GameObject:
   - component: {fileID: 8157780238440916621}
   - component: {fileID: 8555259701008267964}
   - component: {fileID: 1759064284877132609}
+  - component: {fileID: 3631795854974340014}
   m_Layer: 0
   m_Name: Salaryman1
   m_TagString: Untagged
@@ -6358,6 +6359,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1759064284877132609}
+    - targetCorrespondingSourceObject: {fileID: 833971682554733099, guid: cb99dc7fca2ed32418538c7effca6524,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3631795854974340014}
   m_SourcePrefab: {fileID: 100100000, guid: cb99dc7fca2ed32418538c7effca6524, type: 3}
 --- !u!23 &2647141989456613625
 MeshRenderer:
@@ -6516,8 +6521,24 @@ MonoBehaviour:
   DishesImage: {fileID: 3042016299346062250}
   SizeImage: {fileID: 4063734389117143124}
   SalesAmountText: {fileID: 2103893928133094582}
+
   UI_matome: {fileID: 1601294366854188784, guid: bc30a4b2c2776d041b86371e429600c3,
     type: 3}
   contect: {fileID: 5493870108573677233}
+
   AssortDishesNumberMax: 2
   aaa: 0
+--- !u!114 &3631795854974340014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103893928133094582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb21ab9ae46f0a94d82670f3af243f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3491578416364536438}
+  weight: 0.5
