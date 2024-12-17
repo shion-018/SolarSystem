@@ -8,6 +8,7 @@ public class GameStateChange : MonoBehaviour
 {
     
     GameManager gameManager;
+    [SerializeField] GameManager.GAMESTATE gameState;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,7 @@ public class GameStateChange : MonoBehaviour
     public void GameStateChange_func()
     {
 
-        gameManager.gamestate = GameManager.GAMESTATE.Play;
-
+        gameManager.gamestate = gameState;
 
     }
 
