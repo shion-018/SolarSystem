@@ -93,20 +93,253 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: numbers_ver2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 37
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b730ff2315bb50d40b5235f9457a7dc7
+      internalID: -1752708038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b4e7f4cb170fa4a809bce1cd6a60ec
+      internalID: -1899425248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 2
+        width: 37
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44cc3e73328a3c54c8bc9084d5772c42
+      internalID: 1388864742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1
+        width: 38
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64fbfb33d6b3b8944a69433cb682e418
+      internalID: -528834900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 36
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71c880948754a54882fe24aed205216
+      internalID: -257824514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_5
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 2
+        width: 37
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8e3eff76b734e4aa2a66be6959ccfb
+      internalID: -393315751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_6
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1
+        width: 35
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0baa5ab57d068bd409db4e66be0d1d2f
+      internalID: -1928504444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_7
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1
+        width: 35
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7f8ec6d9a4cd945ac6d0ca6582fcfa
+      internalID: -1873899706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_8
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92242b1ab13e4de44902a2154cc6c49d
+      internalID: -1754513922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_ver2_9
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 0
+        width: 33
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6609fa266d8d745ae4a4e22dcef652
+      internalID: -205926886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f89d61491f68db54dbcdc094a9b67061
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      numbers_ver2_0: -1752708038
+      numbers_ver2_1: -1899425248
+      numbers_ver2_2: 1388864742
+      numbers_ver2_3: -528834900
+      numbers_ver2_4: -257824514
+      numbers_ver2_5: -393315751
+      numbers_ver2_6: -1928504444
+      numbers_ver2_7: -1873899706
+      numbers_ver2_8: -1754513922
+      numbers_ver2_9: -205926886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
