@@ -74,6 +74,7 @@
     <Compile Include="Assets\Shigeta workshop\Script\generation.cs" />
     <Compile Include="Assets\Scripts\ObjectToggle.cs" />
     <Compile Include="Assets\hinata workshop\Scripts\RatioScript.cs" />
+    <Compile Include="Assets\hinata workshop\Scripts\ResultScript.cs" />
     <Compile Include="Assets\amedama`s script\Size Specification.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Not use\parent and child.cs" />
     <Compile Include="Assets\Shigeta workshop\Script\Visit.cs" />
