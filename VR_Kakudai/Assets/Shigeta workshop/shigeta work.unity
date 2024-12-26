@@ -6265,10 +6265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549d14a0dc2f89144bc2398782d11339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishes: {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  point: []
-  dishesnum: 0
-  spawndishes: 
 --- !u!4 &355075353
 Transform:
   m_ObjectHideFlags: 0
@@ -13067,10 +13063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549d14a0dc2f89144bc2398782d11339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishes: {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  point: []
-  dishesnum: 0
-  spawndishes: 
 --- !u!4 &684088110
 Transform:
   m_ObjectHideFlags: 0
@@ -22864,13 +22856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549d14a0dc2f89144bc2398782d11339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishes: {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  point:
-  - {fileID: 684088108}
-  - {fileID: 1188549903}
-  - {fileID: 355075351}
-  dishesnum: 0
-  spawndishes: 00000000
 --- !u!4 &1124545195
 Transform:
   m_ObjectHideFlags: 0
@@ -23938,10 +23923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549d14a0dc2f89144bc2398782d11339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishes: {fileID: 4593849405150154754, guid: b47b31978140e634aa75d600b9f6dd47, type: 3}
-  point: []
-  dishesnum: 0
-  spawndishes: 
 --- !u!4 &1188549905
 Transform:
   m_ObjectHideFlags: 0
@@ -26530,7 +26511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target:
-  - {fileID: 2315971464606809783, guid: d9756030f1dd94f44b33745329212ee4, type: 3}
+  - {fileID: 8077050957542640785, guid: e99b5ca9ac456f04487e194ddd8cdaca, type: 3}
   spawnInterval: 2
 --- !u!4 &1324483313 stripped
 Transform:
