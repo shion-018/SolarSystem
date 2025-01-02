@@ -5,10 +5,11 @@ using UnityEngine;
 public class startGameHItbox : MonoBehaviour
 {
     [SerializeField] GameObject GanerateCustomer;
+    public MonoBehaviour testGaneration;
     // Start is called before the first frame update
     void Start()
     {
-
+        testGaneration.enabled = false;
     }
 
     // Update is called once per frame
@@ -19,9 +20,10 @@ public class startGameHItbox : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (GanerateCustomer.gameObject.tag == "Start")
+        if (collision.gameObject.tag == "Player")
         {
-            GanerateCustomer.GetComponent<generation>().enabled = true;
+            Debug.Log("ganeration‹N“®");
+            testGaneration.enabled = true;
         }
     }
 }
