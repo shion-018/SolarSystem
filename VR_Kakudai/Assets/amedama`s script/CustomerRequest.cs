@@ -40,6 +40,9 @@ public class CustomerRequest : MonoBehaviour
 
     [SerializeField]private int aaa = 1;//仮
     private int HighJudgeNumber;
+
+    GameObject A;
+    GameManager gameManager;
     
 
     // Start is called before the first frame update
@@ -55,6 +58,9 @@ public class CustomerRequest : MonoBehaviour
 
         Transform[] UI_matome_Hairetu = new Transform[Assort];
         Image[,] UI_Images = new Image[Assort, 3];//料理の画像を表示するUI
+
+        A = GameObject.Find("GameManager");
+        gameManager = A.GetComponent<GameManager>();
 
         for (int i = 0; i < UI_matome_Hairetu.Length; i++)
         {
@@ -223,7 +229,7 @@ public class CustomerRequest : MonoBehaviour
                 {
                     amountText.Amount(DishesMagnification(colliderDishes));
 
-                    Visit.betogether = true;
+                    gameManager.betogether = true;
 
                     Destroy(colliderDishes.gameObject);
                     
@@ -237,7 +243,7 @@ public class CustomerRequest : MonoBehaviour
                 {
 
                     amountText.Amount(DishesMagnification(colliderDishes));
-                    Visit.betogether = true;
+                    gameManager.betogether= true;
 
                     Destroy(colliderDishes.gameObject);
                     

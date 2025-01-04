@@ -17,8 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("タイムリミット（秒）")] int TimeLimit = 60;
     [SerializeField, Tooltip("制限時間Text")] TextMeshProUGUI TimeLimitText;
     [SerializeField, Tooltip("")]
-
     GameObject ResultUI;
+    public  bool betogether = false;
+
 
     public enum GAMESTATE
     {

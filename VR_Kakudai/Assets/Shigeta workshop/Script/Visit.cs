@@ -25,15 +25,14 @@ public class Visit : MonoBehaviour
     emptyseat empty;
     GameObject B;
     CustomerCounter CustmerCounter;
+    GameObject C;
+    GameManager gameManager;
    
     // PlayerのTransformを取得するための変数を追加
     private Transform playerTransform;
 
     // アニメーションの管理用
     private Animator animator;
-
-    //正しいかどうかの判定
-    public static bool betogether = false;
 
     void Start()
     {
@@ -54,6 +53,9 @@ public class Visit : MonoBehaviour
         CustmerCounter = B.GetComponent<CustomerCounter>();
 
         cube_boxCol = this.GetComponent<BoxCollider>();
+
+        C = GameObject.Find("GameManager");
+        gameManager = C.GetComponent<GameManager>();
 
         // Playerオブジェクトを取得してTransformを保持
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -158,17 +160,22 @@ public class Visit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("sushi"))
         {
-            empty.seat[seatnum] = true;
-            CustmerCounter.counter--;
-
-            //自分の親オブジェクトを削除
-            if (transform.parent != null)
+            Debug.Log(gameManager.betogether);
+            if (gameManager.betogether)
             {
-                Destroy(transform.parent.gameObject);
-            }
+                empty.seat[seatnum] = true;
+                CustmerCounter.counter--;
 
-            //自分自身を削除
-            Destroy(this.gameObject);
+                //自分の親オブジェクトを削除
+                if (transform.parent != null)
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+
+                //自分自身を削除
+                Destroy(this.gameObject);
+                gameManager.betogether = false;
+            }
         }
     }
 

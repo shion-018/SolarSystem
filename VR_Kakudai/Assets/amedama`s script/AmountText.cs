@@ -26,7 +26,7 @@ public class AmountText : MonoBehaviour
     {
         SalesAmount += Sales;
 
-        SalesAmountText.text = SalesAmount.ToString();
+        //SalesAmountText.text = SalesAmount.ToString();
 
     }
 }

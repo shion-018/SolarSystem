@@ -6533,7 +6533,7 @@ MonoBehaviour:
     type: 3}
   contect: {fileID: 5493870108573677233}
   AssortDishesNumberMax: 3
-  aaa: 1
+  aaa: 0
 --- !u!114 &3631795854974340014
 MonoBehaviour:
   m_ObjectHideFlags: 0
