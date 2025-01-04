@@ -29,7 +29,7 @@ public class CustomerRequest : MonoBehaviour
     private int RequestDishesPrice = 0;
     private int[] DishesMagPrice;
     private int SalesAmount = 0;
-    [SerializeField] private int AssortDishesNumberMax = 2;//最大の料理組み合わせ数 + 1
+    [SerializeField] private int AssortDishesNumberMax = 3;//最大の料理組み合わせ数 + 1
     private int[] AssortDishesNumber;
     private DishesSetting dishesSetting;
     private AmountText amountText;
@@ -196,6 +196,8 @@ public class CustomerRequest : MonoBehaviour
         DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
         HighJudge highJudge = colliderDishes.gameObject.GetComponentInChildren<HighJudge>();
 
+        Debug.Log("Assort : " + ColDishesSetting.DishesNumber);
+
         for (int i = 0; i < Assort; i++)
         {
 
@@ -203,7 +205,9 @@ public class CustomerRequest : MonoBehaviour
             {
 
                 AssortDishesNumber[i] = -1;
-                AssortJudge += 1;               
+                AssortJudge += 1;      
+                
+                
 
             }
         }
@@ -235,6 +239,8 @@ public class CustomerRequest : MonoBehaviour
                 break;
 
         }
+
+        AssortJudge = 0;
     }
 
     int DishesMagnification(Collision colliderDishes)

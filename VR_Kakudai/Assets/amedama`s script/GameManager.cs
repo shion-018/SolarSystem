@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Timeline;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("制限時間Text")] TextMeshProUGUI TimeLimitText;
     [SerializeField, Tooltip("")]
 
+    GameObject ResultUI;
 
     public enum GAMESTATE
     {
@@ -54,13 +56,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += SceneloadIvent;
         TimeNow = TimeLimit;
+        ResultUI.SetActive(false);
     }
 
     void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
     {
 
         TimeLimitText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
-        Debug.Log(TimeLimitText);
+        ResultUI = GameObject.Find("ResultUI");
+
+        Debug.Log(ResultUI);
 
     }
 
@@ -78,7 +83,7 @@ public class GameManager : MonoBehaviour
                 TimeLimitText.text = TimeNow.ToString();
                 Seconds_If = 0;
 
-                if (TimeLimit <= TimeNow)
+                if (TimeNow <= 0)
                 {
                     TimeNow = 0;
                     gamestate = GAMESTATE.GameEnd;
@@ -88,7 +93,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (gamestate == GAMESTATE.GameEnd)//ゲームが終了したとき
+        {
+            ResultUI.SetActive(true);
+        }
     }
-
 }
 
