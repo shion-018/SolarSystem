@@ -25,9 +25,7 @@ public class Visit : MonoBehaviour
     emptyseat empty;
     GameObject B;
     CustomerCounter CustmerCounter;
-    GameObject C;
-    Appeardishes appeardishes;
-
+   
     // Player‚ÌTransform‚ğæ“¾‚·‚é‚½‚ß‚Ì•Ï”‚ğ’Ç‰Á
     private Transform playerTransform;
 
@@ -51,9 +49,6 @@ public class Visit : MonoBehaviour
 
         B = GameObject.Find("CustonerCount");
         CustmerCounter = B.GetComponent<CustomerCounter>();
-
-        C = GameObject.Find("DishesManager");
-        appeardishes = C.GetComponent<Appeardishes>();
 
         cube_boxCol = this.GetComponent<BoxCollider>();
 
@@ -152,7 +147,6 @@ public class Visit : MonoBehaviour
 
         if (other.gameObject.CompareTag("Finish"))
         {
-            InputDishes();
             cube_boxCol.isTrigger = false;
         }
     }
@@ -212,25 +206,6 @@ public class Visit : MonoBehaviour
                         Road[i] = targetObject.transform;
                     }
                 }
-                break;
-        }
-    }
-
-    void InputDishes()
-    {
-        switch (seatnum)
-        {
-            case 0:
-                appeardishes.dishesnum = 0;
-                appeardishes.spawndishes[0] = true;
-                break;
-            case 1:
-                appeardishes.dishesnum = 1;
-                appeardishes.spawndishes[1] = true;
-                break;
-            case 2:
-                appeardishes.dishesnum = 2;
-                appeardishes.spawndishes[2] = true;
                 break;
         }
     }
