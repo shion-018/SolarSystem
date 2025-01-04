@@ -33,7 +33,7 @@ public class Visit : MonoBehaviour
     private Animator animator;
 
     //ê≥ÇµÇ¢Ç©Ç«Ç§Ç©ÇÃîªíË
-    static bool betogether = true;
+    public static bool betogether = false;
 
     void Start()
     {
