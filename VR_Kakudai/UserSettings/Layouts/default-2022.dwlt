@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 113
+  controlID: 102
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 69
+  controlID: 17
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 60
+  controlID: 18
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -332,14 +332,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Game3\SolarSystem\VR_Kakudai
+  m_LastProjectPath: C:\Users\ameda\.vscode\SolarSystem-1\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 82980000
-    m_LastClickedID: 39042
-    m_ExpandedIDs: 000000008298000000ca9a3b
+    m_SelectedIDs: 2ca10000
+    m_LastClickedID: 41260
+    m_ExpandedIDs: 000000002ca1000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000082980000
+    m_ExpandedIDs: 000000002ca10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -509,9 +509,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 22770000
+      m_SelectedIDs: 1c7d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: f6faffff
+      m_ExpandedIDs: 5afaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -859,16 +859,16 @@ MonoBehaviour:
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.1446724, y: 3.4878194, z: 19.042234}
+    m_Target: {x: -5.4918904, y: 3.446363, z: 18.492884}
     speed: 2
-    m_Value: {x: -4.964837, y: 3.8255439, z: 18.817421}
+    m_Value: {x: -5.1446724, y: 3.4878194, z: 19.042234}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -914,13 +914,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.07522343, y: 0.59781575, z: -0.05648683, w: -0.7961}
+    m_Target: {x: 0.27156308, y: -0.20111378, z: 0.05815984, w: 0.9394158}
     speed: 2
-    m_Value: {x: -0.055891216, y: 0.9143707, z: -0.135399, w: -0.37745124}
+    m_Value: {x: -0.07522343, y: 0.5978157, z: -0.05648683, w: -0.7961}
   m_Size:
-    m_Target: 2.0367253
+    m_Target: 1.2173196
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 2.0367253
   m_Ortho:
     m_Target: 0
     speed: 2

@@ -223,6 +223,8 @@ public class CustomerRequest : MonoBehaviour
                 {
                     amountText.Amount(DishesMagnification(colliderDishes));
 
+                    Visit.betogether = true;
+
                     Destroy(colliderDishes.gameObject);
                     
                 }
@@ -235,9 +237,10 @@ public class CustomerRequest : MonoBehaviour
                 {
 
                     amountText.Amount(DishesMagnification(colliderDishes));
+                    Visit.betogether = true;
 
                     Destroy(colliderDishes.gameObject);
-                    Debug.Log("AssortJudge = Assort : " + AssortJudge + " = " + Assort);
+                    
                 }
                 break;
 
