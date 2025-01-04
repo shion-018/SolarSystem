@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15482589ee9409a40b28077fd1b5687f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObject: {fileID: 0}
+  parentObject: {fileID: 3072275858059735314}
   boxSize: {x: 0.5, y: 0.5, z: 0.5}
   boxOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &3072275858059735314 stripped

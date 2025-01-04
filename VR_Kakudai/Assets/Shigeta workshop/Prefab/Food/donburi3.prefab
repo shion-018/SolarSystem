@@ -465,8 +465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 5232654948646364582}
-  boxSize: {x: 0.5, y: 1, z: 0.5}
-  boxOffset: {x: 0, y: 0.5, z: 0}
+  boxSize: {x: 2.5, y: 2, z: 2.5}
+  boxOffset: {x: 0, y: 0.2, z: 0}
 --- !u!4 &5232654948646364582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56f0a850a1a65124b881be5143eea4e4,
