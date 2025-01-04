@@ -197,12 +197,15 @@ public class CustomerRequest : MonoBehaviour
         HighJudge highJudge = colliderDishes.gameObject.GetComponentInChildren<HighJudge>();
 
         Debug.Log("Assort : " + ColDishesSetting.DishesNumber);
+        
 
         for (int i = 0; i < Assort; i++)
         {
 
             if (AssortDishesNumber[i] == ColDishesSetting.DishesNumber)//料理が正しいかを判定
             {
+
+                
 
                 AssortDishesNumber[i] = -1;
                 AssortJudge += 1;      
@@ -221,7 +224,7 @@ public class CustomerRequest : MonoBehaviour
                     amountText.Amount(DishesMagnification(colliderDishes));
 
                     Destroy(colliderDishes.gameObject);
-
+                    
                 }
                 break;
 
@@ -234,7 +237,7 @@ public class CustomerRequest : MonoBehaviour
                     amountText.Amount(DishesMagnification(colliderDishes));
 
                     Destroy(colliderDishes.gameObject);
-
+                    Debug.Log("AssortJudge = Assort : " + AssortJudge + " = " + Assort);
                 }
                 break;
 
