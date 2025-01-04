@@ -6521,9 +6521,9 @@ MonoBehaviour:
   - {fileID: 6075067564970040525, guid: f1264657bb58e284dbb69ffddc649d6a, type: 3}
   - {fileID: 3586641004761463986, guid: f2af38e9b1de0af4b87932320f03e5e1, type: 3}
   SizeSpecificationSprits:
-  - {fileID: 21300000, guid: 46902883bff181b4e854ec4ee5282bfa, type: 3}
-  - {fileID: 21300000, guid: d861e330c2792804eb16858da2d7aaea, type: 3}
   - {fileID: 21300000, guid: c77c6be6b052bab4bba43cd8ef7b420b, type: 3}
+  - {fileID: 21300000, guid: d861e330c2792804eb16858da2d7aaea, type: 3}
+  - {fileID: 21300000, guid: 46902883bff181b4e854ec4ee5282bfa, type: 3}
   HighSpecificationSprits:
   - {fileID: 21300000, guid: cb54d447c074276449d238fe9eeeef1a, type: 3}
   DishesImage: {fileID: 3042016299346062250}

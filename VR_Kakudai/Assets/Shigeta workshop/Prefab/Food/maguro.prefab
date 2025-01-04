@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 4692091847464324196}
   m_Layer: 0
   m_Name: maguro
-  m_TagString: Untagged
+  m_TagString: sushi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

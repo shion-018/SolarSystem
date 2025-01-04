@@ -220,7 +220,7 @@ public class CustomerRequest : MonoBehaviour
 
             }
         }
-
+        Debug.Log("Assort後 :" + AssortJudge);
         switch (aaa)
         {
             case 0:
@@ -230,7 +230,7 @@ public class CustomerRequest : MonoBehaviour
                     amountText.Amount(DishesMagnification(colliderDishes));
 
                     gameManager.betogether = true;
-
+                    Debug.Log("判定後"+ gameManager.betogether);
                     Destroy(colliderDishes.gameObject);
                     
                 }
@@ -244,7 +244,7 @@ public class CustomerRequest : MonoBehaviour
 
                     amountText.Amount(DishesMagnification(colliderDishes));
                     gameManager.betogether= true;
-
+                    
                     Destroy(colliderDishes.gameObject);
                     
                 }
