@@ -26709,6 +26709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
   - {fileID: 8077050957542640785, guid: e99b5ca9ac456f04487e194ddd8cdaca, type: 3}
+  - {fileID: 2315971464606809783, guid: d9756030f1dd94f44b33745329212ee4, type: 3}
   spawnInterval: 2
 --- !u!4 &1324483313 stripped
 Transform:
@@ -42288,12 +42289,12 @@ PrefabInstance:
     - target: {fileID: 35633361588650381, guid: 8e1c80e206c078d4b8b0584282d24ca9,
         type: 3}
       propertyPath: boxSize.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 35633361588650381, guid: 8e1c80e206c078d4b8b0584282d24ca9,
         type: 3}
       propertyPath: boxOffset.y
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 35633361588650381, guid: 8e1c80e206c078d4b8b0584282d24ca9,
         type: 3}
