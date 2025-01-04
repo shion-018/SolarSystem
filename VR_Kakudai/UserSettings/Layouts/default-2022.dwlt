@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 119
+  controlID: 104
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,14 +120,14 @@ MonoBehaviour:
     y: 432.8
     width: 1163.2
     height: 290
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
   - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 49
+  controlID: 60
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 50
+  controlID: 51
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -322,7 +322,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/amedama`s script
+    - Assets/Shigeta workshop/Prefab/guest
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -330,16 +330,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 55
   m_LastFolders:
-  - Assets/amedama`s script
+  - Assets/Shigeta workshop/Prefab/guest
   m_LastFoldersGridSize: 55
   m_LastProjectPath: C:\Users\ameda\.vscode\SolarSystem-1\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 127}
-    m_SelectedIDs: 829b0000
-    m_LastClickedID: 39810
-    m_ExpandedIDs: 000000000c9b0000b89b0000baa5000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 311}
+    m_SelectedIDs: 64a60000
+    m_LastClickedID: 42596
+    m_ExpandedIDs: 00000000629b0000189c000050a6000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c9b0000
+    m_ExpandedIDs: 00000000629b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -392,8 +392,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d480fcff
-    m_LastClickedInstanceID: -229164
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000268600004ac30100
     m_RenameOverlay:
@@ -419,7 +419,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 74.50043}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 55
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -509,9 +509,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 46ebfbff
-      m_LastClickedID: -267450
-      m_ExpandedIDs: c04bfcff4e4efcff524efcffa481fcff10f9fcff50fbfcffb65cfdff2263fdffb065fdffb465fdff58f5ffff5cf5ffff5ef5ffffa2f5ffff28fbfffff4ffffff16750000227700006a790000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 28fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -0.36139038, y: 3.2227528, z: 21.468792}
     speed: 2
-    m_Value: {x: -0.36139038, y: 3.2227528, z: 21.468792}
+    m_Value: {x: 5.427045, y: 6.1267295, z: 0.8127838}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -929,11 +929,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.027272854, y: -0.75178003, z: 0.0311463, w: 0.6581542}
     speed: 2
-    m_Value: {x: 0.02727212, y: -0.75175977, z: 0.03114546, w: 0.6581365}
+    m_Value: {x: 0.023026837, y: -0.95243305, z: 0.07444079, w: 0.2946181}
   m_Size:
     m_Target: 1.3976374
     speed: 2
-    m_Value: 1.3976374
+    m_Value: 1.5205775
   m_Ortho:
     m_Target: 0
     speed: 2
