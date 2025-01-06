@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9139877877901764117, guid: 7da27425b5fd25e4db52149fc0ec99a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7da27425b5fd25e4db52149fc0ec99a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,6 +63,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6387909654393636174, guid: 7da27425b5fd25e4db52149fc0ec99a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4670330461506429722, guid: 7da27425b5fd25e4db52149fc0ec99a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -834166696631601073, guid: 7da27425b5fd25e4db52149fc0ec99a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7da27425b5fd25e4db52149fc0ec99a9,
         type: 3}
       propertyPath: m_Name
@@ -67,6 +87,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: sushi
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397164356589893781, guid: 7da27425b5fd25e4db52149fc0ec99a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
