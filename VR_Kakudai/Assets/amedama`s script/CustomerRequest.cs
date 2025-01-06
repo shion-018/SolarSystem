@@ -252,7 +252,6 @@ public class CustomerRequest : MonoBehaviour
 
         }
 
-        AssortJudge = 0;
     }
 
     int DishesMagnification(Collision colliderDishes)
