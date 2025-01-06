@@ -193,6 +193,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7058928178645083795, guid: 56f0a850a1a65124b881be5143eea4e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1173617119870781992, guid: 56f0a850a1a65124b881be5143eea4e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 56f0a850a1a65124b881be5143eea4e4,
         type: 3}
       propertyPath: m_Name
@@ -467,6 +477,7 @@ MonoBehaviour:
   parentObject: {fileID: 5232654948646364582}
   boxSize: {x: 2.5, y: 2, z: 2.5}
   boxOffset: {x: 0, y: 0.2, z: 0}
+  DonburiDishes: e7030000e7030000e7030000
 --- !u!4 &5232654948646364582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56f0a850a1a65124b881be5143eea4e4,
