@@ -6142,7 +6142,7 @@ GameObject:
   - component: {fileID: 335085251}
   - component: {fileID: 335085250}
   - component: {fileID: 335085249}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GameStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31951,7 +31951,7 @@ GameObject:
   - component: {fileID: 1552092206}
   - component: {fileID: 1552092207}
   - component: {fileID: 1552092208}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GameStartCollision
   m_TagString: Player
   m_Icon: {fileID: 0}
