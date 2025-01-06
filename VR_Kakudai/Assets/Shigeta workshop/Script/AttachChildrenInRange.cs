@@ -26,12 +26,20 @@ public class AttachSushiChildrenInRange : MonoBehaviour
 
             foreach (Collider collider in hitColliders)
             {
-                // sushiタグを持つ場合のみ親を設定
+                // sushiタグを持つ場合のみ処理を実行
                 if (collider.CompareTag("sushi"))
                 {
-                    if (collider.transform.parent == null) // すでに親がない場合のみ設定
+                    // 親を設定
+                    if (collider.transform.parent == null)
                     {
                         collider.transform.parent = parentObject;
+                    }
+
+                    // Rigidbodyを無効化
+                    Rigidbody rb = collider.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.isKinematic = true; // 物理演算を無効化
                     }
                 }
             }
