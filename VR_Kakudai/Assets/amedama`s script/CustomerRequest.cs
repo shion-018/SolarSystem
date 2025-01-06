@@ -191,33 +191,23 @@ public class CustomerRequest : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter(Collision colliderDishes)
     {
-        DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
+        //DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
         HighJudge highJudge = colliderDishes.gameObject.GetComponentInChildren<HighJudge>();
-
-        Debug.Log("Assort : " + ColDishesSetting.DishesNumber);
-        
+        AttachSushiChildrenInRange ASCIR = colliderDishes.gameObject.GetComponent<AttachSushiChildrenInRange>();
 
         for (int i = 0; i < Assort; i++)
         {
-
-            if (AssortDishesNumber[i] == ColDishesSetting.DishesNumber)//料理が正しいかを判定
+            for (int j = 0; j < Assort; j++)
             {
+                if (AssortDishesNumber[i] == ASCIR.DonburiDishes[j])//料理が正しいかを判定
+                {
 
-                
+                    AssortDishesNumber[i] = -1;
+                    AssortJudge += 1;
 
-                AssortDishesNumber[i] = -1;
-                AssortJudge += 1;      
-                
-                
-
+                }
             }
         }
         Debug.Log("Assort後 :" + AssortJudge);
