@@ -19,7 +19,9 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Console
+
+  m_Title: Hierarchy
+
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -49,7 +51,7 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 
-  controlID: 1075
+  controlID: 93
 
 --- !u!114 &3
 MonoBehaviour:
@@ -70,10 +72,10 @@ MonoBehaviour:
     y: 0
     width: 363.19995
 
-    height: 722.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
+    height: 730.8
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 13}
 
   m_Panes:
   - {fileID: 14}
@@ -98,10 +100,10 @@ MonoBehaviour:
     y: 0
     width: 290.4
 
-    height: 427.2
+    height: 432
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 14}
 
   m_Panes:
   - {fileID: 15}
@@ -126,7 +128,8 @@ MonoBehaviour:
     y: 432
     width: 1172.8
 
-    height: 295.59998
+    height: 298.8
+
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 13}
@@ -232,7 +235,7 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
 
-  controlID: 1076
+  controlID: 38
 
 --- !u!114 &10
 MonoBehaviour:
@@ -280,8 +283,8 @@ MonoBehaviour:
     y: 0
     width: 882.4
 
-    height: 427.2
-  m_MinSize: {x: 102, y: 121}
+    height: 432
+  m_MinSize: {x: 202, y: 221}
 
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 12}
@@ -428,7 +431,7 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 
-    - Assets/Shigeta workshop/Animation
+    - Assets/aoi workshop
 
     m_Globs: []
     m_OriginalText: 
@@ -438,18 +441,16 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders:
 
-  - Assets/Shigeta workshop/Animation
-
+  - Assets/aoi workshop
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\shiki\Desktop\SolarSystem\VR_Kakudai
+  m_LastProjectPath: C:\Users\hide0\Documents\Unity_ver2\SolarSystem\SolarSystem\SolarSystem\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-
-    scrollPos: {x: 0, y: 385.40002}
-    m_SelectedIDs: 149e0000
-    m_LastClickedID: 40468
-    m_ExpandedIDs: 00000000349d0000e89d0000fc9d00001a9e00001c9e000000ca9a3b
+    scrollPos: {x: 0, y: 127}
+    m_SelectedIDs: 5e760000
+    m_LastClickedID: 30302
+    m_ExpandedIDs: 00000000de7400005e7600009a7600006886000000ca9a3bffffff7f
 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -479,7 +480,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 
-    m_ExpandedIDs: 00000000349d0000
+    m_ExpandedIDs: 00000000de740000
 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -505,10 +506,12 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 68efffff
-    m_LastClickedInstanceID: -4248
+
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000aa8b00004cba0000
+    m_ExpandedInstanceIDs: c6230000aa8b0000
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,7 +535,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 102.20001}
+
+    m_ScrollPosition: {x: 0, y: 0}
+
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -578,7 +583,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 77.60004
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -623,24 +628,24 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 
-      m_SelectedIDs: a6a9ffff
-      m_LastClickedID: 0
-      m_ExpandedIDs: a6c9ffffbcefffff2cfbffffd8aa00006ee10000
+      m_SelectedIDs: a0850000
+      m_LastClickedID: 34208
+      m_ExpandedIDs: dcf8ffff2cfbffff
 
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Directional Light
+        m_OriginalName: Directional Light
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 34242
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -690,7 +695,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
       snapOffset: {x: -154.39996, y: -26.399994}
-      snapOffsetDelta: {x: -5.6000366, y: 0}
+      snapOffsetDelta: {x: -16, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -995,9 +1000,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 
-    m_Target: {x: -34.56283, y: -11.427641, z: 13.293946}
+    m_Target: {x: 0, y: 0, z: -8.39}
     speed: 2
-    m_Value: {x: -34.56283, y: -11.427641, z: 13.293946}
+    m_Value: {x: 0, y: 0, z: -8.39}
 
   m_RenderMode: 0
   m_CameraMode:
@@ -1050,9 +1055,11 @@ MonoBehaviour:
     m_Value: {x: -0.1265381, y: 0.7697563, z: -0.1634588, w: -0.6039408}
 
   m_Size:
-    m_Target: 2.8620927
+
+    m_Target: 7.071068
     speed: 2
-    m_Value: 2.8620927
+    m_Value: 7.071068
+
   m_Ortho:
     m_Target: 0
     speed: 2
