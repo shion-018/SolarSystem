@@ -158,7 +158,7 @@ public class Visit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("sushi"))
+        if (collision.gameObject.CompareTag("donburi"))
         {
             Invoke("Wait", 0.2f);
         }
