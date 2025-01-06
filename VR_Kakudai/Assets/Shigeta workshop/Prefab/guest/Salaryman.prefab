@@ -6454,9 +6454,14 @@ MonoBehaviour:
   - Road2-1
   - Road2-2
   - Road2-3
+  spawnLocationName: GohanPosition
   Road: []
   cube: {fileID: 2103893928133094582}
   cube_boxCol: {fileID: 2137946776750358891}
+  spawnObject: {fileID: 4888040978263441180, guid: 8e1c80e206c078d4b8b0584282d24ca9,
+    type: 3}
+  spawnLocation: {fileID: 8928655577399713406, guid: 016ffccf40a224d4581c8dd4deab09e3,
+    type: 3}
 --- !u!114 &8157780238440916621
 MonoBehaviour:
   m_ObjectHideFlags: 0

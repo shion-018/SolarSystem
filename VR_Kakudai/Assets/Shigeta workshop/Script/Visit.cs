@@ -10,6 +10,7 @@ public class Visit : MonoBehaviour
     [SerializeField] private string[] RoadName0;
     [SerializeField] private string[] RoadName1;
     [SerializeField] private string[] RoadName2;
+    [SerializeField] private string spawnLocationName;
 
     int RoadNum = 0;
     bool TriggerSignal = false;
@@ -33,6 +34,9 @@ public class Visit : MonoBehaviour
 
     // アニメーションの管理用
     private Animator animator;
+
+    [SerializeField] private GameObject spawnObject; // 出現するオブジェクト
+    [SerializeField] private Transform spawnLocation; // 出現位置
 
     void Start()
     {
@@ -173,6 +177,13 @@ public class Visit : MonoBehaviour
             empty.seat[seatnum] = true;
             CustmerCounter.counter--;
             gameManager.betogether = false;
+
+            GameObject spawnLocationObject = GameObject.Find(spawnLocationName);
+            if (spawnObject != null && spawnLocation != null)
+            {
+                Instantiate(spawnObject, spawnLocation.position, spawnLocation.rotation);
+            }
+
             //自分の親オブジェクトを削除
             if (transform.parent != null)
             {
