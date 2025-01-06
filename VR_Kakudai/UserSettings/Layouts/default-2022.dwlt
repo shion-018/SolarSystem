@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 119
+  controlID: 108
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 49
+  controlID: 51
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 50
+  controlID: 52
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -322,7 +322,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Shigeta workshop
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -330,16 +330,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Shigeta workshop
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\nonam\source\repos\TemporaryFile\SolarSystem-1\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 225.40002}
-    m_SelectedIDs: 029e0000
-    m_LastClickedID: 40450
-    m_ExpandedIDs: 000000004c9d0000de9d000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: c09d0000
+    m_LastClickedID: 40384
+    m_ExpandedIDs: 00000000c09d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c9d0000
+    m_ExpandedIDs: 00000000c09d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -419,7 +419,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 222.20001}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -508,10 +508,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 110.79999}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fee3ffff30e9ffffbaf5ffffbcf5ffffbef5ffffc0f5ffffdaf5ffff28fbffff74760000c6790000f4bf0000
+      m_ExpandedIDs: 28fbffff18760000367a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -879,9 +879,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 25.483896, y: -10.761562, z: 3.930738}
+    m_Target: {x: -31.114098, y: -19.246862, z: 14.490903}
     speed: 2
-    m_Value: {x: 25.483896, y: -10.761562, z: 3.930738}
+    m_Value: {x: -31.114098, y: -19.246862, z: 14.490903}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -927,13 +927,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.15673976, y: -0.69152427, z: 0.15561397, w: -0.68833494}
+    m_Target: {x: -0.20104587, y: 0.7349038, z: -0.24923891, w: -0.5985303}
     speed: 2
-    m_Value: {x: -0.15889208, y: -0.68839425, z: 0.15664111, w: -0.69016683}
+    m_Value: {x: -0.20024197, y: 0.73488605, z: -0.2482493, w: -0.59851307}
   m_Size:
-    m_Target: 18.04089
+    m_Target: 18.85273
     speed: 2
-    m_Value: 18.890984
+    m_Value: 18.04089
   m_Ortho:
     m_Target: 0
     speed: 2
