@@ -26732,7 +26732,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
   - {fileID: 8077050957542640785, guid: e99b5ca9ac456f04487e194ddd8cdaca, type: 3}
-  - {fileID: 2315971464606809783, guid: d9756030f1dd94f44b33745329212ee4, type: 3}
   spawnInterval: 2
 --- !u!4 &1324483313 stripped
 Transform:
