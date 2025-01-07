@@ -10517,7 +10517,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660633561}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -22531,6 +22531,7 @@ GameObject:
   - component: {fileID: 1523526319}
   - component: {fileID: 1523526318}
   - component: {fileID: 1523526320}
+  - component: {fileID: 1523526321}
   m_Layer: 7
   m_Name: HowToPlay
   m_TagString: Untagged
@@ -22830,6 +22831,20 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &1523526321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523526308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef53911ea38f2444b6b4b274f3d1344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 1797300782}
+  offset: {x: 0, y: 0.2, z: 0}
 --- !u!1 &1527224640
 GameObject:
   m_ObjectHideFlags: 0
@@ -26791,7 +26806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1797300783
 RectTransform:
   m_ObjectHideFlags: 0
