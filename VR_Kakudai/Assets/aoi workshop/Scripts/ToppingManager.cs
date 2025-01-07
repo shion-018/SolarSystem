@@ -12,102 +12,125 @@ public class ToppingManager : MonoBehaviour
     public Transform[] spawnPoints;
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
+    private Dictionary<GameObject, Vector3> lastPositions = new Dictionary<GameObject, Vector3>();
     private bool objectsActive = false;
 
-    private GameObject grabbedObject;
+    private Camera mainCamera;
+    private GameObject selectedObject;
     private float grabDistance;
     private Vector3 grabOffset;
 
+    void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) // Bボタン
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch) || Input.GetMouseButtonDown(1))
         {
             ToggleObjects();
         }
 
-        HandleVRControl();
+        HandleMotionDetection();
+        HandleMouseDrag();
     }
 
-    void HandleVRControl()
+    void HandleMotionDetection()
     {
-        // 掴む処理
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) // RTトリガー
+        foreach (GameObject obj in new List<GameObject>(spawnedObjects))
         {
-            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward);
-            RaycastHit hit;
+            if (obj == null) continue;
 
-            if (Physics.Raycast(ray, out hit))
+            Vector3 currentPosition = obj.transform.position;
+
+            // Check if the object has moved significantly
+            if (lastPositions.ContainsKey(obj) && Vector3.Distance(lastPositions[obj], currentPosition) > 0.01f)
+            {
+                OnObjectMoved(obj);
+            }
+
+            // Update the last known position
+            lastPositions[obj] = currentPosition;
+        }
+    }
+
+    void HandleMouseDrag()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 if (spawnedObjects.Contains(hit.collider.gameObject))
                 {
-                    grabbedObject = hit.collider.gameObject;
-                    grabDistance = Vector3.Distance(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), hit.point);
+                    selectedObject = hit.collider.gameObject;
+                    grabDistance = Vector3.Distance(mainCamera.transform.position, hit.point);
                     grabOffset = hit.collider.transform.position - hit.point;
 
-                    // 物理演算を一時的に無効化
-                    Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
+                    // Temporarily disable physics
+                    Rigidbody rb = selectedObject.GetComponent<Rigidbody>();
                     if (rb != null)
                     {
                         rb.isKinematic = true;
                         rb.useGravity = false;
                     }
-
-                    // 掴んだオブジェクトを管理対象から外す
-                    spawnedObjects.Remove(grabbedObject);
-
-                    // 他のオブジェクトを全て削除
-                    List<GameObject> objectsToDestroy = new List<GameObject>(spawnedObjects);
-                    DestroyAllPrefabs(objectsToDestroy);
-
-                    // オブジェクトが空の場合、新しい出現を許可
-                    if (spawnedObjects.Count == 0)
-                    {
-                        objectsActive = false;
-                    }
                 }
             }
         }
 
-        // 掴んだオブジェクトを動かす
-        if (grabbedObject != null && OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) // RTトリガーを押し続けている間
+        if (selectedObject != null && Input.GetMouseButton(0))
         {
-            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             Vector3 newPosition = ray.GetPoint(grabDistance) + grabOffset;
-            grabbedObject.transform.position = newPosition;
+            selectedObject.transform.position = newPosition;
         }
 
-        // 掴んだオブジェクトを解放
-        if (grabbedObject != null && OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) // RTトリガーを離す
+        if (Input.GetMouseButtonUp(0) && selectedObject != null)
         {
-            Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
+            // Re-enable physics
+            Rigidbody rb = selectedObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = false;
                 rb.useGravity = true;
             }
-            grabbedObject = null;
+            selectedObject = null;
         }
+    }
+
+    void OnObjectMoved(GameObject movedObject)
+    {
+        Debug.Log($"Object {movedObject.name} has moved!");
+
+        // Disable physics temporarily
+        Rigidbody rb = movedObject.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            rb.useGravity = false;
+        }
+
+        // Remove from active list
+        spawnedObjects.Remove(movedObject);
+
+        // Remove other objects
+        List<GameObject> objectsToDestroy = new List<GameObject>(spawnedObjects);
+        DestroyAllPrefabs(objectsToDestroy);
     }
 
     void ToggleObjects()
     {
-        if (objectsActive)
+        // Check if there are any objects to destroy
+        if (objectsActive && spawnedObjects.Count > 0)
         {
-            // 現在のオブジェクトを全て削除
             List<GameObject> objectsToDestroy = new List<GameObject>(spawnedObjects);
-            if (objectsToDestroy.Count > 0)
-            {
-                DestroyAllPrefabs(objectsToDestroy);
-                objectsActive = false;
-            }
-            else
-            {
-                // 削除対象がない場合は次回のBボタンでオブジェクトを生成
-                objectsActive = false;
-            }
+            DestroyAllPrefabs(objectsToDestroy);
+            objectsActive = false;
         }
         else
         {
+            // If no objects are active or there are no objects to destroy, spawn new ones
             SpawnPrefabs();
             objectsActive = true;
         }
@@ -142,6 +165,9 @@ public class ToppingManager : MonoBehaviour
                 }
                 rb.isKinematic = true;
                 rb.useGravity = false;
+
+                // Initialize the last position
+                lastPositions[newObject] = newObject.transform.position;
             }
         }
     }
@@ -153,6 +179,7 @@ public class ToppingManager : MonoBehaviour
             if (obj != null)
             {
                 spawnedObjects.Remove(obj);
+                lastPositions.Remove(obj);
                 Destroy(obj);
             }
         }
