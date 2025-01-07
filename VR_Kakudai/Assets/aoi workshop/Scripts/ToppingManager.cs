@@ -6,73 +6,113 @@ using UnityEngine.XR;
 public class ToppingManager : MonoBehaviour
 {
     [Header("Prefab Settings")]
-    public GameObject[] prefabs; // 出現させるPrefabの配列
+    public GameObject[] prefabs;
 
     [Header("Spawn Positions")]
-    public Transform[] spawnPoints; // 配置位置を格納する配列
+    public Transform[] spawnPoints;
 
-    private List<GameObject> spawnedObjects = new List<GameObject>(); // 出現中のオブジェクトを管理するリスト
-    private List<GameObject> grabbedObjects = new List<GameObject>(); // 掴まれているオブジェクトを管理するリスト
+    private List<GameObject> spawnedObjects = new List<GameObject>();
+    private bool objectsActive = false;
 
-    private GameObject grabbedObject; // 掴むオブジェクト
-    private Camera mainCamera; // メインカメラ
-
-    void Start()
-    {
-        mainCamera = Camera.main;
-    }
+    private GameObject grabbedObject;
+    private float grabDistance;
+    private Vector3 grabOffset;
 
     void Update()
     {
-        // Oculus Quest 2のBボタンを検出
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) // Bボタン
         {
-            HandleSpawnOrDestroy();
+            ToggleObjects();
         }
 
-        // Oculus Quest 2のRTボタンでオブジェクトを掴む
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
-        {
-            TryGrabObject();
-        }
-
-        // Oculus Quest 2のRTボタンを離したらオブジェクトを放す
-        if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
-        {
-            ReleaseObject();
-        }
+        HandleVRControl();
     }
 
-    /// <summary>
-    /// オブジェクトの生成または削除を命ずる
-    /// </summary>
-    void HandleSpawnOrDestroy()
+    void HandleVRControl()
     {
-        // 掴まれていないオブジェクトを検索
-        List<GameObject> nonGrabbedObjects = new List<GameObject>();
-        foreach (GameObject obj in spawnedObjects)
+        // 掴む処理
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) // RTトリガー
         {
-            if (obj != null && !grabbedObjects.Contains(obj))
+            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
             {
-                nonGrabbedObjects.Add(obj);
+                if (spawnedObjects.Contains(hit.collider.gameObject))
+                {
+                    grabbedObject = hit.collider.gameObject;
+                    grabDistance = Vector3.Distance(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), hit.point);
+                    grabOffset = hit.collider.transform.position - hit.point;
+
+                    // 物理演算を一時的に無効化
+                    Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.isKinematic = true;
+                        rb.useGravity = false;
+                    }
+
+                    // 掴んだオブジェクトを管理対象から外す
+                    spawnedObjects.Remove(grabbedObject);
+
+                    // 他のオブジェクトを全て削除
+                    List<GameObject> objectsToDestroy = new List<GameObject>(spawnedObjects);
+                    DestroyAllPrefabs(objectsToDestroy);
+
+                    // オブジェクトが空の場合、新しい出現を許可
+                    if (spawnedObjects.Count == 0)
+                    {
+                        objectsActive = false;
+                    }
+                }
             }
         }
 
-        // 掴まれていないオブジェクトがない場合は新しいPrefabを生成
-        if (nonGrabbedObjects.Count == 0)
+        // 掴んだオブジェクトを動かす
+        if (grabbedObject != null && OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) // RTトリガーを押し続けている間
         {
-            SpawnPrefabs();
+            Ray ray = new Ray(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward);
+            Vector3 newPosition = ray.GetPoint(grabDistance) + grabOffset;
+            grabbedObject.transform.position = newPosition;
         }
-        else
+
+        // 掴んだオブジェクトを解放
+        if (grabbedObject != null && OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) // RTトリガーを離す
         {
-            // 掴まれていないオブジェクトを削除
-            DestroyAllPrefabs(nonGrabbedObjects);
+            Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                rb.useGravity = true;
+            }
+            grabbedObject = null;
         }
     }
 
-    /// <summary>
-    /// Prefabsを出現させる
-    /// </summary>
+    void ToggleObjects()
+    {
+        if (objectsActive)
+        {
+            // 現在のオブジェクトを全て削除
+            List<GameObject> objectsToDestroy = new List<GameObject>(spawnedObjects);
+            if (objectsToDestroy.Count > 0)
+            {
+                DestroyAllPrefabs(objectsToDestroy);
+                objectsActive = false;
+            }
+            else
+            {
+                // 削除対象がない場合は次回のBボタンでオブジェクトを生成
+                objectsActive = false;
+            }
+        }
+        else
+        {
+            SpawnPrefabs();
+            objectsActive = true;
+        }
+    }
+
     void SpawnPrefabs()
     {
         if (prefabs.Length != spawnPoints.Length)
@@ -86,9 +126,8 @@ public class ToppingManager : MonoBehaviour
             if (prefabs[i] != null && spawnPoints[i] != null)
             {
                 GameObject newObject = Instantiate(prefabs[i], spawnPoints[i].position, spawnPoints[i].rotation);
-                spawnedObjects.Add(newObject); // リストに追加
+                spawnedObjects.Add(newObject);
 
-                // Colliderを追加
                 Collider collider = newObject.GetComponent<Collider>();
                 if (collider == null)
                 {
@@ -96,68 +135,17 @@ public class ToppingManager : MonoBehaviour
                 }
                 collider.isTrigger = false;
 
-                // Rigidbodyを追加
                 Rigidbody rb = newObject.GetComponent<Rigidbody>();
                 if (rb == null)
                 {
                     rb = newObject.AddComponent<Rigidbody>();
                 }
-                rb.isKinematic = true; // 初期状態で物理演算を無効化
-                rb.useGravity = false; // 初期状態で重力を無効化
+                rb.isKinematic = true;
+                rb.useGravity = false;
             }
         }
     }
 
-    /// <summary>
-    /// Oculus Quest 2のRTボタンでオブジェクトを掴む
-    /// </summary>
-    void TryGrabObject()
-    {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            GameObject hitObject = hit.collider.gameObject;
-            if (spawnedObjects.Contains(hitObject) && !grabbedObjects.Contains(hitObject))
-            {
-                grabbedObject = hitObject;
-                grabbedObjects.Add(hitObject);
-
-                // 他のオブジェクトを消去
-                DestroyAllPrefabs(new List<GameObject>(spawnedObjects.FindAll(obj => obj != hitObject && !grabbedObjects.Contains(obj))));
-
-                // 重力と物理演算を無効化
-                Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.isKinematic = true;
-                    rb.useGravity = false;
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// Oculus Quest 2のRTボタンを離したときの処理
-    /// </summary>
-    void ReleaseObject()
-    {
-        if (grabbedObject != null)
-        {
-            Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.isKinematic = false; // 物理演算を有効化
-                rb.useGravity = true; // 重力有効化
-            }
-            grabbedObject = null; // リファレンスを解除
-        }
-    }
-
-    /// <summary>
-    /// 出現中のPrefabを削除
-    /// </summary>
     void DestroyAllPrefabs(List<GameObject> objectsToDestroy)
     {
         foreach (GameObject obj in objectsToDestroy)
