@@ -106,12 +106,12 @@ public class ToppingManager : MonoBehaviour
         Debug.Log($"Object {movedObject.name} has moved!");
 
         // 物理演算を一時的に無効化
-        Rigidbody rb = movedObject.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-            rb.useGravity = false;
-        }
+        //Rigidbody rb = movedObject.GetComponent<Rigidbody>();
+        //if (rb != null)
+        //{
+        //    rb.isKinematic = true;
+        //    rb.useGravity = false;
+        //}
 
         // リストから削除
         spawnedObjects.Remove(movedObject);
