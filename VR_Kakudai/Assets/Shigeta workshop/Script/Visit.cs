@@ -164,7 +164,7 @@ public class Visit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("donburi"))
         {
-            Invoke("Wait", 0.2f);
+            Invoke("Wait", 1.0f);
         }
     }
 

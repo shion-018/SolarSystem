@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 
 public class CustomerRequest : MonoBehaviour
@@ -18,8 +19,10 @@ public class CustomerRequest : MonoBehaviour
 
     [SerializeField] private GameObject SalesAmountText;//売上金額の合計を映すところ
 
+    [SerializeField] AudioClip SuccesSound;
+    [SerializeField] AudioClip MissSound;
+    [SerializeField] AudioSource audioSource;
 
-    /// 仮
     [SerializeField] private GameObject UI_matome;
     [SerializeField] private Transform contect;
 
@@ -214,55 +217,62 @@ public class CustomerRequest : MonoBehaviour
 
     void OnCollisionEnter(Collision colliderDishes)
     {
-        //DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
-        HighJudge highJudge = colliderDishes.gameObject.GetComponentInChildren<HighJudge>();
-        AttachSushiChildrenInRange ASCIR = colliderDishes.gameObject.GetComponent<AttachSushiChildrenInRange>();
-
-        for (int i = 0; i < Assort; i++)
+        if (colliderDishes.gameObject.tag == "donburi")
         {
-            for (int j = 0; j < Assort; j++)
+
+            //DishesSetting ColDishesSetting = colliderDishes.gameObject.GetComponent<DishesSetting>();
+            HighJudge highJudge = colliderDishes.gameObject.GetComponentInChildren<HighJudge>();
+            AttachSushiChildrenInRange ASCIR = colliderDishes.gameObject.GetComponent<AttachSushiChildrenInRange>();
+
+            for (int i = 0; i < Assort; i++)
             {
-                if (AssortDishesNumber[i] == ASCIR.DonburiDishes[j])//料理が正しいかを判定
+                for (int j = 0; j < Assort; j++)
                 {
+                    if (AssortDishesNumber[i] == ASCIR.DonburiDishes[j])//料理が正しいかを判定
+                    {
 
-                    AssortDishesNumber[i] = -1;
-                    AssortJudge += 1;
+                        AssortDishesNumber[i] = -1;
+                        AssortJudge += 1;
 
+                    }
                 }
             }
+
+            switch (aaa)
+            {
+                case 0:
+
+                    if (AssortJudge == Assort)
+                    {
+                        amountText.Amount(DishesMagnification(colliderDishes));
+
+                        gameManager.betogether = true;
+                        audioSource.PlayOneShot(SuccesSound);
+                        Destroy(colliderDishes.gameObject);
+                        
+                    }
+                    else
+                    {
+                        audioSource.PlayOneShot(MissSound);
+                    }
+                    break;
+
+                case 1:
+
+
+                    if (highJudge.satisfyHeight >= HighJudgeNumber)
+                    {
+
+                        amountText.Amount(DishesMagnification(colliderDishes));
+                        gameManager.betogether = true;
+
+                        Destroy(colliderDishes.gameObject);
+
+                    }
+                    break;
+
+            }
         }
-        Debug.Log("Assort後 :" + AssortJudge);
-        switch (aaa)
-        {
-            case 0:
-
-                if (AssortJudge == Assort)
-                {
-                    amountText.Amount(DishesMagnification(colliderDishes));
-
-                    gameManager.betogether = true;
-                    Debug.Log("判定後"+ gameManager.betogether);
-                    Destroy(colliderDishes.gameObject);
-                    
-                }
-                break;
-
-            case 1:
-
-
-                if (highJudge.satisfyHeight >= HighJudgeNumber)
-                {
-
-                    amountText.Amount(DishesMagnification(colliderDishes));
-                    gameManager.betogether= true;
-                    
-                    Destroy(colliderDishes.gameObject);
-                    
-                }
-                break;
-
-        }
-
     }
 
     int DishesMagnification(Collision colliderDishes)
