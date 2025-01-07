@@ -14,7 +14,7 @@ public class ToppingManager : MonoBehaviour
     private List<GameObject> spawnedObjects = new List<GameObject>(); // 出現中のオブジェクトを管理するリスト
     private List<GameObject> grabbedObjects = new List<GameObject>(); // 掴まれているオブジェクトを管理するリスト
 
-    private GameObject grabbedObject; // 左クリックで掴むオブジェクト
+    private GameObject grabbedObject; // 掴むオブジェクト
     private Camera mainCamera; // メインカメラ
 
     void Start()
@@ -24,20 +24,20 @@ public class ToppingManager : MonoBehaviour
 
     void Update()
     {
-        // Oculus Quest 2のBボタンまたはマウスの右クリックを検出
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch) || Input.GetMouseButtonDown(1))
+        // Oculus Quest 2のBボタンを検出
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {
             HandleSpawnOrDestroy();
         }
 
-        // 左クリックでオブジェクトを掴む
-        if (Input.GetMouseButtonDown(0))
+        // Oculus Quest 2のRTボタンでオブジェクトを掴む
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
         {
             TryGrabObject();
         }
 
-        // 左クリックを離したらオブジェクトを放す
-        if (Input.GetMouseButtonUp(0))
+        // Oculus Quest 2のRTボタンを離したらオブジェクトを放す
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
         {
             ReleaseObject();
         }
@@ -109,7 +109,7 @@ public class ToppingManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 左クリックでオブジェクトを掴む
+    /// Oculus Quest 2のRTボタンでオブジェクトを掴む
     /// </summary>
     void TryGrabObject()
     {
@@ -139,7 +139,7 @@ public class ToppingManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 左クリックを離したときの処理
+    /// Oculus Quest 2のRTボタンを離したときの処理
     /// </summary>
     void ReleaseObject()
     {
