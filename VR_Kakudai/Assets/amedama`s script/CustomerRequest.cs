@@ -102,14 +102,35 @@ public class CustomerRequest : MonoBehaviour
                 DishesValueMax = RequestDishes.Length;
                 SizeSpecificationSpriteValueMin = 0;
                 SizeSpecificationSpriteValueMax = SizeSpecificationSprits.Length;
+                int[] DishesNotSame = new int[3] { -1, -1, -1 };
+                bool NotSameJudge = true;
+
 
                 //乱数生成で料理と大きさを決定
                 for (int i = 0; i < Assort; i++)
                 {
+                    do
+                    {
 
-                    DishesValue = Random.Range(DishesValueMin, DishesValueMax);
+                        NotSameJudge = true;
+                        DishesValue = Random.Range(DishesValueMin, DishesValueMax);
+
+                        for (int j = 0; j < Assort; j++)
+                        {
+                            if (DishesNotSame[j] != DishesValue && DishesNotSame[j] == -1)
+                            {
+                                DishesNotSame[i] = DishesValue;
+                                break;
+                            }
+                            else if (DishesNotSame[j] == DishesValue)
+                            {
+                                NotSameJudge = false;
+                            }
+                        }
+                    } while (!NotSameJudge);
+
                     dishesSetting = RequestDishes[DishesValue].GetComponent<DishesSetting>();
-                    UI_Images[i,0].sprite = DishesSprits[DishesValue];                    
+                    UI_Images[i, 0].sprite = DishesSprits[DishesValue];
                     RequestDishesPrice = DishesPrice[DishesValue];
                     SizeSpecificationSpriteValue = Random.Range(SizeSpecificationSpriteValueMin, SizeSpecificationSpriteValueMax);
                     UI_Images[i, 1].sprite = SizeSpecificationSprits[SizeSpecificationSpriteValue];
