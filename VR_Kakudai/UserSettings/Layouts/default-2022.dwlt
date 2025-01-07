@@ -48,7 +48,9 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 83
+
+  controlID: 66
+
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,9 +69,11 @@ MonoBehaviour:
     x: 1172.8
     y: 0
     width: 363.19995
-    height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+
+    height: 722.8
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -93,9 +97,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 290.4
-    height: 432
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+
+    height: 427.2
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +229,9 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 38
+
+  controlID: 67
+
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +256,9 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 39
+
+  controlID: 68
+
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -322,7 +332,9 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Shigeta workshop/Script
+
+    - Assets/Shigeta workshop/Prefab/guest
+
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -330,16 +342,20 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Shigeta workshop/Script
+
+  - Assets/Shigeta workshop/Prefab/guest
+
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Game3\SolarSystem\VR_Kakudai
+  m_LastProjectPath: C:\Users\ameda\.vscode\SolarSystem-1\VR_Kakudai
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 321.40002}
-    m_SelectedIDs: 26a80000
-    m_LastClickedID: 43046
-    m_ExpandedIDs: 0000000064750000
+
+    scrollPos: {x: 0, y: 305.40002}
+    m_SelectedIDs: 92be0200
+    m_LastClickedID: 179858
+    m_ExpandedIDs: 00000000449d00000e9e000080be020000ca9a3bffffff7f
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +383,9 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000064750000
+
+    m_ExpandedIDs: 00000000449d0000
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -392,8 +410,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 80b4ffff
-    m_LastClickedInstanceID: -19328
+
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -509,9 +529,11 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 96730000
-      m_LastClickedID: 0
-      m_ExpandedIDs: f4faffff
+
+      m_SelectedIDs: 14faffff
+      m_LastClickedID: -1516
+      m_ExpandedIDs: b0d0fdff40d3fdff44d3fdffccd3fdff5cd6fdff60d6fdffb6e2fdff3ae3fdff3ee3fdffbae3fdff3ee4fdff42e4fdff1603feff9a03feff9e03fefffe03feff8e06feff9206feff2c2afeffb02afeffb42afeff522bfeffe22dfeffe62dfeffae48feff3e4bfeff424bfeffe44bfeff684cfeff6c4cfeff2054feffb056feffb456feff1457feff9857feff9c57feff406ffeffd071feffd471feff9072feff2075feff2475feff387efeffc880feffcc80feff4881feffcc81feffd081feff0ed0feff9cd2feffa0d2feff5cd3feffe0d3feffe4d3feff7610ffff0413ffff0813ffffa813ffff2a14ffff2e14ffffc620ffff4821ffff4c21ffffea21ffff7824ffff7c24ffff9426ffff88f7ffffe2f7ffff02faffff14faffff28fbffff
+
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -527,7 +549,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -600,7 +622,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -626,7 +648,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -859,16 +881,18 @@ MonoBehaviour:
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: -8.39}
+
+    m_Target: {x: -2.3389297, y: 3.2032187, z: 21.234184}
     speed: 2
-    m_Value: {x: -17.891129, y: -9.213544, z: 29.949982}
+    m_Value: {x: -2.3389297, y: 3.2032187, z: 21.234184}
+
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -879,7 +903,7 @@ MonoBehaviour:
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -914,13 +938,15 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.20104587, y: 0.7349038, z: -0.24923891, w: -0.5985303}
+
+    m_Target: {x: 0.06875684, y: -0.7445321, z: 0.077544875, w: 0.65967494}
     speed: 2
-    m_Value: {x: -0.26721814, y: 0.4548209, z: -0.14525665, w: -0.83715886}
+    m_Value: {x: 0.06795724, y: -0.7445353, z: 0.07664199, w: 0.65967786}
   m_Size:
-    m_Target: 7.071068
+    m_Target: 1.2468079
     speed: 2
-    m_Value: 11.411661
+    m_Value: 1.2468079
+
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1066,9 +1092,11 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 505.6
+
+    y: 500.80002
     width: 1171.8
-    height: 277.8
+    height: 274.59998
+
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0

@@ -1777,6 +1777,7 @@ GameObject:
   - component: {fileID: 5801387330502710978}
   - component: {fileID: 1738081071592569345}
   - component: {fileID: 3182625078208003076}
+  - component: {fileID: 8894413056470885574}
   m_Layer: 0
   m_Name: rikishi_3
   m_TagString: Untagged
@@ -1955,6 +1956,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3182625078208003076}
+    - targetCorrespondingSourceObject: {fileID: 8721409943916572745, guid: d073226dc15a5544a825ca80800c7445,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8894413056470885574}
   m_SourcePrefab: {fileID: 100100000, guid: d073226dc15a5544a825ca80800c7445, type: 3}
 --- !u!23 &2072436363937635616
 MeshRenderer:
@@ -2126,8 +2131,107 @@ MonoBehaviour:
   DishesImage: {fileID: 5797106018279054799}
   SizeImage: {fileID: 4685109051645644826}
   SalesAmountText: {fileID: 8077050957542640785}
+  SuccesSound: {fileID: 8300000, guid: 5a33f0ea6280d0046aec62b9e3ac2fdd, type: 3}
+  MissSound: {fileID: 8300000, guid: f875636865378044da6e4296306368bf, type: 3}
+  audioSource: {fileID: 8894413056470885574}
   UI_matome: {fileID: 1601294366854188784, guid: c963150da53da8245bff9c3bb919b997,
     type: 3}
   contect: {fileID: 2687670534485980855}
   AssortDishesNumberMax: 4
   aaa: 0
+--- !u!82 &8894413056470885574
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145558277410696644}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
