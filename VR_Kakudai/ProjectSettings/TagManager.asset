@@ -9,6 +9,7 @@ TagManager:
   - Game Object
   - Road
   - SalesAmountText
+  - roof
   layers:
   - Default
   - TransparentFX
