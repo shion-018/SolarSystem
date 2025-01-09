@@ -24,7 +24,7 @@ public class ResultScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        resultCanvas.SetActive(false);
+        //resultCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class ResultScript : MonoBehaviour
     {
         Debug.Log("EditorResult‚Í‰ñ‚Á‚Ä‚é‚æ");
         resultCanvas.SetActive(true);
+        Debug.Log(resultCanvas.activeSelf);
         Text comeResul_text = _comeResult.GetComponent<Text>();
         Text goodResul_text = _goodResult.GetComponent<Text>();
         Text badResul_text = _badResult.GetComponent<Text>();
