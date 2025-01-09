@@ -15944,8 +15944,9 @@ MonoBehaviour:
   TimeLimit: 2
   TimeLimitText: {fileID: 297941419}
   ResultUI: {fileID: 994683524}
+  ResultScript: {fileID: 0}
   betogether: 0
-  AllCusomer: 0
+  AllCustomer: 0
   SatisfiedCustomers: 0
   gamestate: 0
   TimeNow: 0
