@@ -248,6 +248,8 @@ public class CustomerRequest : MonoBehaviour
 
                         gameManager.betogether = true;
                         audioSource.PlayOneShot(SuccesSound);
+                        gameManager.SatisfiedCustomers++;
+                        Debug.Log( "gM.SC = " + gameManager.SatisfiedCustomers);
                         Destroy(colliderDishes.gameObject);
                         
                     }
@@ -265,7 +267,7 @@ public class CustomerRequest : MonoBehaviour
 
                         amountText.Amount(DishesMagnification(colliderDishes));
                         gameManager.betogether = true;
-
+                        gameManager.SatisfiedCustomers++;
                         Destroy(colliderDishes.gameObject);
 
                     }

@@ -12,11 +12,11 @@ public class AttachSushiChildrenInRange : MonoBehaviour
     void Update()
     {
         // ボタンが押された瞬間を検出
-        bool rightClick = OVRInput.GetDown(OVRInput.RawButton.A);
-        //bool keyPress = Input.GetKeyDown(KeyCode.A); // キーボードでの検出
+        //bool rightClick = OVRInput.GetDown(OVRInput.RawButton.A);
+        bool keyPress = Input.GetKeyDown(KeyCode.A); // キーボードでの検出
 
         // いずれかのボタンが押された瞬間に処理を実行
-        if (/*keyPress ||*/ rightClick)
+        if (keyPress /*|| rightClick*/)
         {
             // ワールド座標で中心位置を計算
             Vector3 center = parentObject.position + boxOffset;
