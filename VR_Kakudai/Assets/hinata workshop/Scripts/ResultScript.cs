@@ -32,7 +32,7 @@ public class ResultScript : MonoBehaviour
     {
 
     }
-    void EditorResult()
+    public void EditorResult()
     {
         resultCanvas.SetActive(true);
         Text comeResul_text = _comeResult.GetComponent<Text>();
