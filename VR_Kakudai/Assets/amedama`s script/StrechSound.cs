@@ -31,7 +31,7 @@ public class StrechSound : MonoBehaviour
             Debug.Log(magnification_judge);
             magnification_judge += 1;
             reduction_judge += 1;
-            audioSource.pitch += 0.5f; 
+            audioSource.pitch -= 0.5f; 
         }
         else if (Dishes_Original_Size_x * reduction_judge > this.transform.localScale.x)
         {
@@ -39,7 +39,7 @@ public class StrechSound : MonoBehaviour
             Debug.Log(reduction_judge);
             magnification_judge -= 1;
             reduction_judge -= 1;
-            audioSource.pitch -= 0.5f;
+            audioSource.pitch+= 0.5f;
         }
     }
 

@@ -17713,7 +17713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7afbf6d720ce149a877d64dd884240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLimit: 2
+  TimeLimit: 300
   TimeLimitText: {fileID: 297941419}
   ResultUI: {fileID: 0}
   ResultScript: {fileID: 1559266240}
