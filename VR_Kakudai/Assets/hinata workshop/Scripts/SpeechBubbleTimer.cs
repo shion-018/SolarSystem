@@ -13,6 +13,7 @@ public class SpeechBubbleTimer : MonoBehaviour
     [SerializeField] Image hukidasi;
     [SerializeField] Canvas hukidasiImage;
 
+
     bool touch = false;
     void Start()
     {
@@ -39,6 +40,11 @@ public class SpeechBubbleTimer : MonoBehaviour
         if(timer < 0.25)
         {
             hukidasi.color = Color.red;
+        }
+        if (timer < 0)
+        {
+            Destroy(transform.parent.gameObject);
+            Destroy(this.gameObject);
         }
 
         return timer;

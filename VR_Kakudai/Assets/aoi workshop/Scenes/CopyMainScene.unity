@@ -12025,7 +12025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeLimit: 300
   TimeLimitText: {fileID: 297941419}
-  ResultUI: {fileID: 0}
+  ResultUI: {fileID: 1559266238}
   ResultScript: {fileID: 1559266240}
   betogether: 0
   AllCustomer: 0
@@ -14019,6 +14019,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -2846242253892608548, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29287156439048610, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 238237556640589868, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 866622991362577334, guid: 36219e0af6849b743aa5d7bcf6c42afa,
         type: 3}
       propertyPath: m_IsActive
@@ -14038,6 +14053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748140477578251932, guid: 36219e0af6849b743aa5d7bcf6c42afa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3303738644973346220, guid: 36219e0af6849b743aa5d7bcf6c42afa,
         type: 3}
@@ -14913,7 +14933,7 @@ GameObject:
   - component: {fileID: 999089318}
   - component: {fileID: 999089317}
   m_Layer: 0
-  m_Name: CustonerCount
+  m_Name: CustomerCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21981,6 +22001,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d863bd8bb9379144fba8fbf488ee9026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comeResult: 0
+  goodResult: 0
+  badResult: 0
   resultCanvas: {fileID: 1559266238}
   _comeResult: {fileID: 141906670}
   _goodResult: {fileID: 237397417}
