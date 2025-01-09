@@ -100,11 +100,12 @@ public class GameManager : MonoBehaviour
         {
             if (flag)
             {
+                ResultUI.SetActive(true);
                 ResultScript.comeResult = AllCustomer;
                 ResultScript.goodResult = SatisfiedCustomers;
                 ResultScript.badResult = AllCustomer - SatisfiedCustomers;
                 ResultScript.EditorResult();
-                ResultUI.SetActive(true);
+                
                 flag = false;
             }
 

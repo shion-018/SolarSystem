@@ -34,6 +34,7 @@ public class ResultScript : MonoBehaviour
     }
     public void EditorResult()
     {
+        Debug.Log("EditorResult‚Í‰ñ‚Á‚Ä‚é‚æ");
         resultCanvas.SetActive(true);
         Text comeResul_text = _comeResult.GetComponent<Text>();
         Text goodResul_text = _goodResult.GetComponent<Text>();
