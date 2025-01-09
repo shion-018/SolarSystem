@@ -24,7 +24,7 @@ public class ResultScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        resultCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class ResultScript : MonoBehaviour
     }
     public void IsGameClear()
     {
-        StartCoroutine(RetryAfterDelay(10f)); //十秒後にシーンをリロード
+        StartCoroutine(RetryAfterDelay(10f)); //10秒後にシーンをリロード
     }
     private IEnumerator RetryAfterDelay(float delay)
     {
@@ -61,6 +61,7 @@ public class ResultScript : MonoBehaviour
     {
         //点数の判別欄
         sumResult = goodResult*3 + badResult;
+
         if (sumResult >= 15)
         {
             god.SetActive(true);
@@ -73,7 +74,7 @@ public class ResultScript : MonoBehaviour
         {
             good.SetActive(true);
         }
-        if( sumResult >= 0 && sumResult < 5)
+        if( sumResult < 5)
         {
             close.SetActive(true);
         }
