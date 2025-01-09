@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ResultScript : MonoBehaviour
@@ -35,5 +36,18 @@ public class ResultScript : MonoBehaviour
         goodResul_text.text = "" + goodResult;
         badResul_text.text = "" + badResult;
         sumResult_text.text = "" + sumResult;
+    }
+    public void IsGameClear()
+    {
+        StartCoroutine(RetryAfterDelay(10f)); 
+    }
+    private IEnumerator RetryAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); 
+        RetryGame(); 
+    }
+    void RetryGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

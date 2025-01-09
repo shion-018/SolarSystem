@@ -32076,7 +32076,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound1: {fileID: 8300000, guid: b807e2929d53fad43a5f294d514f75ab, type: 3}
   audioSource: {fileID: 8182726040113787436}
-  magnification: 0.3
 --- !u!65 &7424722519384809732
 BoxCollider:
   m_ObjectHideFlags: 0
