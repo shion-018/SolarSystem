@@ -29,8 +29,8 @@ public class generation : MonoBehaviour
     {
         if (CustomerCounter.counter < 3 && !isSpawning)
         {
-            gameManager.AllCusomer++;
-            Debug.Log("gM.AC = " + gameManager.AllCusomer);
+            gameManager.AllCustomer++;
+            Debug.Log("gM.AC = " + gameManager.AllCustomer);
             StartCoroutine(SpawnWithDelay());
         }
     }
