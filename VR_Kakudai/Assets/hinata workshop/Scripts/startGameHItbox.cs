@@ -22,7 +22,6 @@ public class startGameHItbox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("ganeration‹N“®");
             Ganeration.enabled = true;
         }
     }

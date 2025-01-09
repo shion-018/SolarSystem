@@ -105,7 +105,6 @@ public class Visit : MonoBehaviour
             if (TriggerSignal)
             {
                 RoadNum++;
-                Debug.Log(RoadNum);
                 TriggerSignal = false;
             }
 
@@ -179,8 +178,6 @@ public class Visit : MonoBehaviour
 
     void Wait()
     {
-
-        Debug.Log(gameManager.betogether);
         if (gameManager.betogether)
         {
             empty.seat[seatnum] = true;

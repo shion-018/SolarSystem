@@ -18,7 +18,6 @@ public class SpeechBubbleTimer : MonoBehaviour
     void Start()
     {
         timerLimit = Random.Range(2,6 ) * 5;
-        Debug.Log("êßå¿éûä‘" + timerLimit);
 
         hukidasi.color = Color.green;
 
@@ -54,7 +53,6 @@ public class SpeechBubbleTimer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Finish"))
         {
-            Debug.Log("ÇŒÇ†");
             touch = true;
         }
     }

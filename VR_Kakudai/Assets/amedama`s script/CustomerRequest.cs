@@ -140,7 +140,6 @@ public class CustomerRequest : MonoBehaviour
 
                     AssortDishesNumber[i] = dishesSetting.Number[SizeSpecificationSpriteValue];
 
-                    Debug.Log("盛り付け : " + AssortDishesNumber[i]);
                 }
 
                 break;

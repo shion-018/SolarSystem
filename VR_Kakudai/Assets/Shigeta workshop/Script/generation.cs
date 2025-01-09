@@ -30,7 +30,6 @@ public class generation : MonoBehaviour
         if (CustomerCounter.counter < 3 && !isSpawning)
         {
             gameManager.AllCustomer++;
-            Debug.Log("gM.AC = " + gameManager.AllCustomer);
             StartCoroutine(SpawnWithDelay());
         }
     }
