@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("")]
     GameObject ResultUI;
     public  bool betogether = false;
+    public int AllCustomer = 0;
+    public int SatisfiedCustomers = 0;
 
 
     public enum GAMESTATE

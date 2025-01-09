@@ -8,8 +8,9 @@ public class generation : MonoBehaviour
 
     int i = 0;
 
-    GameObject A;
-    CustomerCounter CustmerCounter;
+    GameObject A,B;
+    CustomerCounter CustomerCounter;
+    GameManager gameManager;
 
     // 生成間隔（秒）
     [SerializeField] private float spawnInterval = 2.0f;
@@ -17,14 +18,19 @@ public class generation : MonoBehaviour
 
     void Start()
     {
-        A = GameObject.Find("CustonerCount");
-        CustmerCounter = A.GetComponent<CustomerCounter>();
+        A = GameObject.Find("CustomerCount");
+        CustomerCounter = A.GetComponent<CustomerCounter>();
+
+        B = GameObject.Find("GameManager");
+        gameManager = B.GetComponent<GameManager>();
     }
 
     void Update()
     {
-        if (CustmerCounter.counter < 3 && !isSpawning)
+        if (CustomerCounter.counter < 3 && !isSpawning)
         {
+            gameManager.AllCusomer++;
+            Debug.Log("gM.AC = " + gameManager.AllCusomer);
             StartCoroutine(SpawnWithDelay());
         }
     }
@@ -38,7 +44,7 @@ public class generation : MonoBehaviour
         Instantiate(target[i], this.transform.position, Quaternion.identity);
 
         // カウンターを増やす
-        CustmerCounter.counter++;
+        CustomerCounter.counter++;
 
         // 指定の間隔を待機
         yield return new WaitForSeconds(spawnInterval);
