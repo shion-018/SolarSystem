@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         TimeLimitText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
         ResultUI = GameObject.Find("ResultUI");
         ResultScript = ResultUI.GetComponent<ResultScript>();
+        ResultUI.SetActive(false);
         TimeNow = TimeLimit;
         Debug.Log(ResultUI);
 
