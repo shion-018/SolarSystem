@@ -29,6 +29,8 @@ public class Visit : MonoBehaviour
     GameObject C;
     GameManager gameManager;
 
+    bool Nottimeover = false;
+
     // PlayerのTransformを取得するための変数を追加
     private Transform playerTransform;
 
@@ -53,7 +55,7 @@ public class Visit : MonoBehaviour
         A = GameObject.Find("emptyseat");
         empty = A.GetComponent<emptyseat>();
 
-        B = GameObject.Find("CustonerCount");
+        B = GameObject.Find("CustomerCount");
         CustmerCounter = B.GetComponent<CustomerCounter>();
 
         cube_boxCol = this.GetComponent<BoxCollider>();
@@ -164,8 +166,15 @@ public class Visit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("donburi"))
         {
+            Nottimeover = true;
             Invoke("Wait", 1.0f);
         }
+    }
+
+    void OnDestroy()
+    {
+        gameManager.betogether = true;
+        Wait();
     }
 
     void Wait()
@@ -178,12 +187,14 @@ public class Visit : MonoBehaviour
             CustmerCounter.counter--;
             gameManager.betogether = false;
 
-            GameObject spawnLocationObject = GameObject.Find(spawnLocationName);
-            if (spawnObject != null && spawnLocation != null)
+            if (Nottimeover)
             {
-                Instantiate(spawnObject, spawnLocation.position, spawnLocation.rotation);
+                GameObject spawnLocationObject = GameObject.Find(spawnLocationName);
+                if (spawnObject != null && spawnLocation != null)
+                {
+                    Instantiate(spawnObject, spawnLocation.position, spawnLocation.rotation);
+                }
             }
-
             //自分の親オブジェクトを削除
             if (transform.parent != null)
             {
@@ -195,6 +206,7 @@ public class Visit : MonoBehaviour
         }
 
     }
+
 
     void InputRoad(int seatnum)
     {

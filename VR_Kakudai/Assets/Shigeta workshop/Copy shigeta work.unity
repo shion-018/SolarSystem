@@ -14282,7 +14282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &986723811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14749,7 +14749,7 @@ GameObject:
   - component: {fileID: 999089318}
   - component: {fileID: 999089317}
   m_Layer: 0
-  m_Name: CustonerCount
+  m_Name: CustomerCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
