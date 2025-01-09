@@ -44,15 +44,15 @@ public class DishesSetting : MonoBehaviour
     void Update()
     {
 
-        if (this.gameObject.transform.localScale.x >= CriterionSize * 3)
+        if (this.gameObject.transform.localScale.x >= CriterionSize * 2)
         {
             DishesNumber = Number[2];
         }
-        else if (this.gameObject.transform.localScale.x >= CriterionSize * 2)
+        else if (this.gameObject.transform.localScale.x >= CriterionSize)
         {
             DishesNumber = Number[1];
         }
-        else if (this.gameObject.transform.localScale.x >= CriterionSize)
+        else if (this.gameObject.transform.localScale.x < CriterionSize)
         {
             DishesNumber = Number[0];
         }
