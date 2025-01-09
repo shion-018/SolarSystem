@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class ResultScript : MonoBehaviour
 {
-    int comeResult;
-    int goodResult;
-    int badResult;
+    [HideInInspector]public int comeResult;
+    [HideInInspector]public int goodResult;
+    [HideInInspector]public int badResult;
     int sumResult;
     [Header("ƒŠƒUƒ‹ƒg‚Ì”š")]
     [SerializeField] GameObject resultCanvas;
