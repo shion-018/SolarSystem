@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField, Tooltip("タイムリミット（秒）")] int TimeLimit = 60;
     [SerializeField, Tooltip("制限時間Text")] TextMeshProUGUI TimeLimitText;
-    [SerializeField, Tooltip("")]
-    GameObject ResultUI;
+    [SerializeField, Tooltip("")]GameObject ResultUI;
+    [SerializeField] ResultScript ResultScript;
     public  bool betogether = false;
     public int AllCustomer = 0;
     public int SatisfiedCustomers = 0;
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public int TimeNow = 0;
     float Seconds_If;
-
+    bool flag = true;
 
 
     private void Awake()
@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += SceneloadIvent;
         TimeNow = TimeLimit;
         ResultUI.SetActive(false);
+        ResultScript = ResultUI.GetComponent<ResultScript>();
     }
 
     void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
@@ -97,7 +98,13 @@ public class GameManager : MonoBehaviour
 
         if (gamestate == GAMESTATE.GameEnd)//ゲームが終了したとき
         {
-            ResultUI.SetActive(true);
+            if (flag)
+            {
+                ResultScript.EditorResult();
+                ResultUI.SetActive(true);
+                flag = false;
+            }
+
         }
     }
 }
