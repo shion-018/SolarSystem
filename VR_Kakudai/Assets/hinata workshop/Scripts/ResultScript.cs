@@ -64,19 +64,19 @@ public class ResultScript : MonoBehaviour
         //“_”‚Ì”»•Ê—“
         sumResult = goodResult * 3 + badResult;
 
-        if (sumResult >= 15)
+        if (sumResult >= 25)
         {
             god.SetActive(true);
         }
-        if (sumResult >= 10 && sumResult < 15)
+        if (sumResult >= 20 && sumResult < 25)
         {
             excerent.SetActive(true);
         }
-        if (sumResult >= 5 && sumResult < 10)
+        if (sumResult >= 15 && sumResult < 20)
         {
             good.SetActive(true);
         }
-        if (sumResult < 5)
+        if (sumResult < 15)
         {
             close.SetActive(true);
         }
