@@ -8,21 +8,21 @@ public class generation : MonoBehaviour
 
     int i = 0;
 
-    GameObject A,B;
+    GameObject CustomerCounterObjct, GameManagerObject;
     CustomerCounter CustomerCounter;
     GameManager gameManager;
 
-    // 生成間隔（秒）
+    //生成間隔（秒）
     [SerializeField] private float spawnInterval = 2.0f;
     private bool isSpawning = false;
 
     void Start()
     {
-        A = GameObject.Find("CustomerCount");
-        CustomerCounter = A.GetComponent<CustomerCounter>();
+        CustomerCounterObjct = GameObject.Find("CustomerCount");
+        CustomerCounter = CustomerCounterObjct.GetComponent<CustomerCounter>();
 
-        B = GameObject.Find("GameManager");
-        gameManager = B.GetComponent<GameManager>();
+        GameManagerObject = GameObject.Find("GameManager");
+        gameManager = GameManagerObject.GetComponent<GameManager>();
     }
 
     void Update()
@@ -36,18 +36,17 @@ public class generation : MonoBehaviour
 
     IEnumerator SpawnWithDelay()
     {
-        isSpawning = true;  // 生成中フラグをオン
+        isSpawning = true;
 
-        // ランダムにオブジェクトを選んで生成
+        //ランダムにオブジェクトを選んで生成
         i = Random.Range(0, target.Length);
         Instantiate(target[i], this.transform.position, Quaternion.identity);
 
-        // カウンターを増やす
         CustomerCounter.counter++;
 
-        // 指定の間隔を待機
+        //指定の間隔を待機
         yield return new WaitForSeconds(spawnInterval);
 
-        isSpawning = false;  // 生成中フラグをオフ
+        isSpawning = false;
     }
 }

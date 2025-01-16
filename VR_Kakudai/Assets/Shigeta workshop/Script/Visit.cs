@@ -22,23 +22,22 @@ public class Visit : MonoBehaviour
     public GameObject cube;
     public BoxCollider cube_boxCol;
 
-    GameObject A;
+    GameObject EmptyObject;
     emptyseat empty;
-    GameObject B;
+    GameObject CustmerCounterObject;
     CustomerCounter CustmerCounter;
-    GameObject C;
+    GameObject GameManagerObjct;
     GameManager gameManager;
 
-    bool Nottimeover = false;
+    bool NotTimeover = false;
 
-    // PlayerのTransformを取得するための変数を追加
     private Transform playerTransform;
 
-    // アニメーションの管理用
+    //アニメーションの管理用
     private Animator animator;
 
-    [SerializeField] private GameObject spawnObject; // 出現するオブジェクト
-    [SerializeField] private Transform spawnLocation; // 出現位置
+    [SerializeField] private GameObject spawnObject;
+    [SerializeField] private Transform spawnLocation;
 
     void Start()
     {
@@ -52,18 +51,17 @@ public class Visit : MonoBehaviour
             }
         }
 
-        A = GameObject.Find("emptyseat");
-        empty = A.GetComponent<emptyseat>();
+        EmptyObject = GameObject.Find("emptyseat");
+        empty = EmptyObject.GetComponent<emptyseat>();
 
-        B = GameObject.Find("CustomerCount");
-        CustmerCounter = B.GetComponent<CustomerCounter>();
+        CustmerCounterObject = GameObject.Find("CustomerCount");
+        CustmerCounter = CustmerCounterObject.GetComponent<CustomerCounter>();
 
         cube_boxCol = this.GetComponent<BoxCollider>();
 
-        C = GameObject.Find("GameManager");
-        gameManager = C.GetComponent<GameManager>();
+        GameManagerObjct = GameObject.Find("GameManager");
+        gameManager = GameManagerObjct.GetComponent<GameManager>();
 
-        // Playerオブジェクトを取得してTransformを保持
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
@@ -165,15 +163,9 @@ public class Visit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("donburi"))
         {
-            Nottimeover = true;
+            NotTimeover = true;
             Invoke("Wait", 1.0f);
         }
-    }
-
-    void OnDestroy()
-    {
-        gameManager.betogether = true;
-        Wait();
     }
 
     void Wait()
@@ -184,7 +176,7 @@ public class Visit : MonoBehaviour
             CustmerCounter.counter--;
             gameManager.betogether = false;
 
-            if (Nottimeover)
+            if (NotTimeover)
             {
                 GameObject spawnLocationObject = GameObject.Find(spawnLocationName);
                 if (spawnObject != null && spawnLocation != null)
@@ -204,7 +196,7 @@ public class Visit : MonoBehaviour
 
     }
 
-
+    //道の設定
     void InputRoad(int seatnum)
     {
         switch (seatnum)

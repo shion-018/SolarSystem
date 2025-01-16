@@ -17,7 +17,7 @@ public class SpeechBubbleTimer : MonoBehaviour
     bool touch = false;
     void Start()
     {
-        timerLimit = Random.Range(2,6 ) * 5;
+        timerLimit = 999;
 
         hukidasi.color = Color.green;
 
