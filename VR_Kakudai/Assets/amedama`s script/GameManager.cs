@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
@@ -11,10 +13,13 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    [SerializeField, Tooltip("É^ÉCÉÄÉäÉ~ÉbÉgÅiïbÅj")] int TimeLimit = 60;
-    [SerializeField, Tooltip("êßå¿éûä‘Text")] TextMeshProUGUI TimeLimitText;
-    [SerializeField, Tooltip("")]
-
+    [SerializeField, Tooltip("„Çø„Ç§„É†„É™„Éü„ÉÉ„ÉàÔºàÁßíÔºâ")] int TimeLimit = 60;
+    [SerializeField, Tooltip("Âà∂ÈôêÊôÇÈñìText")] TextMeshProUGUI TimeLimitText;
+    [SerializeField, Tooltip("")]GameObject ResultUI;
+    [SerializeField] ResultScript ResultScript;
+    public  bool betogether = false;
+    public int AllCustomer = 0;
+    public int SatisfiedCustomers = 0;
 
 
     public enum GAMESTATE
@@ -29,9 +34,9 @@ public class GameManager : MonoBehaviour
 
     public GAMESTATE gamestate = GAMESTATE.Title;
 
-    int TimeNow = 0;
+    public int TimeNow = 0;
     float Seconds_If;
-
+    bool flag = true;
 
 
     private void Awake()
@@ -51,8 +56,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.sceneLoaded += SceneloadIvent;
+        TimeNow = TimeLimit;
+        ResultUI.SetActive(false);
+        ResultScript = ResultUI.GetComponent<ResultScript>();
+    }
 
+    void SceneloadIvent(Scene scene , LoadSceneMode sceneMode)
+    {
 
+        TimeLimitText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
+        ResultUI = GameObject.Find("ResultUI");
+        ResultScript = ResultUI.GetComponent<ResultScript>();
+        ResultUI.SetActive(false);
+        TimeNow = TimeLimit;
+        Debug.Log(ResultUI);
 
     }
 
@@ -60,30 +78,40 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            gamestate = GAMESTATE.Play;
-        }
-
-        if (gamestate == GAMESTATE.Play)//éûä‘ÇÉJÉEÉìÉgÇ∑ÇÈèàóù
+        if (gamestate == GAMESTATE.Play)//ÊôÇÈñì„Çí„Ç´„Ç¶„É≥„Éà„Åô„ÇãÂá¶ÁêÜ
         {
             Seconds_If += Time.deltaTime;
 
             if (Seconds_If >= 1.0f)
             {
-                TimeNow += 1;
+                TimeNow -= 1;
                 TimeLimitText.text = TimeNow.ToString();
                 Seconds_If = 0;
 
-                if (TimeLimit <= TimeNow)
+                if (TimeNow <= 0)
                 {
                     TimeNow = 0;
+                    gamestate = GAMESTATE.GameEnd;
 
                 }
 
             }
         }
 
-    }
+        if (gamestate == GAMESTATE.GameEnd)//„Ç≤„Éº„É†„ÅåÁµÇ‰∫Ü„Åó„Åü„Å®„Åç
+        {
+            if (flag)
+            {
+                ResultUI.SetActive(true);
+                ResultScript.comeResult = AllCustomer;
+                ResultScript.goodResult = SatisfiedCustomers;
+                ResultScript.badResult = AllCustomer - SatisfiedCustomers;
+                ResultScript.EditorResult();
+                
+                flag = false;
+            }
 
+        }
+    }
 }
+

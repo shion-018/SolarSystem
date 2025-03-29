@@ -5,37 +5,44 @@ using UnityEngine;
 public class Visit : MonoBehaviour
 {
     [SerializeField] private string[] targetNames;
-    //[SerializeField] GameObject TimeBar;
     public Transform[] targets;
 
     [SerializeField] private string[] RoadName0;
-
     [SerializeField] private string[] RoadName1;
-
     [SerializeField] private string[] RoadName2;
+    [SerializeField] private string spawnLocationName;
 
     int RoadNum = 0;
-
     bool TriggerSignal = false;
-
     public Transform[] Road;
-
     private float speed = 3.0f;
-
     int seatnum = 0;
-
     int P = 0;
-
     bool HeadtoGirl = false;
-
+    public GameObject cube;
+    public BoxCollider cube_boxCol;
 
     GameObject A;
     emptyseat empty;
-    // Start is called before the first frame update
+    GameObject B;
+    CustomerCounter CustmerCounter;
+    GameObject C;
+    GameManager gameManager;
+
+    bool Nottimeover = false;
+
+    // PlayerのTransformを取得するための変数を追加
+    private Transform playerTransform;
+
+    // アニメーションの管理用
+    private Animator animator;
+
+    [SerializeField] private GameObject spawnObject; // 出現するオブジェクト
+    [SerializeField] private Transform spawnLocation; // 出現位置
+
     void Start()
     {
         targets = new Transform[targetNames.Length];
-
         for (int i = 0; i < targetNames.Length; i++)
         {
             GameObject targetObject = GameObject.Find(targetNames[i]);
@@ -48,11 +55,29 @@ public class Visit : MonoBehaviour
         A = GameObject.Find("emptyseat");
         empty = A.GetComponent<emptyseat>();
 
+        B = GameObject.Find("CustomerCount");
+        CustmerCounter = B.GetComponent<CustomerCounter>();
+
+        cube_boxCol = this.GetComponent<BoxCollider>();
+
+        C = GameObject.Find("GameManager");
+        gameManager = C.GetComponent<GameManager>();
+
+        // Playerオブジェクトを取得してTransformを保持
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            playerTransform = playerObject.transform;
+        }
+
+        // Animatorコンポーネントの取得
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        bool isMoving = false;
+
         if (P == 0)
         {
             for (int i = 0; i < targets.Length; i++)
@@ -67,26 +92,59 @@ public class Visit : MonoBehaviour
             }
         }
 
-        if(HeadtoGirl == false && RoadNum < 3)
+        if (HeadtoGirl == false && RoadNum < Road.Length)
         {
+            Vector3 direction = (Road[RoadNum].position - transform.position).normalized;
             transform.position = Vector3.MoveTowards(transform.position, Road[RoadNum].position, speed * Time.deltaTime);
 
-            if(TriggerSignal == true)
+            if (direction != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(direction);
+            }
+
+            if (TriggerSignal)
             {
                 RoadNum++;
                 TriggerSignal = false;
             }
 
-            if(RoadNum > 2)
+            if (RoadNum > Road.Length - 1)
             {
                 HeadtoGirl = true;
             }
-        }
 
+            isMoving = true;
+        }
 
         if (targets.Length > 0 && targets[seatnum] != null && HeadtoGirl == true)
         {
+            Vector3 directionToTarget = (targets[seatnum].position - transform.position).normalized;
             transform.position = Vector3.MoveTowards(transform.position, targets[seatnum].position, speed * Time.deltaTime);
+
+            if (directionToTarget != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(directionToTarget);
+            }
+
+            // Counterポジションに到達したらPlayerの方向を向く
+            if (Vector3.Distance(transform.position, targets[seatnum].position) < 0.1f && playerTransform != null)
+            {
+                Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
+                transform.rotation = Quaternion.LookRotation(directionToPlayer);
+
+                // アニメーションを待機状態に切り替える
+                isMoving = false;
+            }
+            else
+            {
+                isMoving = true;
+            }
+        }
+
+        // アニメーションの切り替え
+        if (animator != null)
+        {
+            animator.SetBool("walking", isMoving);
         }
     }
 
@@ -97,7 +155,55 @@ public class Visit : MonoBehaviour
             TriggerSignal = true;
         }
 
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            cube_boxCol.isTrigger = false;
+        }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("donburi"))
+        {
+            Nottimeover = true;
+            Invoke("Wait", 1.0f);
+        }
+    }
+
+    void OnDestroy()
+    {
+        gameManager.betogether = true;
+        Wait();
+    }
+
+    void Wait()
+    {
+        if (gameManager.betogether)
+        {
+            empty.seat[seatnum] = true;
+            CustmerCounter.counter--;
+            gameManager.betogether = false;
+
+            if (Nottimeover)
+            {
+                GameObject spawnLocationObject = GameObject.Find(spawnLocationName);
+                if (spawnObject != null && spawnLocation != null)
+                {
+                    Instantiate(spawnObject, spawnLocation.position, spawnLocation.rotation);
+                }
+            }
+            //自分の親オブジェクトを削除
+            if (transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+
+            //自分自身を削除
+            Destroy(this.gameObject);
+        }
+
+    }
+
 
     void InputRoad(int seatnum)
     {
@@ -136,7 +242,6 @@ public class Visit : MonoBehaviour
                     }
                 }
                 break;
-
         }
     }
 }

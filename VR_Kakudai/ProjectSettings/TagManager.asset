@@ -7,6 +7,9 @@ TagManager:
   - sushi
   - donburi
   - Game Object
+  - Road
+  - SalesAmountText
+  - roof
   layers:
   - Default
   - TransparentFX
@@ -14,10 +17,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
+  - player
   - item
-  - 
-  - 
+  - floor
+  - wall
   - 
   - 
   - 

@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class SpeechBubbleTimer : MonoBehaviour
 {
     //timerLimit‚Å§ŒÀŠÔ•ÏX
-    float timerLimit;
+    [SerializeField] float timerLimit;
     float seconds = 0f;
     
     [SerializeField] TestClock testclock;
     [SerializeField] Image hukidasi;
     [SerializeField] Canvas hukidasiImage;
 
+
     bool touch = false;
     void Start()
     {
         timerLimit = Random.Range(2,6 ) * 5;
-        Debug.Log("§ŒÀŠÔ" + timerLimit);
 
         hukidasi.color = Color.green;
 
@@ -40,6 +40,11 @@ public class SpeechBubbleTimer : MonoBehaviour
         {
             hukidasi.color = Color.red;
         }
+        if (timer < 0)
+        {
+            Destroy(transform.parent.gameObject);
+            Destroy(this.gameObject);
+        }
 
         return timer;
     }
@@ -48,7 +53,6 @@ public class SpeechBubbleTimer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Finish"))
         {
-            Debug.Log("‚Î‚ ");
             touch = true;
         }
     }
